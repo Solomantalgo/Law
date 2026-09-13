@@ -1,0 +1,1 @@
+export default function Testimonial() { return <section className="quote-section"><div className="quote-mark">“</div><blockquote>The strongest legal relationships are built on clarity, trust and an understanding of what truly matters to the client.</blockquote><p>— Client testimonial <span>Corporate Client</span></p></section>; }

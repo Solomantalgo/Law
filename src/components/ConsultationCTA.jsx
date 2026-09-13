@@ -1,0 +1,2 @@
+import { Arrow } from './Shared';
+export default function ConsultationCTA() { return <section className="consultation-section" id="contact"><div className="reveal"><p className="eyebrow">START A CONVERSATION</p><h2>When the matter is important,<br /><em>the right counsel matters.</em></h2><p>Speak with our team about your legal needs.</p></div><div className="consultation-actions reveal"><a className="button button-light" href="#contact">Book a Consultation <Arrow /></a><a className="button button-outline-light" href="#contact">Contact the Firm</a></div></section>; }

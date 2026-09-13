@@ -1,0 +1,3 @@
+import { Arrow } from './Shared';
+import { image } from '../data/siteData';
+export default function About() { return <section className="section about-section reveal"><div className="about-media reveal"><img src={image('About.jpg')} alt="Contemporary legal office interior" /><span className="image-caption">R. MACKAY ADVOCATES / KAMPALA</span></div><div className="about-copy-block reveal"><p className="eyebrow dark">ABOUT THE FIRM</p><h2>Legal insight.<br /><em>Commercial understanding.</em><br />Personal commitment.</h2><p>We are shaping a considered legal practice for clients who value clarity, responsiveness and counsel that understands the wider context of every decision.</p><a className="line-link" href="#contact">Discover Our Firm <Arrow /></a></div></section>; }

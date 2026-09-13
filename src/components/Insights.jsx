@@ -1,0 +1,3 @@
+import { Arrow } from './Shared';
+import { insights } from '../data/siteData';
+export default function Insights() { return <section className="section insights-section" id="insights"><div className="section-heading reveal"><div><p className="eyebrow dark">LEGAL INSIGHTS</p><h2>Perspectives for<br /><em>important decisions.</em></h2></div><a className="line-link" href="#contact">View all insights <Arrow /></a></div><div className="insights-grid">{insights.map(([category, date, title]) => <a className="insight-card reveal" href="#contact" key={title}><div><span>{category}</span><time>{date}</time></div><h3>{title}</h3><Arrow /></a>)}</div></section>; }

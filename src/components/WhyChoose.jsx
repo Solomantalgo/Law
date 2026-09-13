@@ -1,0 +1,2 @@
+const principles = ['Commercial Perspective', 'Responsive Counsel', 'Practical Solutions', 'Long-Term Relationships'];
+export default function WhyChoose() { return <section className="section why-section"><div className="why-intro reveal"><p className="eyebrow dark">OUR APPROACH</p><h2>More than<br /><em>legal advice.</em></h2></div><div className="why-list">{principles.map((item, index) => <div className="why-row reveal" key={item}><span>0{index + 1}</span><strong>{item}</strong><p>Thoughtful, practical support aligned with what matters most.</p></div>)}</div></section>; }
