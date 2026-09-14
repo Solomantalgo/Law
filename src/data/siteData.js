@@ -7,6 +7,6 @@ export const practiceAreas = [
   ['05', 'Employment Law', 'Balanced counsel for workplace relationships, policies and employment risk.'],
   ['06', 'Family & Private Client', 'Discreet, considered advice for personal, family and private client matters.'],
 ];
-export const attorneys = [['Richard Mackay', 'Managing Partner', 'Managing Partner portrait.jpg'], ['Sarah N. Kato', 'Senior Advocate', 'Senior female advocate.jpg'], ['Daniel K. Mugisha', 'Corporate Counsel', 'Younger corporate lawyer.jpg']];
+export const attorneys = [['Robert Mackay', 'Managing Partner', 'Managing Partner portrait.jpg'], ['Sarah N. Kato', 'Senior Advocate', 'Senior female advocate.jpg'], ['Daniel K. Mugisha', 'Corporate Counsel', 'Younger corporate lawyer.jpg']];
 export const insights = [['LEGAL UPDATE', '12.06.26', 'Understanding Commercial Agreements in Uganda'], ['BUSINESS LAW', '28.05.26', 'What Businesses Should Consider Before Entering a Partnership'], ['PROPERTY', '09.05.26', 'Property Transactions: Key Legal Considerations']];
 export const image = (name) => `/assets/images/${name}`;
