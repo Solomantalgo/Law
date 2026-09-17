@@ -1,12 +1,15 @@
-export const stats = [['15+', 'Years of Experience'], ['250+', 'Matters Handled'], ['98%', 'Client Satisfaction'], ['06', 'Core Practice Areas']];
+export const stats = [['15+', 'Years of Experience'], ['250+', 'Matters Handled'], ['98%', 'Client Satisfaction'], ['05', 'Core Practice Areas']];
 export const practiceAreas = [
-  ['01', 'Corporate & Commercial Law', 'Business-minded counsel for agreements, transactions and commercial decisions.'],
-  ['02', 'Litigation & Dispute Resolution', 'Measured representation and practical strategies when disputes arise.'],
-  ['03', 'Real Estate & Property', 'Clear guidance through property transactions, development and ownership matters.'],
-  ['04', 'Banking & Finance', 'Thoughtful support for lending, security and financial services work.'],
-  ['05', 'Employment Law', 'Balanced counsel for workplace relationships, policies and employment risk.'],
-  ['06', 'Family & Private Client', 'Discreet, considered advice for personal, family and private client matters.'],
+  ['01', 'Tax', 'Considered advice on tax matters affecting businesses and individuals.'],
+  ['02', 'Criminal', 'Skilled representation in criminal matters, including business crime.'],
+  ['03', 'Corporate and Commercial Practice', 'Business-minded counsel for agreements, transactions and commercial decisions.'],
+  ['04', 'Conveyancing', 'Clear guidance through property transfers and conveyancing matters.'],
+  ['05', 'Corporate Compliance', 'Practical compliance counsel to keep businesses on the right side of regulation.'],
 ];
-export const attorneys = [['Robert Mackay', 'Managing Partner', 'Managing Partner portrait.jpg'], ['Sarah N. Kato', 'Senior Advocate', 'Senior female advocate.jpg'], ['Daniel K. Mugisha', 'Corporate Counsel', 'Younger corporate lawyer.jpg']];
+// TODO: real team has 5-6 members total (also incl. Journey John Kakinga,
+// Musimbi Alex, and a 6th person whose name was illegible in the source
+// photo). Only 3 stock photos exist, so only 3 are shown for now. Revisit
+// once real headshots are available.
+export const attorneys = [['Richard Rugambwa', 'Managing Partner', 'Managing Partner portrait.jpg'], ['Mackay Robert', 'Partner', 'Younger corporate lawyer.jpg'], ['Racheal Namuddu', 'Legal Associate', 'Senior female advocate.jpg'], ['Journey John Kakinga', 'Legal Associate', 'Legal Associate portrait 1.jpg'], ['Musimbi Alex', 'Legal Associate', 'Legal Associate portrait 2.jpg']];
 export const insights = [['LEGAL UPDATE', '12.06.26', 'Understanding Commercial Agreements in Uganda'], ['BUSINESS LAW', '28.05.26', 'What Businesses Should Consider Before Entering a Partnership'], ['PROPERTY', '09.05.26', 'Property Transactions: Key Legal Considerations']];
 export const image = (name) => `/assets/images/${name}`;
