@@ -25,7 +25,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-main">
-        <a className="wordmark footer-wordmark" href="#home" aria-label="R. Mackay Advocates home"><img src="/assets/images/rmackay-logo-full.png" alt="R. Mackay Advocates" /></a>
+        <a className="footer-badge" href="#home" aria-label="R. Mackay Advocates home"><img src="/assets/images/rmackay-full-badge-transparent.png" alt="R. Mackay Advocates" /></a>
         <p>Strategic legal counsel for businesses, institutions and individuals navigating complex decisions.</p>
         <div className="footer-socials">
           {socials.map(([name, Icon]) => (

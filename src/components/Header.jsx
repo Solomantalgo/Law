@@ -7,7 +7,10 @@ export default function Header({ menuOpen, setMenuOpen }) {
   const links = ['home', 'about', 'practice', 'attorneys', 'insights', 'contact'];
   const label = (id) => id === 'practice' ? 'Practice Areas' : id[0].toUpperCase() + id.slice(1);
   return <header className={`site-header ${scrolled ? 'is-scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
-    <a className="wordmark" href="#home" onClick={(e) => { e.preventDefault(); go('#home'); }} aria-label="R. Mackay Advocates home"><img src="/assets/images/rmackay-logo-full.png" alt="R. Mackay Advocates" /></a>
+    <a className="wordmark wordmark-icon" href="#home" onClick={(e) => { e.preventDefault(); go('#home'); }} aria-label="R. Mackay Advocates home">
+      <img src="/assets/images/rmackay-logo-mark-header.png" alt="" aria-hidden="true" />
+      <span className="wordmark-text"><strong>R. MACKAY</strong><small>ADVOCATES</small></span>
+    </a>
     <nav className="desktop-nav" aria-label="Primary navigation">{links.map((id) => <a key={id} href={`#${id}`} onClick={(e) => { e.preventDefault(); go(`#${id}`); }}>{label(id)}</a>)}</nav>
     <a className="header-cta" href="#contact" onClick={(e) => { e.preventDefault(); go('#contact'); }}>Book a Consultation <Arrow /></a>
     <button className="menu-button" type="button" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><MenuIcon open={menuOpen} /></button>
