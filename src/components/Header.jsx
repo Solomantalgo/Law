@@ -8,7 +8,7 @@ export default function Header({ menuOpen, setMenuOpen }) {
   const label = (id) => id === 'practice' ? 'Practice Areas' : id[0].toUpperCase() + id.slice(1);
   return <header className={`site-header ${scrolled ? 'is-scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
     <a className="wordmark wordmark-icon" href="#home" onClick={(e) => { e.preventDefault(); go('#home'); }} aria-label="R. Mackay Advocates home">
-      <img src="/assets/images/rmackay-logo-mark-header.png" alt="" aria-hidden="true" />
+      <img src="/assets/images/rmackay-full-badge-transparent.png" alt="R. Mackay Advocates badge" aria-hidden="true" />
       <span className="wordmark-text"><strong>R. MACKAY</strong><small>ADVOCATES</small></span>
     </a>
     <nav className="desktop-nav" aria-label="Primary navigation">{links.map((id) => <a key={id} href={`#${id}`} onClick={(e) => { e.preventDefault(); go(`#${id}`); }}>{label(id)}</a>)}</nav>
