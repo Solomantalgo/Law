@@ -41,7 +41,7 @@ export default function Attorneys({ onSelectAttorney }) {
                 className="attorney-photo"
                 onClick={(e) => handleProfileClick(e, attorney.id)}
               >
-                <img src={image(attorney.photo)} alt={`${attorney.name}, ${attorney.role}`} />
+                <img src={image(attorney.photo)} alt={`${attorney.name}, ${attorney.role}`} loading="lazy" decoding="async" />
                 <span><Arrow /></span>
               </a>
               <div className="attorney-info">

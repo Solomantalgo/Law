@@ -32,8 +32,8 @@ export default function AttorneyProfilePage({ attorneyId, onBack }) {
           </a>
 
           <div className="profile-hero-content">
-            <div className="profile-hero-photo">
-              <img src={image(attorney.photo)} alt={`${attorney.name}, ${attorney.role}`} />
+            <div className={`profile-hero-photo ${attorney.id === 'robert-mackay' ? 'robert-profile-photo' : ''}`}>
+              <img src={image(attorney.photo)} alt={`${attorney.name}, ${attorney.role}`} fetchPriority="high" decoding="async" />
             </div>
             <div className="profile-hero-details">
               <p className="eyebrow dark" style={{ color: '#8fc5e4' }}>ATTORNEY PROFILE</p>

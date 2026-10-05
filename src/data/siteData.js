@@ -20,7 +20,7 @@ export const attorneys = [
     role: 'Managing Partner',
     title: 'Advocate of the High Court of Uganda | Managing Partner',
     qualifications: 'LL.M. International Crime and Justice | Diploma in International Commercial Arbitration',
-    photo: 'Younger corporate lawyer.jpeg',
+    photo: 'Robert Mackay portrait.jpg',
     isFeatured: true,
     highlightTag: 'Managing Partner • Founder',
     summary: 'Ugandan advocate, prosecutor, legal educator and Managing Partner with 18+ years of experience across complex criminal litigation, international criminal law, anti-corruption, financial crime and commercial advisory.',
@@ -111,7 +111,7 @@ export const attorneys = [
     role: 'Partner',
     title: 'Partner | Advocate of the High Court',
     qualifications: 'LL.B (Hons), Dip. Legal Practice',
-    photo: 'Managing Partner portrait.jpg',
+    photo: 'Richard Rugambwa portrait.jpg',
     isFeatured: false,
     summary: 'Experienced partner focusing on corporate transactions, commercial dispute resolution, and regulatory compliance.',
     sections: {
