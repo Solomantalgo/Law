@@ -23,7 +23,7 @@ export default function Footer() {
   };
 
   return (
-    <footer>
+    <footer className="reveal reveal-fade">
       <div className="footer-main">
         <a className="footer-badge" href="#home" aria-label="R. Mackay Advocates home"><img src="/assets/images/rmackay-full-badge-transparent.png" alt="R. Mackay Advocates" /></a>
         <p>Strategic legal counsel for businesses, institutions and individuals navigating complex decisions.</p>

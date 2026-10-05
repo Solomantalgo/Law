@@ -133,6 +133,7 @@ export const attorneys = [
     title: 'Senior Associate | Advocate of the High Court',
     qualifications: 'LL.B (Hons), Dip. Legal Practice',
     photo: 'Senior female advocate.jpg',
+    photoPlaceholder: true,
     isFeatured: false,
     summary: 'Senior Associate specializing in land transactions, civil litigation, and corporate compliance.',
     sections: {
@@ -153,6 +154,7 @@ export const attorneys = [
     title: 'Legal Associate | Advocate of the High Court',
     qualifications: 'LL.B (Hons), Dip. Legal Practice',
     photo: 'Legal Associate portrait 1.jpg',
+    photoPlaceholder: true,
     isFeatured: false,
     summary: 'Associate focusing on criminal proceedings, legal research, and dispute resolution.',
     sections: {
@@ -173,6 +175,7 @@ export const attorneys = [
     title: 'Legal Associate | Advocate of the High Court',
     qualifications: 'LL.B (Hons), Dip. Legal Practice',
     photo: 'Legal Associate portrait 2.jpg',
+    photoPlaceholder: true,
     isFeatured: false,
     summary: 'Associate specializing in corporate advisory, commercial drafting, and client representation.',
     sections: {

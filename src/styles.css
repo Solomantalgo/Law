@@ -122,7 +122,7 @@ h2 em, h1 em { font-style: italic; color: var(--bright); }
 .about-section { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(50px, 9vw, 130px); align-items: center; }
 .about-media { position: relative; padding: 0 0 28px 28px; }
 .about-media:before { position: absolute; top: 28px; bottom: 0; left: 0; width: 58%; border: 1px solid var(--bright); content: ""; }
-.about-media img { position: relative; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; object-position: center 48%; }
+.about-media img { position: relative; width: 100%; height: auto; aspect-ratio: 1080 / 627; object-fit: cover; object-position: center 48%; }
 .image-caption { position: absolute; right: 28px; bottom: 0; display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: var(--navy); color: #fff; font-size: 9px; letter-spacing: .13em; }
 .image-caption img { width: 16px; height: 16px; object-fit: contain; }
 .about-copy-block>p:not(.eyebrow) { max-width: 460px; color: var(--muted); font-size: 16px; }
@@ -284,13 +284,18 @@ footer small { display: block; margin-top: 16px; color: #8fa6b7; font-size: 10px
 }
 
 @media(max-width:600px) {
+  .about-section { grid-template-columns: minmax(0, 1fr); }
+  .about-media { min-width: 0; width: calc(100vw - 56px); }
+  .about-copy-block { min-width: 0; width: 100%; }
+  .about-copy-block>p:not(.eyebrow) { max-width: 300px; }
   .hero-image { height: clamp(230px, 60vw, 330px); }
   .hero-image img { object-position: center center; }
   .hero-overlay { background: linear-gradient(180deg, rgba(7, 26, 47, .08) 0%, rgba(7, 26, 47, .14) 20%, rgba(7, 26, 47, .68) 42%, rgba(7, 26, 47, .98) 57%, var(--navy) 100%); }
   .hero-content { justify-content: flex-start; width: calc(100vw - 40px); max-width: calc(100vw - 40px); margin-left: 20px; padding: calc(clamp(230px, 60vw, 330px) + 82px) 0 70px; }
   .hero h1 { width: 100%; max-width: 100%; font-size: clamp(1.6rem, 6.8vw, 2.1rem); overflow-wrap: anywhere; }
   .hero h1 em { display: block; width: 100%; }
-  .hero-copy { width: min(100%, calc(100vw - 64px)); max-width: calc(100vw - 64px); font-size: 14px; overflow-wrap: anywhere; }
+  .hero-copy { width: 100%; max-width: 290px; font-size: 14px; overflow-wrap: anywhere; }
+  .about-copy-block h2 { font-size: clamp(1.65rem, 7vw, 2rem); }
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -525,6 +530,136 @@ footer small { display: block; margin-top: 16px; color: #8fa6b7; font-size: 10px
   height: 6px;
   border-radius: 50%;
   background: #8fc5e4;
+}
+
+/* Homepage polish: deliberate spacing, restrained interactions, and motion-safe layouts. */
+.site-header.is-scrolled {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background: rgba(7, 26, 47, .96);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  box-shadow: 0 5px 18px rgba(7, 26, 47, .12);
+  backdrop-filter: none;
+}
+.desktop-nav a:after { background: #d4a94f; }
+.hero-overlay { background: linear-gradient(90deg, rgba(7, 26, 47, .96) 0%, rgba(7, 26, 47, .84) 31%, rgba(7, 26, 47, .38) 62%, rgba(7, 26, 47, .035) 100%); }
+.hero h1 { max-width: 800px; }
+.section { padding-top: clamp(82px, 8.5vw, 132px); padding-bottom: clamp(82px, 8.5vw, 132px); }
+.about-section { padding-top: clamp(80px, 8vw, 122px); padding-bottom: clamp(80px, 8vw, 122px); }
+.about-section .about-media img { object-position: center 46%; }
+.practice-row { position: relative; transition: background-color .25s, border-color .25s; }
+.practice-row:hover { padding-right: 0; padding-left: 0; background: transparent; border-color: rgba(23, 105, 170, .45); }
+.practice-title { transition: transform .3s cubic-bezier(.22, 1, .36, 1), color .25s; }
+.practice-row:hover .practice-title { transform: translateX(8px); color: var(--blue); }
+.practice-row .arrow { transition: transform .3s cubic-bezier(.22, 1, .36, 1); }
+.practice-row:hover .arrow { transform: translate(3px, -3px); }
+.who-section { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(48px, 8vw, 110px); align-items: center; background: #fff; }
+.who-intro h2 { display: grid; gap: 3px; margin: 0 0 22px; font-size: clamp(2.35rem, 4.5vw, 4.1rem); }
+.who-intro h2 span { display: block; }
+.who-copy { max-width: 470px; color: var(--muted); font-size: 15px; }
+.who-list { border-top: 1px solid var(--line); }
+.who-row { display: grid; grid-template-columns: 46px 1fr 24px; align-items: center; gap: 18px; min-height: 82px; border-bottom: 1px solid var(--line); transition: padding .25s, border-color .25s; }
+.who-row span { color: var(--bright); font: 500 14px var(--serif); }
+.who-row strong { font: 500 clamp(1.05rem, 1.8vw, 1.45rem) var(--serif); transition: transform .3s, color .25s; }
+.who-row i { color: var(--bright); font-style: normal; transition: transform .3s; }
+.who-row:hover { padding-inline: 8px; border-color: rgba(23, 105, 170, .45); }
+.who-row:hover strong { transform: translateX(5px); color: var(--blue); }
+.who-row:hover i { transform: translate(3px, -3px); }
+.corporate-inner { min-height: 590px; }
+.corporate-image { min-height: 520px; }
+.principles { margin-top: 38px; }
+.attorney-grid { gap: 26px; }
+.attorney-card { border: 1px solid transparent; transition: border-color .35s; }
+.attorney-card:hover { border-color: rgba(23, 105, 170, .35); }
+.attorney-card:not(.featured-attorney):hover { transform: none; box-shadow: none; }
+.attorney-card.featured-attorney:hover { transform: none; border-color: var(--bright); box-shadow: 0 10px 30px rgba(7, 26, 47, .08), 0 0 0 1px rgba(23, 105, 170, .15); }
+.attorney-photo img { transition: transform .8s cubic-bezier(.22, 1, .36, 1); }
+.attorney-card:hover .attorney-photo img { transform: scale(1.02); }
+.attorney-card h3 { transition: color .25s; }
+.attorney-card:hover h3 { color: var(--blue); }
+.attorney-photo span .arrow { transition: transform .3s; }
+.attorney-card:hover .attorney-photo span .arrow { transform: translate(3px, -3px); }
+.attorney-photo > span { position: absolute; right: 16px; bottom: 16px; }
+.attorney-photo > span .arrow { position: static; width: auto; height: auto; margin: 0; background: none; }
+.attorney-placeholder { display: flex; width: 100%; height: clamp(390px, 43vw, 570px); flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: linear-gradient(145deg, #edf2f5, #dce5ec); color: #526678; }
+.attorney-photo .attorney-placeholder { position: relative; right: auto; bottom: auto; width: 100%; height: clamp(390px, 43vw, 570px); background: linear-gradient(145deg, #edf2f5, #dce5ec); color: #526678; }
+.attorney-placeholder b { display: grid; width: 74px; height: 74px; place-items: center; border: 1px solid rgba(7, 26, 47, .22); border-radius: 50%; color: var(--navy); font: 500 1.5rem var(--serif); }
+.attorney-placeholder small { font-size: 8px; font-weight: 700; letter-spacing: .16em; }
+.profile-placeholder { height: 100%; }
+.why-row { transition: border-color .3s; }
+.why-row span, .why-row strong { transition: color .25s, transform .3s; }
+.why-row:hover { border-color: rgba(23, 105, 170, .42); }
+.why-row:hover span { color: #c49b45; }
+.why-row:hover strong { color: var(--blue); transform: translateX(5px); }
+.quote-section { min-height: 400px; }
+.quote-mark { color: #e4edf3; }
+.quote-section blockquote + p { color: var(--bright); font-weight: 700; }
+.insight-card { transition: border-color .28s, background-color .28s; }
+.insight-card:hover { transform: none; background: #f9fbfc; }
+.insight-card .arrow { transition: transform .3s; }
+.insight-card:hover .arrow { transform: translate(3px, -3px); }
+.line-link .arrow { transition: transform .3s; }
+.consultation-section { grid-template-columns: 1.35fr .65fr; background: linear-gradient(112deg, #0b3d73 0%, #14538f 100%); }
+.consultation-section h2 { font-size: clamp(2.25rem, 4vw, 3.8rem); }
+.consultation-section h2 em { color: #d4e7f5; }
+.consultation-section h2 .reveal-item { display: inline-block; }
+footer a { transition: color .22s; }
+footer .social-icon { transition: color .22s, background-color .22s, border-color .22s, transform .25s; }
+footer .social-icon:hover { transform: translateY(-2px); }
+
+@media (max-width: 1050px) {
+  .section { padding-top: 96px; padding-bottom: 96px; }
+  .about-section { padding-top: 80px; padding-bottom: 80px; gap: 52px; }
+  .who-section { gap: 44px; }
+  .corporate-inner { min-height: 0; }
+  .corporate-image { min-height: 500px; }
+}
+@media (min-width: 601px) and (max-width: 800px) {
+  .hero { min-height: auto; }
+  .hero-image { height: clamp(300px, 50vw, 390px); bottom: auto; }
+  .hero-image img { object-position: center 22%; }
+  .hero-overlay { background: linear-gradient(180deg, rgba(7, 26, 47, .05) 0%, rgba(7, 26, 47, .05) 34%, rgba(7, 26, 47, .5) 43%, var(--navy) 51%, var(--navy) 100%); }
+  .hero-content { min-height: auto; width: 100%; max-width: 680px; margin-left: 0; padding: calc(clamp(300px, 50vw, 390px) + 62px) 28px 104px; }
+  .hero h1 { max-width: 650px; font-size: clamp(2.35rem, 6vw, 3.5rem); }
+  .hero-copy { max-width: 540px; }
+  .hero-trust { right: 28px; bottom: 28px; left: 28px; }
+}
+@media (min-width: 801px) {
+  .who-intro h2 { font-size: clamp(2.2rem, 3vw, 2.9rem); }
+  .who-intro h2 span:nth-child(2) { white-space: nowrap; }
+}
+@media (max-width: 800px) {
+  .section { padding: 76px 20px; }
+  .about-section { padding: 70px 20px; gap: 38px; }
+  .practice-section { padding-top: 32px; }
+  .who-section { grid-template-columns: 1fr; gap: 32px; }
+  .who-intro h2 { font-size: clamp(2.15rem, 7vw, 3.25rem); }
+  .who-row { min-height: 70px; }
+  .corporate-content { padding: 68px 20px; }
+  .principles { margin-top: 32px; }
+  .consultation-section { grid-template-columns: 1fr; padding-top: 76px; padding-bottom: 76px; }
+  .consultation-section h2 { font-size: clamp(2rem, 8vw, 2.8rem); }
+  .attorney-grid { gap: 30px; }
+  .attorney-placeholder { height: min(125vw, 570px); }
+}
+@media (max-width: 600px) {
+  .hero-overlay { background: linear-gradient(180deg, rgba(7, 26, 47, .08) 0%, rgba(7, 26, 47, .14) 20%, rgba(7, 26, 47, .68) 42%, rgba(7, 26, 47, .98) 57%, var(--navy) 100%); }
+  .hero-image img { object-position: center 40%; }
+  .about-section { padding-top: 62px; padding-bottom: 66px; }
+  .who-section { padding-top: 68px; padding-bottom: 68px; }
+  .who-copy { font-size: 14px; }
+  .why-section { gap: 35px; }
+  .why-row { padding: 18px 0; }
+  .quote-section { min-height: 380px; }
+  .insights-section { padding-top: 72px; padding-bottom: 78px; }
+  .consultation-section { gap: 24px; }
+  .consultation-section h2 { font-size: clamp(2rem, 8vw, 2.8rem); }
+  footer { gap: 30px 20px; padding-top: 52px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header, .arrow, .attorney-photo img, .practice-row, .practice-title, .practice-row .arrow,
+  .who-row, .who-row strong, .who-row i, .attorney-card, .attorney-card h3, .why-row,
+  .why-row span, .why-row strong, .insight-card, .insight-card .arrow, footer .social-icon { transition: none !important; }
 }
 
 .profile-main-content {

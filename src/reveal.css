@@ -1,1 +1,34 @@
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}.reveal.is-visible{opacity:1;transform:translateY(0)}.reveal:nth-child(2){transition-delay:.05s}.reveal:nth-child(3){transition-delay:.1s}.reveal:nth-child(4){transition-delay:.15s}.reveal:nth-child(5){transition-delay:.2s}.reveal:nth-child(6){transition-delay:.25s}.about-copy-block h2{display:grid;gap:4px}.reveal-line{display:block;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}.reveal-line:nth-child(1){transition-delay:.12s}.reveal-line:nth-child(2){transition-delay:.52s}.reveal-line:nth-child(3){transition-delay:.92s}.reveal.is-visible .reveal-line{opacity:1;transform:translateY(0)}@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.reveal-line{opacity:1;transform:none;transition:none}}
+/* One-time viewport reveals. Content remains visible unless JavaScript is active. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal,
+  .js .reveal-item {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+    transition: opacity 760ms cubic-bezier(.22, 1, .36, 1), transform 760ms cubic-bezier(.22, 1, .36, 1);
+    will-change: opacity, transform;
+  }
+
+  .js .reveal-left { transform: translate3d(-30px, 0, 0); }
+  .js .reveal-right { transform: translate3d(30px, 0, 0); }
+  .js .reveal-fade { transform: none; }
+  .js .reveal.is-visible,
+  .js .reveal-item.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
+  }
+
+  .reveal-stagger > .reveal-item:nth-child(2) { transition-delay: 70ms; }
+  .reveal-stagger > .reveal-item:nth-child(3) { transition-delay: 140ms; }
+  .reveal-stagger > .reveal-item:nth-child(4) { transition-delay: 210ms; }
+  .reveal-stagger > .reveal-item:nth-child(5) { transition-delay: 280ms; }
+  .reveal-stagger > .reveal-item:nth-child(6) { transition-delay: 350ms; }
+}
+
+.about-copy-block h2 { display: grid; gap: 4px; }
+.reveal-line { display: block; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal,
+  .js .reveal-item { opacity: 1; transform: none; transition: none; }
+}

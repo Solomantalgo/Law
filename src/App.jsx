@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Credibility from './components/Credibility';
 import About from './components/About';
 import PracticeAreas from './components/PracticeAreas';
+import WhoWeHelp from './components/WhoWeHelp';
 import CorporateSection from './components/CorporateSection';
 import Attorneys from './components/Attorneys';
 import AttorneyProfilePage from './components/AttorneyProfilePage';
@@ -56,10 +57,8 @@ export default function App() {
 
   useEffect(() => {
     if (profileId) return;
-    const items = document.querySelectorAll('.reveal');
-    const showAll = () => {
-      items.forEach((item) => item.classList.add('is-visible'));
-    };
+    const items = document.querySelectorAll('.reveal, .reveal-item');
+    const showAll = () => items.forEach((item) => item.classList.add('is-visible'));
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       showAll();
       return undefined;
@@ -76,13 +75,11 @@ export default function App() {
             observer.unobserve(entry.target);
           }
         }),
-      { threshold: 0.12 }
+      { threshold: 0.12, rootMargin: '0px 0px -36px 0px' }
     );
     items.forEach((item) => observer.observe(item));
-    const timeoutId = window.setTimeout(showAll, 4000);
     return () => {
       observer.disconnect();
-      window.clearTimeout(timeoutId);
     };
   }, [profileId]);
 
@@ -103,6 +100,7 @@ export default function App() {
         <Credibility />
         <About />
         <PracticeAreas />
+        <WhoWeHelp />
         <CorporateSection />
         <Attorneys
           onSelectAttorney={(id) => {

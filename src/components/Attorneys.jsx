@@ -21,14 +21,14 @@ export default function Attorneys({ onSelectAttorney }) {
         <p className="heading-note">Meet the advocate and legal team behind our<br />considered, client-focused practice.</p>
       </div>
 
-      <div className="attorney-grid">
+      <div className="attorney-grid reveal-stagger">
         {attorneys.map((attorney) => {
           const isFeatured = attorney.isFeatured;
           const profileHref = `#attorneys/${attorney.id}`;
 
           return (
             <article
-              className={`attorney-card reveal ${isFeatured ? 'featured-attorney' : ''}`}
+              className={`attorney-card reveal-item ${isFeatured ? 'featured-attorney' : ''}`}
               key={attorney.id}
             >
               {isFeatured && (
@@ -41,7 +41,7 @@ export default function Attorneys({ onSelectAttorney }) {
                 className="attorney-photo"
                 onClick={(e) => handleProfileClick(e, attorney.id)}
               >
-                <img src={image(attorney.photo)} alt={`${attorney.name}, ${attorney.role}`} loading="lazy" decoding="async" />
+                {attorney.photoPlaceholder ? <div className="attorney-placeholder" aria-label={`Portrait forthcoming for ${attorney.name}`}><b>{attorney.name.split(' ').map((part) => part[0]).join('')}</b><small>PORTRAIT FORTHCOMING</small></div> : <img src={image(attorney.photo)} alt={`${attorney.name}, ${attorney.role}`} loading="lazy" decoding="async" />}
                 <span><Arrow /></span>
               </a>
               <div className="attorney-info">
