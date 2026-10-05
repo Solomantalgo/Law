@@ -1,18 +1,20 @@
 /* One-time viewport reveals. Content remains visible unless JavaScript is active. */
 @media (prefers-reduced-motion: no-preference) {
-  .js .reveal,
-  .js .reveal-item {
+  .reveal-ready .reveal,
+  .reveal-ready .reveal-item,
+  .reveal-ready .reveal-up {
     opacity: 0;
     transform: translate3d(0, 30px, 0);
     transition: opacity 760ms cubic-bezier(.22, 1, .36, 1), transform 760ms cubic-bezier(.22, 1, .36, 1);
     will-change: opacity, transform;
   }
 
-  .js .reveal-left { transform: translate3d(-30px, 0, 0); }
-  .js .reveal-right { transform: translate3d(30px, 0, 0); }
-  .js .reveal-fade { transform: none; }
-  .js .reveal.is-visible,
-  .js .reveal-item.is-visible {
+  .reveal-ready .reveal-left { transform: translate3d(-30px, 0, 0); }
+  .reveal-ready .reveal-right { transform: translate3d(30px, 0, 0); }
+  .reveal-ready .reveal-fade { transform: none; }
+  .reveal-ready .reveal.is-visible,
+  .reveal-ready .reveal-item.is-visible,
+  .reveal-ready .reveal-up.is-visible {
     opacity: 1;
     transform: translate3d(0, 0, 0);
     will-change: auto;
@@ -29,6 +31,7 @@
 .reveal-line { display: block; }
 
 @media (prefers-reduced-motion: reduce) {
-  .js .reveal,
-  .js .reveal-item { opacity: 1; transform: none; transition: none; }
+  .reveal-ready .reveal,
+  .reveal-ready .reveal-item,
+  .reveal-ready .reveal-up { opacity: 1; transform: none; transition: none; }
 }

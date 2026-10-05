@@ -57,7 +57,7 @@ export default function App() {
 
   useEffect(() => {
     if (profileId) return;
-    const items = document.querySelectorAll('.reveal, .reveal-item');
+    const items = document.querySelectorAll('.reveal, .reveal-item, .reveal-up');
     const showAll = () => items.forEach((item) => item.classList.add('is-visible'));
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       showAll();
@@ -77,6 +77,7 @@ export default function App() {
         }),
       { threshold: 0.12, rootMargin: '0px 0px -36px 0px' }
     );
+    document.documentElement.classList.add('reveal-ready');
     items.forEach((item) => observer.observe(item));
     return () => {
       observer.disconnect();

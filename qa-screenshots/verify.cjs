@@ -1,6 +1,6 @@
 const ws = new WebSocket('ws://127.0.0.1:9247/devtools/page/693CA2A77616C53869ABF107271B27AB');
-let id = 0; const waiting = new Map(); const exceptions = [];
-ws.onmessage = (event) => { const m = JSON.parse(event.data); if (m.method === 'Runtime.exceptionThrown') exceptions.push(m.params.exceptionDetails.text); if (waiting.has(m.id)) { waiting.get(m.id)(m); waiting.delete(m.id); } };
+let id = 0; const waiting = new Map(); const exceptions = []; const consoleErrors = [];
+ws.onmessage = (event) => { const m = JSON.parse(event.data); if (m.method === 'Runtime.exceptionThrown') exceptions.push(m.params.exceptionDetails.text); if (m.method === 'Runtime.consoleAPICalled' && m.params.type === 'error') consoleErrors.push(m.params.args.map((arg) => arg.value || arg.description).join(' ')); if (waiting.has(m.id)) { waiting.get(m.id)(m); waiting.delete(m.id); } };
 function send(method, params = {}) { const n = ++id; return new Promise((resolve) => { waiting.set(n, resolve); ws.send(JSON.stringify({ id: n, method, params })); }); }
 const pause = (ms) => new Promise((r) => setTimeout(r, ms));
 async function evaluate(expression, awaitPromise = false) { const r = await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise }); if (r.result.exceptionDetails) throw new Error(r.result.exceptionDetails.text); return r.result.result.value; }
@@ -26,6 +26,6 @@ async function evaluate(expression, awaitPromise = false) { const r = await send
   await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
   await send('Page.navigate', { url: 'http://127.0.0.1:5178/' }); await pause(800);
   const reduced = await evaluate(`JSON.stringify({hidden:[...document.querySelectorAll('.reveal,.reveal-item')].filter(e=>getComputedStyle(e).opacity==='0').length,transition:getComputedStyle(document.querySelector('.reveal-item')).transitionDuration})`);
-  console.log(JSON.stringify({ reveal, sticky, anchor, profile: JSON.parse(profile), menuOpen, mobileMenuClosed, mobileOverflow, reduced: JSON.parse(reduced), exceptions }));
+  console.log(JSON.stringify({ reveal, sticky, anchor, profile: JSON.parse(profile), menuOpen, mobileMenuClosed, mobileOverflow, reduced: JSON.parse(reduced), exceptions, consoleErrors }));
   ws.close();
 })().catch((e) => { console.error(e); process.exitCode = 1; ws.close(); });
