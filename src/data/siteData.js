@@ -6,11 +6,38 @@ export const stats = [
 ];
 
 export const practiceAreas = [
-  ['01', 'Tax', 'Considered advice on tax matters affecting businesses and individuals.'],
-  ['02', 'Criminal', 'Skilled representation in criminal matters, including business crime.'],
-  ['03', 'Corporate and Commercial Practice', 'Business-minded counsel for agreements, transactions and commercial decisions.'],
-  ['04', 'Conveyancing', 'Clear guidance through property transfers and conveyancing matters.'],
-  ['05', 'Corporate Compliance', 'Practical compliance counsel to keep businesses on the right side of regulation.'],
+  {
+    number: '01', slug: 'tax', title: 'Tax',
+    summary: 'Considered advice on tax matters affecting businesses and individuals.',
+    introduction: '', services: [], relatedAttorneys: [], seoTitle: '', seoDescription: '',
+    copyStatus: 'existing-demo-copy',
+  },
+  {
+    number: '02', slug: 'criminal', title: 'Criminal',
+    summary: 'Skilled representation in criminal matters, including business crime.',
+    introduction: '', services: [], relatedAttorneys: [], seoTitle: '', seoDescription: '',
+    copyStatus: 'existing-demo-copy',
+  },
+  {
+    number: '03', slug: 'corporate-commercial', title: 'Corporate and Commercial Practice',
+    mobileTitleLines: ['Corporate and', 'Commercial', 'Practice'],
+    summary: 'Business-minded counsel for agreements, transactions and commercial decisions.',
+    mobileSummaryLines: ['Business-minded counsel for agreements,', 'transactions and commercial decisions.'],
+    introduction: '', services: [], relatedAttorneys: [], seoTitle: '', seoDescription: '',
+    copyStatus: 'existing-demo-copy',
+  },
+  {
+    number: '04', slug: 'conveyancing', title: 'Conveyancing',
+    summary: 'Clear guidance through property transfers and conveyancing matters.',
+    introduction: '', services: [], relatedAttorneys: [], seoTitle: '', seoDescription: '',
+    copyStatus: 'existing-demo-copy',
+  },
+  {
+    number: '05', slug: 'corporate-compliance', title: 'Corporate Compliance',
+    summary: 'Practical compliance counsel to keep businesses on the right side of regulation.',
+    introduction: '', services: [], relatedAttorneys: [], seoTitle: '', seoDescription: '',
+    copyStatus: 'existing-demo-copy',
+  },
 ];
 
 export const attorneys = [

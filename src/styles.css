@@ -986,6 +986,7 @@ footer .social-icon:hover { transform: translateY(-2px); }
 .site-header.site-header--directory.is-scrolled,
 .site-header.site-header--directory.menu-open,
 .site-header.site-header--profile { background: var(--navy); color: #fff; border-bottom: 1px solid rgba(255,255,255,.08); box-shadow: 0 5px 18px rgba(7,26,47,.16); backdrop-filter: none; }
+.site-header--practice { background: var(--navy); color: #fff; border-bottom: 1px solid rgba(255,255,255,.08); box-shadow: 0 5px 18px rgba(7,26,47,.16); backdrop-filter: none; }
 .site-header--profile.is-scrolled,
 .site-header--profile.menu-open { background: var(--navy); color: #fff; }
 .attorney-profile-page .profile-hero-details h1 { font: 500 var(--profile-h1)/1.08 var(--profile-heading-font); letter-spacing: -.035em; }
@@ -1066,6 +1067,87 @@ footer .social-icon:hover { transform: translateY(-2px); }
 .attorney-card.featured-attorney .attorney-photo > span { transition: transform .2s ease; }
 .attorney-card.featured-attorney:hover .attorney-photo > span { transform: translateX(4px); }
 .attorney-card.featured-attorney .attorney-info .attorney-role::before { display: inline-block; width: 18px; height: 1px; margin: 0 8px 4px 0; background: #b8954d; content: ''; }
+
+/* Practice-area directory and data-driven detail pages. */
+.practice-directory-page, .practice-area-page { min-height: 100vh; background: #fff; }
+.practice-directory-page .practice-directory-section { padding-top: 150px; padding-bottom: 72px; }
+.practice-directory-section .practice-row { grid-template-columns: 70px minmax(0, 1fr) minmax(220px, .9fr) 30px; }
+.practice-row:focus-visible { position: relative; z-index: 1; outline: 3px solid #b8954d; outline-offset: 4px; }
+.practice-directory-cta { display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-top: 48px; padding: 27px 30px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.65); }
+.practice-directory-cta h3 { margin: 0 0 5px; color: var(--navy); font: 500 1.18rem/1.35 var(--serif); }
+.practice-directory-cta p { margin: 0; color: var(--muted); font-size: .9rem; }
+.practice-directory-cta > a { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 8px; color: var(--blue); font-weight: 700; }
+.practice-directory-cta > a:focus-visible, .practice-area-page a:focus-visible { outline: 3px solid #b8954d; outline-offset: 4px; }
+.practice-area-hero { padding: 126px max(26px, calc((100% - var(--max)) / 2)) 60px; background: var(--navy); color: #fff; }
+.practice-area-hero-inner { width: min(100%, 900px); margin: 0 auto; }
+.practice-back-link { display: inline-block; margin-bottom: 36px; color: #d4e5f1; font-size: .88rem; font-weight: 600; }
+.practice-area-hero .eyebrow { margin-bottom: 16px; }
+.practice-area-hero h1 { max-width: 900px; margin: 0 0 16px; color: #fff; font: 500 clamp(2.7rem, 6vw, 5rem)/1.06 var(--serif); letter-spacing: -.035em; }
+.practice-title-mobile { display: none; }
+.practice-area-intro { max-width: 64ch; margin: 0; color: #e0e9f0; font-size: 1.05rem; line-height: 1.75; }
+.practice-area-content { width: min(calc(100% - 52px), 900px); margin: 0 auto; padding: 55px 0; }
+.practice-area-content h2 { margin: 0 0 22px; color: var(--navy); font: 500 clamp(1.75rem, 3vw, 2.35rem)/1.2 var(--serif); letter-spacing: -.025em; }
+.practice-area-overview > div { max-width: 72ch; color: #334155; font-size: 1rem; line-height: 1.85; }
+.practice-area-services { border-top: 1px solid var(--line); }
+.practice-area-services ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; margin: 0; padding: 0; list-style: none; }
+.practice-area-services li { padding: 15px 0; border-bottom: 1px solid var(--line); color: #334155; }
+.practice-area-related { border-top: 1px solid var(--line); background: var(--cream); }
+.practice-area-related .practice-area-content { padding-top: 48px; padding-bottom: 48px; }
+.practice-related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.practice-related-attorney { display: grid; grid-template-columns: 62px minmax(0, 1fr) 18px; gap: 14px; align-items: center; padding: 14px; border: 1px solid var(--line); background: #fff; }
+.practice-related-attorney .attorney-portrait { width: 62px; height: 72px; }
+.practice-related-attorney strong, .practice-related-attorney small { display: block; }
+.practice-related-attorney strong { color: var(--navy); font: 500 1rem/1.3 var(--serif); }
+.practice-related-attorney small { margin-top: 4px; color: var(--muted); font-size: .75rem; }
+.practice-area-cta { display: flex; align-items: center; justify-content: space-between; gap: 36px; padding: 56px max(26px, calc((100% - var(--max)) / 2)); background: var(--blue); color: #fff; }
+.practice-area-cta > div { max-width: 720px; }
+.practice-area-cta .eyebrow { margin-bottom: 12px; }
+.practice-area-cta h2 { margin: 0 0 10px; color: #fff; font: 500 clamp(1.8rem, 3.5vw, 2.6rem)/1.2 var(--serif); }
+.practice-area-cta p:last-child { margin: 0; color: #e1ebf4; }
+.practice-area-cta .button { flex: 0 0 auto; }
+.practice-not-found { min-height: 54vh; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 140px max(26px, calc((100% - 900px) / 2)) 70px; }
+.practice-not-found h1 { margin: 0 0 14px; color: var(--navy); font: 500 clamp(2rem, 5vw, 3.4rem)/1.1 var(--serif); }
+.practice-not-found p:not(.eyebrow) { color: var(--muted); }
+.practice-not-found .button { margin-top: 10px; }
+.button-dark { display: inline-flex; align-items: center; gap: 10px; padding: 14px 20px; background: var(--navy); color: #fff; font-weight: 700; }
+
+@media (max-width: 800px) {
+  .practice-directory-page .practice-directory-section { padding-top: 120px; padding-bottom: 54px; }
+  .practice-directory-section .practice-row { grid-template-columns: 42px minmax(0, 1fr) 24px; }
+  .practice-directory-cta { align-items: flex-start; flex-direction: column; gap: 16px; margin-top: 34px; padding: 22px 0; }
+  .practice-directory-cta > div, .practice-area-cta > div { width: 100%; min-width: 0; }
+  .practice-area-hero { padding-top: 112px; padding-bottom: 46px; }
+  .practice-area-hero-inner { width: 100%; min-width: 0; }
+  .practice-area-content { padding-top: 42px; padding-bottom: 42px; }
+  .practice-related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .practice-area-cta { align-items: flex-start; flex-direction: column; gap: 22px; padding-top: 46px; padding-bottom: 46px; }
+}
+@media (max-width: 600px) {
+  .practice-area-page { width: 100%; overflow-x: clip; }
+  .practice-area-page main, .practice-area-hero, .practice-area-cta { width: 100%; min-width: 0; }
+  .practice-area-hero-inner { width: calc(100vw - 60px); min-width: 0; }
+  .practice-area-hero-inner, .practice-area-cta > div { max-width: 100%; }
+  .practice-directory-page .practice-directory-section { padding-top: 105px; }
+  .practice-directory-section .practice-row { grid-template-columns: 32px minmax(0, 1fr) 22px; gap: 10px; padding: 17px 0; }
+  .practice-directory-section .practice-title { min-width: 0; font-size: 1.08rem; line-height: 1.35; overflow-wrap: anywhere; }
+  .practice-directory-cta > div { width: calc(100vw - 40px); }
+  .practice-directory-cta h3 { max-width: calc(100vw - 40px); font-size: 1rem; overflow-wrap: anywhere; }
+  .practice-directory-cta p { max-width: 30ch; white-space: normal; overflow-wrap: anywhere; }
+  .practice-area-hero { padding: 100px 20px 36px; }
+  .practice-back-link { margin-bottom: 28px; }
+  .practice-area-hero h1 { width: 100%; max-width: calc(100vw - 60px); font-size: clamp(1.8rem, 7vw, 2rem); white-space: normal; overflow-wrap: anywhere; }
+  .practice-title-desktop { display: none; }
+  .practice-title-mobile { display: block; }
+  .practice-title-mobile > span { display: block; }
+  .practice-area-intro { width: 100%; max-width: calc(100vw - 60px); font-size: .94rem; overflow-wrap: anywhere; }
+  .practice-area-content { width: calc(100% - 40px); padding: 34px 0; }
+  .practice-area-content h2 { font-size: 1.7rem; }
+  .practice-area-services ul, .practice-related-grid { grid-template-columns: 1fr; }
+  .practice-area-cta { padding: 38px 20px; }
+  .practice-area-cta > div { flex: 1 1 0%; width: calc(100vw - 60px); }
+  .practice-area-cta h2, .practice-area-cta p { max-width: calc(100vw - 60px); white-space: normal; overflow-wrap: anywhere; }
+  .practice-area-cta h2 { font-size: 1.55rem; }
+}
 @media (max-width: 800px) {
   .profile-content-region { scroll-margin-top: var(--global-header-height); }
   .profile-tabs { justify-content: flex-start; gap: 22px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; padding: 0 20px; scroll-padding-inline: 20px; -webkit-overflow-scrolling: touch; }

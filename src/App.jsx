@@ -9,12 +9,13 @@ import CorporateSection from './components/CorporateSection';
 import Attorneys from './components/Attorneys';
 import AttorneyProfilePage from './components/AttorneyProfilePage';
 import AttorneyDirectoryPage from './components/AttorneyDirectoryPage';
+import { PracticeAreaNotFoundPage, PracticeAreaPage, PracticeAreasDirectoryPage } from './components/PracticeAreaPages';
 import WhyChoose from './components/WhyChoose';
 import Testimonial from './components/Testimonial';
 import Insights from './components/Insights';
 import ConsultationCTA from './components/ConsultationCTA';
 import Footer from './components/Footer';
-import { attorneys } from './data/siteData';
+import { attorneys, practiceAreas } from './data/siteData';
 
 const getProfileSlug = () => {
   const match = window.location.pathname.match(/^\/people\/([^/]+)\/?$/);
@@ -98,6 +99,14 @@ export default function App() {
       setProfileId(id);
       window.scrollTo({ top: 0, behavior: 'instant' });
     }} />;
+  }
+
+  const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+  if (currentPath === '/practice-areas') return <PracticeAreasDirectoryPage />;
+  if (currentPath.startsWith('/practice-areas/')) {
+    const slug = decodeURIComponent(currentPath.slice('/practice-areas/'.length));
+    const practiceArea = practiceAreas.find((area) => area.slug === slug);
+    return practiceArea ? <PracticeAreaPage area={practiceArea} /> : <PracticeAreaNotFoundPage />;
   }
 
   return (

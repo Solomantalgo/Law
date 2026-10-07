@@ -4,7 +4,7 @@ export default function Header({ menuOpen, setMenuOpen }) {
   const [scrolled, setScrolled] = useState(false);
   const headerRef = useRef(null);
   const pathname = window.location.pathname.replace(/\/$/, '') || '/';
-  const context = pathname === '/people' ? 'directory' : /^\/people\/[^/]+$/.test(pathname) ? 'profile' : 'home';
+  const context = pathname === '/people' ? 'directory' : /^\/people\/[^/]+$/.test(pathname) ? 'profile' : pathname === '/practice-areas' || pathname.startsWith('/practice-areas/') ? 'practice' : 'home';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -50,7 +50,8 @@ export default function Header({ menuOpen, setMenuOpen }) {
     setMenuOpen(false);
     const target = document.querySelector(id);
     if (target) target.scrollIntoView({ behavior: 'smooth' });
-    else if (window.location.pathname.startsWith('/people')) window.location.href = `/${id}`;
+    else if (id === '#practice') window.location.href = '/practice-areas';
+    else window.location.href = `/${id}`;
   };
   const links = ['home', 'about', 'practice', 'attorneys', 'insights', 'contact'];
   const label = (id) => id === 'practice' ? 'Practice Areas' : id[0].toUpperCase() + id.slice(1);
