@@ -1,70 +1,71 @@
 import { Arrow } from './Shared';
-import { attorneys, image } from '../data/siteData';
+import { attorneys } from '../data/siteData';
+import AttorneyPortrait from './AttorneyPortrait';
 
-export default function Attorneys({ onSelectAttorney }) {
-  const handleProfileClick = (e, attorneyId) => {
-    e.preventDefault();
-    if (onSelectAttorney) {
-      onSelectAttorney(attorneyId);
-    } else {
-      window.location.hash = `#attorneys/${attorneyId}`;
-    }
-  };
+const leadership = attorneys.filter((attorney) => attorney.leadershipGroup === 'Managing Partners');
+const otherPartners = attorneys.filter((attorney) => !attorney.leadershipGroup && attorney.role === 'Partner');
+const otherAttorneys = attorneys.filter((attorney) => !attorney.leadershipGroup && attorney.role !== 'Partner');
+
+export default function Attorneys({ onSelectAttorney, preview = false }) {
+  const groups = [
+    { title: 'Managing Partners', members: leadership },
+    ...(!preview ? [
+      { title: 'Other Partners', members: otherPartners },
+      { title: 'Other Attorneys', members: otherAttorneys },
+    ] : []),
+  ].filter((group) => group.members.length);
 
   return (
     <section className="section attorneys-section" id="attorneys">
-      <div className="section-heading reveal">
+      <div className="section-heading reveal-up">
         <div>
           <p className="eyebrow dark">OUR PEOPLE</p>
           <h2>Experience<br /><em>you can trust.</em></h2>
         </div>
-        <p className="heading-note">Meet the advocate and legal team behind our<br />considered, client-focused practice.</p>
+        <p className="heading-note">Meet the people behind R. Mackay Advocates.</p>
       </div>
 
-      <div className="attorney-grid reveal-stagger">
-        {attorneys.map((attorney) => {
-          const isFeatured = attorney.isFeatured;
-          const profileHref = `#attorneys/${attorney.id}`;
-
-          return (
-            <article
-              className={`attorney-card reveal-item ${isFeatured ? 'featured-attorney' : ''}`}
-              key={attorney.id}
-            >
-              {isFeatured && (
-                <div className="featured-badge">
-                  <span>{attorney.highlightTag || 'MANAGING PARTNER'}</span>
-                </div>
-              )}
-              <a
-                href={profileHref}
-                className="attorney-photo"
-                onClick={(e) => handleProfileClick(e, attorney.id)}
+      {groups.map((group) => (
+        <div className={`attorney-groups attorney-group-${group.title === 'Managing Partners' ? 'leadership' : 'others'}`} key={group.title}>
+          <h3 className="attorney-group-title reveal-up">{group.title}</h3>
+          <div className={`attorney-grid attorney-grid-count-${group.members.length} reveal-stagger`}>
+            {group.members.map((attorney) => (
+              <article
+                className={`attorney-card reveal-item ${attorney.featured ? 'featured-attorney' : ''} ${attorney.leadershipGroup ? 'leadership-attorney' : ''} ${!attorney.image ? 'attorney-card-placeholder' : ''}`}
+                key={attorney.slug}
               >
-                {attorney.photoPlaceholder ? <div className="attorney-placeholder" aria-label={`Portrait forthcoming for ${attorney.name}`}><b>{attorney.name.split(' ').map((part) => part[0]).join('')}</b><small>PORTRAIT FORTHCOMING</small></div> : <img src={image(attorney.photo)} alt={`${attorney.name}, ${attorney.role}`} loading="lazy" decoding="async" />}
-                <span><Arrow /></span>
-              </a>
-              <div className="attorney-info">
-                <h3>{attorney.name}</h3>
-                <p className="attorney-role">{attorney.role}</p>
-                {attorney.qualifications && (
-                  <p className="attorney-qualifications">{attorney.qualifications}</p>
-                )}
-                {attorney.summary && (
-                  <p className="attorney-summary-snippet">{attorney.summary}</p>
-                )}
                 <a
-                  href={profileHref}
-                  className={`view-profile-link ${isFeatured ? 'highlighted-btn' : ''}`}
-                  onClick={(e) => handleProfileClick(e, attorney.id)}
+                  href={`/people/${attorney.slug}`}
+                  className="attorney-photo"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    onSelectAttorney?.(attorney.slug);
+                  }}
+                  aria-label={`View ${attorney.name}'s profile`}
                 >
-                  View Full Profile <Arrow />
+                  <AttorneyPortrait attorney={attorney} variant="card" />
+                  <span aria-hidden="true"><Arrow /></span>
                 </a>
-              </div>
-            </article>
-          );
-        })}
-      </div>
+                <div className="attorney-info">
+                  <h3>{attorney.name}</h3>
+                  <p className="attorney-role">{attorney.role}</p>
+                  <a
+                    href={`/people/${attorney.slug}`}
+                    className="view-profile-link"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      onSelectAttorney?.(attorney.slug);
+                    }}
+                  >
+                    View Profile <Arrow />
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
+      {preview && <div className="attorneys-directory-link reveal-up"><a href="/people">Meet Our People <Arrow /></a></div>}
     </section>
   );
 }

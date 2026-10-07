@@ -1,12 +1,48 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Arrow, MenuIcon } from './Shared';
 export default function Header({ menuOpen, setMenuOpen }) {
   const [scrolled, setScrolled] = useState(false);
-  useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 40); onScroll(); window.addEventListener('scroll', onScroll, { passive: true }); return () => window.removeEventListener('scroll', onScroll); }, []);
-  const go = (id) => { setMenuOpen(false); document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' }); };
+  const headerRef = useRef(null);
+  const pathname = window.location.pathname.replace(/\/$/, '') || '/';
+  const context = pathname === '/people' ? 'directory' : /^\/people\/[^/]+$/.test(pathname) ? 'profile' : 'home';
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useLayoutEffect(() => {
+    const header = headerRef.current;
+    if (!header) return undefined;
+    const updateHeight = () => document.documentElement.style.setProperty('--global-header-height', `${header.getBoundingClientRect().height}px`);
+    updateHeight();
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(updateHeight);
+    observer?.observe(header);
+    window.addEventListener('resize', updateHeight);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('resize', updateHeight);
+      document.documentElement.style.removeProperty('--global-header-height');
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const alreadyLocked = document.body.classList.contains('no-scroll');
+    document.body.classList.add('no-scroll');
+    return () => { if (!alreadyLocked) document.body.classList.remove('no-scroll'); };
+  }, [menuOpen]);
+  const go = (id) => {
+    setMenuOpen(false);
+    const target = document.querySelector(id);
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    else if (window.location.pathname.startsWith('/people')) window.location.href = `/${id}`;
+  };
   const links = ['home', 'about', 'practice', 'attorneys', 'insights', 'contact'];
   const label = (id) => id === 'practice' ? 'Practice Areas' : id[0].toUpperCase() + id.slice(1);
-  return <header className={`site-header ${scrolled ? 'is-scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
+  return <header ref={headerRef} className={`site-header site-header--${context} ${scrolled ? 'is-scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
     <a className="wordmark wordmark-icon" href="#home" onClick={(e) => { e.preventDefault(); go('#home'); }} aria-label="R. Mackay Advocates home">
       <img src="/assets/images/rmackay-full-badge-transparent.png" alt="R. Mackay Advocates badge" aria-hidden="true" />
       <span className="wordmark-text"><strong>R. MACKAY</strong><small>ADVOCATES</small></span>
