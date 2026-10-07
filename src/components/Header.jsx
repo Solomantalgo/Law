@@ -9,8 +9,20 @@ export default function Header({ menuOpen, setMenuOpen }) {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
+    const sentinel = document.createElement('span');
+    sentinel.className = 'site-header-scroll-sentinel';
+    sentinel.setAttribute('aria-hidden', 'true');
+    document.body.append(sentinel);
+    const observer = typeof IntersectionObserver === 'undefined' ? null : new IntersectionObserver(([entry]) => setScrolled(!entry.isIntersecting));
+    observer?.observe(sentinel);
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+    return () => {
+      observer?.disconnect();
+      sentinel.remove();
+      window.removeEventListener('scroll', onScroll);
+      document.removeEventListener('scroll', onScroll, true);
+    };
   }, []);
 
   useLayoutEffect(() => {

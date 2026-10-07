@@ -13,6 +13,14 @@ const hasValue = (value) => {
 const asList = (value) => (Array.isArray(value) ? value : value ? [value] : []).filter(hasValue);
 const itemText = (item) => (typeof item === 'string' ? item : item?.title || item?.name || item?.role || item?.label || item?.degree || '');
 const itemDescription = (item) => typeof item === 'object' ? item.description || item.summary || '' : '';
+const keepNavItemVisible = (nav, link, behavior) => {
+  if (!nav || !link || window.innerWidth > 800) return;
+  const headerBottom = document.querySelector('.site-header')?.getBoundingClientRect().bottom || 0;
+  const navRect = nav.getBoundingClientRect();
+  const linkRect = link.getBoundingClientRect();
+  if (navRect.top > headerBottom + 2 || linkRect.left >= navRect.left && linkRect.right <= navRect.right) return;
+  link.scrollIntoView({ block: 'nearest', inline: 'center', behavior });
+};
 
 function Biography({ entries }) {
   let previousHeading = '';
@@ -139,12 +147,14 @@ export default function AttorneyProfilePage({ attorneyId }) {
     const nav = tabsRef.current;
     const activeLink = navItemRefs.current.get(activeSection?.id);
     if (!nav || !activeLink) return;
-    const linkRect = activeLink.getBoundingClientRect();
-    const navRect = nav.getBoundingClientRect();
-    if (linkRect.left < navRect.left || linkRect.right > navRect.right) {
-      const centeredLeft = nav.scrollLeft + linkRect.left - navRect.left - (nav.clientWidth - activeLink.offsetWidth) / 2;
-      nav.scrollTo({ left: centeredLeft, behavior: motionBehavior() });
-    }
+    const keepVisible = () => keepNavItemVisible(nav, activeLink, 'instant');
+    keepVisible();
+    window.addEventListener('scroll', keepVisible, { passive: true });
+    window.addEventListener('resize', keepVisible);
+    return () => {
+      window.removeEventListener('scroll', keepVisible);
+      window.removeEventListener('resize', keepVisible);
+    };
   }, [activeSection?.id]);
 
   useEffect(() => {

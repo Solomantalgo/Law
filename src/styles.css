@@ -543,6 +543,7 @@ footer small { display: block; margin-top: 16px; color: #8fa6b7; font-size: 10px
   box-shadow: 0 5px 18px rgba(7, 26, 47, .12);
   backdrop-filter: none;
 }
+.site-header-scroll-sentinel { position: absolute; top: 40px; left: 0; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
 .desktop-nav a:after { background: #d4a94f; }
 .hero-overlay { background: linear-gradient(90deg, rgba(7, 26, 47, .96) 0%, rgba(7, 26, 47, .84) 31%, rgba(7, 26, 47, .38) 62%, rgba(7, 26, 47, .035) 100%); }
 .hero h1 { max-width: 800px; }
@@ -981,10 +982,10 @@ footer .social-icon:hover { transform: translateY(-2px); }
   --profile-body: 1rem;
   --profile-small: .8rem;
 }
-.site-header--directory:not(.is-scrolled):not(.menu-open) { background: #fff; color: var(--navy); box-shadow: 0 4px 22px rgba(7,26,47,.08); }
-.site-header--directory.is-scrolled,
-.site-header--directory.menu-open,
-.site-header--profile { background: var(--navy); color: #fff; border-bottom: 1px solid rgba(255,255,255,.08); box-shadow: 0 5px 18px rgba(7,26,47,.16); }
+.site-header.site-header--directory:not(.is-scrolled):not(.menu-open) { background: #fff; color: var(--navy); box-shadow: 0 4px 22px rgba(7,26,47,.08); }
+.site-header.site-header--directory.is-scrolled,
+.site-header.site-header--directory.menu-open,
+.site-header.site-header--profile { background: var(--navy); color: #fff; border-bottom: 1px solid rgba(255,255,255,.08); box-shadow: 0 5px 18px rgba(7,26,47,.16); backdrop-filter: none; }
 .site-header--profile.is-scrolled,
 .site-header--profile.menu-open { background: var(--navy); color: #fff; }
 .attorney-profile-page .profile-hero-details h1 { font: 500 var(--profile-h1)/1.08 var(--profile-heading-font); letter-spacing: -.035em; }
