@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Credibility from './components/Credibility';
 import About from './components/About';
+import AboutPage from './components/AboutPage';
 import PracticeAreas from './components/PracticeAreas';
 import WhoWeHelp from './components/WhoWeHelp';
 import CorporateSection from './components/CorporateSection';
@@ -102,6 +103,7 @@ export default function App() {
   }
 
   const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+  if (currentPath === '/about') return <AboutPage menuOpen={menuOpen} setMenuOpen={setMenuOpen} />;
   if (currentPath === '/practice-areas') return <PracticeAreasDirectoryPage />;
   if (currentPath.startsWith('/practice-areas/')) {
     const slug = decodeURIComponent(currentPath.slice('/practice-areas/'.length));

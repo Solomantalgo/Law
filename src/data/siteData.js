@@ -40,6 +40,27 @@ export const practiceAreas = [
   },
 ];
 
+export const aboutPageContent = {
+  confirmedFacts: {
+    firmName: 'R. Mackay Advocates',
+    location: 'Kampala, Uganda',
+    leadershipSlugs: ['robert-mackay', 'richard-rugambwa'],
+    conciseIntroduction: 'Based in Kampala, R. Mackay Advocates is led by Managing Partners Robert Mackay and Richard Rugambwa.',
+  },
+  pendingClientContent: ['Approved firm history and founding year', 'Approved mission and values', 'Approved detailed firm narrative'],
+  // Existing marketing language and proposed approach themes are provisional drafts for client review.
+  provisionalCopy: {
+    heroHeading: ['Legal insight.', 'Commercial understanding.', 'Personal commitment.'],
+    heroIntro: 'We are shaping a considered legal practice for clients who value clarity, responsiveness and counsel that understands the wider context of every decision.',
+    approach: [
+      { title: 'Clarity', text: 'Clear communication and a practical view of the decisions ahead.' },
+      { title: 'Considered Advice', text: 'Thoughtful counsel that takes the wider context of each decision into account.' },
+      { title: 'Personal Attention', text: 'Responsive service that keeps the individual matter in view.' },
+    ],
+    peopleIntro: 'Meet the legal team at R. Mackay Advocates.',
+  },
+};
+
 export const attorneys = [
   {
     slug: 'robert-mackay',

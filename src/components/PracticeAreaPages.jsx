@@ -4,7 +4,7 @@ import Footer from './Footer';
 import AttorneyPortrait from './AttorneyPortrait';
 import PracticeAreas from './PracticeAreas';
 import { Arrow } from './Shared';
-import { attorneys } from '../data/siteData';
+import { attorneys, practiceAreas } from '../data/siteData';
 
 function usePracticePageHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,6 +28,7 @@ export function PracticeAreaPage({ area }) {
     .map((slug) => attorneys.find((attorney) => attorney.slug === slug))
     .filter(Boolean);
   const services = (area.services || []).filter(Boolean);
+  const otherAreas = practiceAreas.filter((item) => item.slug !== area.slug);
 
   useEffect(() => {
     document.title = area.seoTitle || `${area.title} | R. Mackay Advocates`;
@@ -97,6 +98,22 @@ export function PracticeAreaPage({ area }) {
             </div>
           </section>
         )}
+
+        <section className="practice-area-explore">
+          <div className="practice-area-content">
+            <p className="eyebrow dark">OUR EXPERTISE</p>
+            <h2>Explore Other Practice Areas</h2>
+            <nav className="practice-explore-list" aria-label="Other practice areas">
+              {otherAreas.map((item) => (
+                <a className="practice-explore-row" href={`/practice-areas/${item.slug}`} key={item.slug}>
+                  <span className="practice-explore-number">{item.number}</span>
+                  <span className="practice-explore-title">{item.title}</span>
+                  <Arrow />
+                </a>
+              ))}
+            </nav>
+          </div>
+        </section>
 
         <section className="practice-area-cta">
           <div>
