@@ -988,8 +988,8 @@ footer .social-icon:hover { transform: translateY(-2px); }
 .site-header.site-header--profile { background: var(--navy); color: #fff; border-bottom: 1px solid rgba(255,255,255,.08); box-shadow: 0 5px 18px rgba(7,26,47,.16); backdrop-filter: none; }
 .site-header--practice { background: var(--navy); color: #fff; border-bottom: 1px solid rgba(255,255,255,.08); box-shadow: 0 5px 18px rgba(7,26,47,.16); backdrop-filter: none; }
 .site-header--about { background: var(--navy); color: #fff; border-bottom: 1px solid rgba(255,255,255,.08); box-shadow: 0 5px 18px rgba(7,26,47,.16); backdrop-filter: none; }
-.about-page { width: 100%; overflow-x: clip; background: #fff; }
-.about-page main { min-width: 0; }
+.about-page { width: 100%; max-width: 100vw; overflow-x: clip; background: #fff; }
+.about-page main { width: 100%; min-width: 0; }
 .about-page-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; gap: clamp(38px, 6vw, 78px); width: min(100%, 1440px); margin: 0 auto; padding: 142px max(28px, 5.5vw) 76px; }
 .about-page-hero-media { position: relative; min-width: 0; padding: 0 0 22px 22px; }
 .about-page-hero-media::before { position: absolute; inset: 22px 22px 22px 0; border: 1px solid var(--bright); content: ''; pointer-events: none; }
@@ -1024,7 +1024,7 @@ footer .social-icon:hover { transform: translateY(-2px); }
 .about-leader-card--lead { border-top-color: #a8894d; box-shadow: 0 12px 30px rgba(7,26,47,.1); }
 .about-leader-card:hover { transform: translateY(-3px); box-shadow: 0 15px 34px rgba(7,26,47,.14); }
 .about-leader-card:focus-visible, .about-page a:focus-visible { outline: 3px solid #b8954d; outline-offset: 4px; }
-.about-leader-card > .attorney-portrait { width: 100%; height: clamp(260px, 30vw, 390px); }
+.about-leader-card > .attorney-portrait { width: 100%; height: clamp(250px, 22vw, 310px); }
 .about-leader-details { display: grid; gap: 9px; padding: 19px 22px 22px; }
 .about-leader-role { color: #8c713b; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .about-leader-details strong { color: var(--navy); font: 500 1.65rem/1.2 var(--serif); }
@@ -1037,24 +1037,24 @@ footer .social-icon:hover { transform: translateY(-2px); }
 .about-page-people > .line-link { justify-self: end; margin: 0; }
 .about-page .consultation-section { padding-top: 68px; padding-bottom: 68px; scroll-margin-top: 90px; }
 @media (max-width: 900px) {
-  .about-page-hero { gap: 36px; padding-top: 126px; padding-bottom: 66px; }
+  .about-page-hero { gap: 36px; padding-top: 126px; padding-bottom: 56px; }
   .about-page-hero h1 { font-size: clamp(2.3rem, 5.1vw, 3.3rem); }
   .about-page-who, .about-page-people { gap: 34px; }
-  .about-page-leadership, .about-page-approach { padding-top: 64px; padding-bottom: 68px; }
+  .about-page-leadership, .about-page-approach { padding-top: 48px; padding-bottom: 44px; }
 }
 @media (max-width: 700px) {
-  .about-page h1, .about-page h2, .about-page h3, .about-page p { min-width: 0; max-width: 100%; white-space: normal !important; overflow-wrap: anywhere; }
-  .about-page-hero-copy, .about-page-section-heading, .about-page-who-copy, .about-page-content { width: 100%; min-width: 0; }
+  .about-page h1, .about-page h2, .about-page h3, .about-page p { min-width: 0; max-width: calc(100vw - 44px); white-space: normal !important; overflow-wrap: anywhere; }
+  .about-page-hero-copy, .about-page-section-heading, .about-page-who-copy, .about-page-content { width: 100%; max-width: calc(100vw - 44px); min-width: 0; }
   .about-page-hero { grid-template-columns: minmax(0, 1fr); gap: 28px; padding: 96px 22px 48px; }
   .about-page-hero-media { width: 100%; padding: 0 0 16px 16px; }
   .about-page-hero-media::before { inset: 16px 16px 16px 0; }
-  .about-page-hero-media img { aspect-ratio: 1080 / 627; object-fit: contain; }
-  .about-page-hero h1 { width: 100%; max-width: 100%; font-size: clamp(1.75rem, 7vw, 2.15rem); }
-  .about-page-hero h1 .reveal-line { max-width: 100%; white-space: normal !important; overflow-wrap: anywhere; }
+  .about-page-hero-media img { width: 100%; max-width: calc(100vw - 60px); height: auto; aspect-ratio: 1080 / 627; object-fit: contain; }
+  .about-page-hero h1 { width: 100%; max-width: calc(100vw - 44px); font-size: clamp(1.5rem, 6vw, 1.9rem); }
+  .about-page-hero h1 .reveal-line { width: 100%; max-width: calc(100vw - 44px); white-space: normal !important; overflow-wrap: anywhere; }
   .about-page-hero-media .image-caption { display: flex; max-width: calc(100% - 8px); padding: 8px 10px; white-space: normal !important; overflow-wrap: anywhere; text-align: right; font-size: 7px; }
   .about-page-who { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 42px 22px; }
   .about-page-people { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 30px 22px; }
-  .about-page-section-heading h2, .about-page-content > h2, .about-page-leadership-heading h2, .about-page-people h2 { font-size: 2rem; }
+  .about-page-section-heading h2, .about-page-content > h2, .about-page-leadership-heading h2, .about-page-people h2 { font-size: clamp(1.65rem, 7.1vw, 1.9rem); }
   .about-page-approach { padding: 42px 22px 32px; }
   .about-page-leadership { padding: 36px 22px; }
   .about-approach-list { grid-template-columns: minmax(0, 1fr); margin-top: 22px; }
