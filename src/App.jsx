@@ -14,6 +14,8 @@ import { PracticeAreaNotFoundPage, PracticeAreaPage, PracticeAreasDirectoryPage 
 import WhyChoose from './components/WhyChoose';
 import Testimonial from './components/Testimonial';
 import Insights from './components/Insights';
+import GalleryPreview from './components/GalleryPreview';
+import GalleryPage from './components/GalleryPage';
 import ConsultationCTA from './components/ConsultationCTA';
 import Footer from './components/Footer';
 import { attorneys, practiceAreas } from './data/siteData';
@@ -104,6 +106,7 @@ export default function App() {
 
   const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
   if (currentPath === '/about') return <AboutPage menuOpen={menuOpen} setMenuOpen={setMenuOpen} />;
+  if (currentPath === '/gallery') return <GalleryPage />;
   if (currentPath === '/practice-areas') return <PracticeAreasDirectoryPage />;
   if (currentPath.startsWith('/practice-areas/')) {
     const slug = decodeURIComponent(currentPath.slice('/practice-areas/'.length));
@@ -131,6 +134,7 @@ export default function App() {
         />
         <WhyChoose />
         <Testimonial />
+        <GalleryPreview />
         <Insights />
         <ConsultationCTA />
       </main>

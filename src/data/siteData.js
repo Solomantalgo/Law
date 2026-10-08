@@ -191,4 +191,39 @@ export const insights = [
   ['PROPERTY', '09.05.26', 'Property Transactions: Key Legal Considerations']
 ];
 
+// Curated from original firm/team photographs already present in public/assets/images.
+// Categories and captions remain empty until the firm supplies approved context.
+export const galleryImages = [
+  {
+    id: 'firm-team-portrait', image: 'about-team.jpeg',
+    alt: 'Members of R. Mackay Advocates standing together for a team photograph.',
+    width: 1080, height: 627, orientation: 'landscape', homepageFeatured: true,
+    category: null, title: null, caption: null,
+  },
+  {
+    id: 'firm-team-group', image: 'hero-team.jpeg',
+    alt: 'R. Mackay Advocates team pictured together in two rows.',
+    width: 1080, height: 719, orientation: 'landscape', homepageFeatured: true,
+    category: null, title: null, caption: null,
+  },
+  {
+    id: 'managing-partners', image: 'R Mackay Advocates leadership pair.jpg',
+    alt: 'Managing Partners Robert Mackay and Richard Rugambwa standing together.',
+    width: 777, height: 1080, orientation: 'portrait', homepageFeatured: true,
+    category: null, title: null, caption: null,
+  },
+  {
+    id: 'robert-mackay-portrait', image: 'Robert Mackay portrait.jpg',
+    alt: 'Robert Mackay, Managing Partner of R. Mackay Advocates.',
+    width: 719, height: 1080, orientation: 'portrait', homepageFeatured: true,
+    category: null, title: null, caption: null,
+  },
+  {
+    id: 'richard-rugambwa-portrait', image: 'Richard Rugambwa portrait.jpg',
+    alt: 'Richard Rugambwa, Managing Partner of R. Mackay Advocates.',
+    width: 719, height: 1080, orientation: 'portrait', homepageFeatured: true,
+    category: null, title: null, caption: null,
+  },
+];
+
 export const image = (name) => `/assets/images/${name}`;

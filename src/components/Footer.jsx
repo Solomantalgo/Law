@@ -33,7 +33,7 @@ export default function Footer() {
           ))}
         </div>
       </div>
-      <div><h4>Firm</h4><a href="/about">About</a><a href="/people">Attorneys</a><a href="/#insights">Insights</a></div>
+      <div><h4>Firm</h4><a href="/about">About</a><a href="/people">Attorneys</a><a href="/gallery">Gallery</a><a href="/#insights">Insights</a></div>
       <div><h4>Expertise</h4><a href="/practice-areas/tax">Tax</a><a href="/practice-areas/criminal">Criminal</a><a href="/practice-areas/corporate-commercial">Corporate and Commercial Practice</a><a href="/practice-areas/conveyancing">Conveyancing</a><a href="/practice-areas/corporate-compliance">Corporate Compliance</a></div>
       <div>
         <h4>Contact</h4>
