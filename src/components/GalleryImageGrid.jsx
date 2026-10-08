@@ -32,6 +32,7 @@ export default function GalleryImageGrid({ items, variant = 'page' }) {
               loading={variant === 'page' && index < 3 ? 'eager' : 'lazy'}
               fetchPriority={variant === 'page' && index === 0 ? 'high' : 'auto'}
               decoding="async"
+              style={{ objectPosition: item.imagePosition || undefined }}
             />
             <span className="gallery-tile-open" aria-hidden="true">View photograph <span>↗</span></span>
           </button>
