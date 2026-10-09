@@ -15,12 +15,12 @@ export default function WhoWeHelp() {
           <span className="reveal-item"><em>people and organisations</em></span>
           <span className="reveal-item">moving forward.</span>
         </h2>
-        <p className="who-copy reveal-item">We work with clients navigating commercial decisions, regulatory responsibilities, disputes, transactions and personal legal matters.</p>
+        <p className="who-copy reveal-item">We advise clients on commercial decisions, regulatory responsibilities, disputes, transactions and personal legal matters.</p>
       </div>
       <div className="who-list reveal-stagger">
         {clientGroups.map(([number, label]) => (
           <div className="who-row reveal-item" key={number}>
-            <span>{number}</span><strong>{label}</strong><i aria-hidden="true">↗</i>
+            <span>{number}</span><strong>{label}</strong>
           </div>
         ))}
       </div>

@@ -1,4 +1,3 @@
-import { Arrow } from './Shared';
 import { galleryImages } from '../data/siteData';
 import GalleryImageGrid from './GalleryImageGrid';
 
@@ -14,7 +13,7 @@ export default function GalleryPreview() {
         <p>A glimpse into the people and moments behind our practice.</p>
       </div>
       <GalleryImageGrid items={featured} variant="preview" />
-      <a className="line-link gallery-preview-link reveal-up" href="/gallery">Explore Our Gallery <Arrow /></a>
+      <a className="line-link gallery-preview-link reveal-up" href="/gallery">Explore Our Gallery</a>
     </section>
   );
 }

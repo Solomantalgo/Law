@@ -41,11 +41,11 @@ function ProfilePanel({ section, attorney }) {
     {section.id === 'experience' && <ol className="profile-timeline">{section.items.map((item, index) => <li key={index}><h3>{itemText(item)}</h3>{typeof item === 'object' && (item.organization || item.period) && <p className="profile-detail-meta">{[item.organization, item.period].filter(Boolean).join(' · ')}</p>}{itemDescription(item) && <p>{itemDescription(item)}</p>}</li>)}</ol>}
     {section.id === 'education' && <div className="profile-credentials">
       {asList(attorney.education).length > 0 && <ul className="profile-credential-list">{asList(attorney.education).map((item, index) => <li key={`edu-${index}`}><strong>{typeof item === 'string' ? item : item.degree || item.title || item.name}</strong>{typeof item === 'object' && item.institution && <span>{item.institution}</span>}</li>)}</ul>}
-      {asList(attorney.qualifications).length > 0 && <><h3>Professional qualifications</h3><ul className="profile-list">{asList(attorney.qualifications).map((item, index) => <li key={`qual-${index}`}>{itemText(item)}{itemDescription(item) && <span> — {itemDescription(item)}</span>}</li>)}</ul></>}
+      {asList(attorney.qualifications).length > 0 && <><h3>Professional qualifications</h3><ul className="profile-list">{asList(attorney.qualifications).map((item, index) => <li key={`qual-${index}`}>{itemText(item)}{itemDescription(item) && <span>: {itemDescription(item)}</span>}</li>)}</ul></>}
     </div>}
     {section.id === 'representative-matters' && <ul className="profile-matters-list">{section.items.map((item, index) => <li key={index}><h3>{itemText(item)}</h3>{itemDescription(item) && <p>{itemDescription(item)}</p>}</li>)}</ul>}
     {section.id === 'memberships' && <div className="profile-memberships">
-      {asList(attorney.professionalMemberships).length > 0 && <ul className="profile-list">{asList(attorney.professionalMemberships).map((item, index) => <li key={`member-${index}`}><strong>{itemText(item)}</strong>{itemDescription(item) && <span> — {itemDescription(item)}</span>}</li>)}</ul>}
+      {asList(attorney.professionalMemberships).length > 0 && <ul className="profile-list">{asList(attorney.professionalMemberships).map((item, index) => <li key={`member-${index}`}><strong>{itemText(item)}</strong>{itemDescription(item) && <span>: {itemDescription(item)}</span>}</li>)}</ul>}
       {asList(attorney.admissions).length > 0 && <><h3>Admissions</h3><ul className="profile-list">{asList(attorney.admissions).map((item, index) => <li key={`admission-${index}`}>{itemText(item)}</li>)}</ul></>}
     </div>}
     {section.id === 'practice-areas' && <ul className="profile-practice-links">{section.items.map((area, index) => <li key={index}>{typeof area === 'string' || !area.href ? <span>{itemText(area)}</span> : <a href={area.href}>{itemText(area)} <span aria-hidden="true">↗</span></a>}</li>)}</ul>}
@@ -188,8 +188,8 @@ export default function AttorneyProfilePage({ attorneyId }) {
                 <p className="profile-title">{attorney.role}</p>
                 {attorney.shortBio && <p className="profile-intro">{attorney.shortBio}</p>}
                 {(attorney.email || attorney.phone) && <div className="profile-contact-actions">
-                  {attorney.email && <a href={`mailto:${attorney.email}`}>Email <Arrow /></a>}
-                  {attorney.phone && <a href={`tel:${attorney.phone}`}>Call <Arrow /></a>}
+                  {attorney.email && <a href={`mailto:${attorney.email}`}>Email</a>}
+                  {attorney.phone && <a href={`tel:${attorney.phone}`}>Call</a>}
                 </div>}
               </div>
             </div>
@@ -214,7 +214,7 @@ export default function AttorneyProfilePage({ attorneyId }) {
         <section className="profile-consultation">
           <p className="eyebrow">NEED LEGAL GUIDANCE?</p>
           <h2>Let’s discuss<br /><em>your matter.</em></h2>
-          <a className="button button-light" href="/#contact">Contact the firm <Arrow /></a>
+          <a className="button button-light" href="/contact#consultation">Contact the firm</a>
         </section>
       </main>
       <Footer />

@@ -1,4 +1,3 @@
-import { Arrow } from './Shared';
 import { aboutPageContent, image } from '../data/siteData';
 
 export default function About() {
@@ -17,7 +16,7 @@ export default function About() {
           ))}
         </h2>
         <p className="reveal-item">{provisionalCopy.heroIntro}</p>
-        <a className="line-link reveal-item" href="/about">Discover Our Firm <Arrow /></a>
+        <a className="line-link reveal-item" href="/about">Discover Our Firm</a>
       </div>
     </section>
   );

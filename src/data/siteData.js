@@ -1,9 +1,22 @@
-export const stats = [
-  ['15+', 'Years of Experience'],
-  ['250+', 'Matters Handled'],
-  ['98%', 'Client Satisfaction'],
-  ['05', 'Core Practice Areas']
-];
+// Legacy figures have no recorded client-approved source. Keep the credibility
+// section empty until the firm confirms figures that can be published.
+export const stats = [];
+
+// Contact details currently displayed in the public site footer. Their source is
+// legacy site copy; client confirmation has not been recorded in this repository.
+export const firmContact = {
+  address: ['3rd Flr Suite 310, BMK House', 'Plot 4-5 Nyabong Rd, Wampewo Avenue', 'P.O Box 27674, Kampala, Uganda'],
+  phone: '+256 393 216 316',
+  email: 'rmackay@rmackayadvocates.com',
+  footerRegistration: 'Reg. No. 20499',
+  footerOfficeNote: 'Offices in Kenya & Uganda',
+  sourceStatus: 'Existing footer copy; client confirmation pending',
+};
+
+export const contactEnquiryNotice = {
+  text: 'Submitting an enquiry does not guarantee an appointment or establish a lawyer-client relationship. Please avoid including confidential, urgent or time-sensitive details and do not attach documents.',
+  approvalStatus: 'Suggested website wording; client and privacy review pending',
+};
 
 export const practiceAreas = [
   {
@@ -51,13 +64,13 @@ export const aboutPageContent = {
   // Existing marketing language and proposed approach themes are provisional drafts for client review.
   provisionalCopy: {
     heroHeading: ['Legal insight.', 'Commercial understanding.', 'Personal commitment.'],
-    heroIntro: 'We are shaping a considered legal practice for clients who value clarity, responsiveness and counsel that understands the wider context of every decision.',
+    heroIntro: 'We advise clients with attention to their circumstances and the decisions ahead.',
     approach: [
       { title: 'Clarity', text: 'Clear communication and a practical view of the decisions ahead.' },
       { title: 'Considered Advice', text: 'Thoughtful counsel that takes the wider context of each decision into account.' },
       { title: 'Personal Attention', text: 'Responsive service that keeps the individual matter in view.' },
     ],
-    peopleIntro: 'Meet the legal team at R. Mackay Advocates.',
+    peopleIntro: 'Find names, roles and available profile information in the directory.',
   },
 };
 
@@ -102,7 +115,7 @@ export const attorneys = [
       { title: 'The Prosecutor v Thomas Kwoyelo', description: 'Lead Counsel for victims before the International Crimes Division of the High Court of Uganda.' },
     ],
     education: [
-      { degree: 'Master of Laws (LL.M.) — International Crime and Justice', institution: 'University of Turin & United Nations Interregional Crime and Justice Research Institute (UNICRI), Italy' },
+      { degree: 'Master of Laws (LL.M.) in International Crime and Justice', institution: 'University of Turin & United Nations Interregional Crime and Justice Research Institute (UNICRI), Italy' },
       { degree: 'Diploma in International Commercial Arbitration', institution: 'American University, Washington College of Law, United States' },
       { degree: 'Diploma in Management and Administration', institution: 'Uganda Management Institute' },
       { degree: 'Diploma in Legal Practice', institution: 'Law Development Centre, Kampala' },
@@ -185,11 +198,17 @@ export const attorneys = [
   },
 ];
 
+// Legacy demonstration headlines are retained as unpublished records for review.
+// Add only client-approved material to this collection before setting approved=true.
 export const insights = [
-  ['LEGAL UPDATE', '12.06.26', 'Understanding Commercial Agreements in Uganda'],
-  ['BUSINESS LAW', '28.05.26', 'What Businesses Should Consider Before Entering a Partnership'],
-  ['PROPERTY', '09.05.26', 'Property Transactions: Key Legal Considerations']
+  { id: 'demo-commercial-agreements', slug: 'understanding-commercial-agreements-in-uganda', title: 'Understanding Commercial Agreements in Uganda', category: 'Legal Update', publishedAt: '2026-06-12', content: [], status: 'draft', source: 'Legacy website demonstration', approved: false },
+  { id: 'demo-business-partnership', slug: 'business-partnership-considerations', title: 'What Businesses Should Consider Before Entering a Partnership', category: 'Business Law', publishedAt: '2026-05-28', content: [], status: 'draft', source: 'Legacy website demonstration', approved: false },
+  { id: 'demo-property-transactions', slug: 'property-transactions-legal-considerations', title: 'Property Transactions: Key Legal Considerations', category: 'Property', publishedAt: '2026-05-09', content: [], status: 'draft', source: 'Legacy website demonstration', approved: false }
 ];
+
+export const publishedInsights = insights
+  .filter((article) => article.status === 'published' && article.approved === true)
+  .sort((a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || ''));
 
 // Curated from original firm/team photographs already present in public/assets/images.
 // Categories and captions remain empty until the firm supplies approved context.

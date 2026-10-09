@@ -85,7 +85,7 @@ export default function AboutPage({ menuOpen, setMenuOpen }) {
             <h2>A wider legal team.</h2>
             <p>{provisionalCopy.peopleIntro}</p>
           </div>
-          <a className="line-link" href="/people">Meet Our People <Arrow /></a>
+          <a className="line-link" href="/people">Meet Our People</a>
         </section>
 
         <ConsultationCTA />

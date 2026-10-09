@@ -121,7 +121,7 @@ export function PracticeAreaPage({ area }) {
             <h2>Need guidance on a legal matter?</h2>
             <p className="practice-cta-body"><span className="practice-title-desktop">Speak with our team about your situation and the legal support you may need.</span><span className="practice-title-mobile"><span>Speak with our team about your situation and</span><span>the legal support you may need.</span></span></p>
           </div>
-          <a className="button button-light" href="/#contact">Discuss your matter <Arrow /></a>
+          <a className="button button-light" href="/contact#consultation">Discuss your matter</a>
         </section>
       </main>
       <Footer />
@@ -138,7 +138,7 @@ export function PracticeAreaNotFoundPage() {
         <p className="eyebrow dark">PRACTICE AREAS</p>
         <h1>Practice area not found</h1>
         <p>This practice area is not available.</p>
-        <a className="button button-dark" href="/practice-areas">Back to Practice Areas <Arrow /></a>
+        <a className="button button-dark" href="/practice-areas">Back to Practice Areas</a>
       </main>
       <Footer />
     </div>

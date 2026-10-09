@@ -19,10 +19,10 @@ export default function Attorneys({ onSelectAttorney, preview = false }) {
     <section className="section attorneys-section" id="attorneys">
       <div className="section-heading reveal-up">
         <div>
-          <p className="eyebrow dark">OUR PEOPLE</p>
-          <h2>Experience<br /><em>you can trust.</em></h2>
+          <p className="eyebrow dark">ATTORNEY DIRECTORY</p>
+          <h2>Our People</h2>
         </div>
-        <p className="heading-note">Meet the people behind R. Mackay Advocates.</p>
+        <p className="heading-note">Profiles for the firm’s legal team.</p>
       </div>
 
       {groups.map((group) => (
@@ -57,7 +57,7 @@ export default function Attorneys({ onSelectAttorney, preview = false }) {
                       onSelectAttorney?.(attorney.slug);
                     }}
                   >
-                    View Profile <Arrow />
+                    View Profile
                   </a>
                 </div>
               </article>
@@ -65,7 +65,7 @@ export default function Attorneys({ onSelectAttorney, preview = false }) {
           </div>
         </div>
       ))}
-      {preview && <div className="attorneys-directory-link reveal-up"><a href="/people">Meet Our People <Arrow /></a></div>}
+      {preview && <div className="attorneys-directory-link reveal-up"><a href="/people">Meet Our People</a></div>}
     </section>
   );
 }

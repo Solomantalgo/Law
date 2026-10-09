@@ -27,7 +27,7 @@ export default function PracticeAreas({ fullPage = false }) {
             <h3>Not sure which area applies to your matter?</h3>
             <p><span className="practice-title-desktop">Speak with our team and we’ll help you identify the appropriate legal support.</span><span className="practice-title-mobile"><span>Speak with our team and we’ll help</span><span>you identify the appropriate legal support.</span></span></p>
           </div>
-          <a href="/#contact">Discuss your matter <Arrow /></a>
+          <a href="/contact#consultation">Discuss your matter</a>
         </aside>
       )}
     </section>

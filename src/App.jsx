@@ -12,10 +12,11 @@ import AttorneyProfilePage from './components/AttorneyProfilePage';
 import AttorneyDirectoryPage from './components/AttorneyDirectoryPage';
 import { PracticeAreaNotFoundPage, PracticeAreaPage, PracticeAreasDirectoryPage } from './components/PracticeAreaPages';
 import WhyChoose from './components/WhyChoose';
-import Testimonial from './components/Testimonial';
 import Insights from './components/Insights';
+import { InsightsListingPage, InsightArticlePage } from './components/InsightsPages';
 import GalleryPreview from './components/GalleryPreview';
 import GalleryPage from './components/GalleryPage';
+import ContactPage from './components/ContactPage';
 import ConsultationCTA from './components/ConsultationCTA';
 import Footer from './components/Footer';
 import { attorneys, practiceAreas } from './data/siteData';
@@ -46,7 +47,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (!profileId && window.location.hash && window.location.hash !== '#') {
+    if (!profileId && window.location.hash && window.location.hash !== '#' && window.location.hash !== '#consultation') {
       const targetId = window.location.hash.slice(1);
       window.setTimeout(() => {
         const target = document.getElementById(targetId);
@@ -105,8 +106,11 @@ export default function App() {
   }
 
   const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+  if (currentPath === '/insights') return <InsightsListingPage />;
+  if (currentPath.startsWith('/insights/')) return <InsightArticlePage slug={decodeURIComponent(currentPath.slice('/insights/'.length))} />;
   if (currentPath === '/about') return <AboutPage menuOpen={menuOpen} setMenuOpen={setMenuOpen} />;
   if (currentPath === '/gallery') return <GalleryPage />;
+  if (currentPath === '/contact') return <ContactPage menuOpen={menuOpen} setMenuOpen={setMenuOpen} />;
   if (currentPath === '/practice-areas') return <PracticeAreasDirectoryPage />;
   if (currentPath.startsWith('/practice-areas/')) {
     const slug = decodeURIComponent(currentPath.slice('/practice-areas/'.length));
@@ -133,7 +137,6 @@ export default function App() {
           }}
         />
         <WhyChoose />
-        <Testimonial />
         <GalleryPreview />
         <Insights />
         <ConsultationCTA />

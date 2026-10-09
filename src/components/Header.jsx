@@ -1,10 +1,10 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Arrow, MenuIcon } from './Shared';
+import { MenuIcon } from './Shared';
 export default function Header({ menuOpen, setMenuOpen }) {
   const [scrolled, setScrolled] = useState(false);
   const headerRef = useRef(null);
   const pathname = window.location.pathname.replace(/\/$/, '') || '/';
-  const context = pathname === '/people' ? 'directory' : /^\/people\/[^/]+$/.test(pathname) ? 'profile' : pathname === '/practice-areas' || pathname.startsWith('/practice-areas/') ? 'practice' : pathname === '/about' ? 'about' : pathname === '/gallery' ? 'gallery' : 'home';
+  const context = pathname === '/people' ? 'directory' : /^\/people\/[^/]+$/.test(pathname) ? 'profile' : pathname === '/practice-areas' || pathname.startsWith('/practice-areas/') ? 'practice' : pathname === '/about' ? 'about' : pathname === '/gallery' ? 'gallery' : pathname === '/contact' ? 'contact' : pathname === '/insights' || pathname.startsWith('/insights/') ? 'insights' : 'home';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -54,15 +54,15 @@ export default function Header({ menuOpen, setMenuOpen }) {
     else if (id === '#practice') window.location.href = '/practice-areas';
     else if (id === '#home') window.location.href = '/';
     else if (id === '#attorneys') window.location.href = '/people';
-    else if (id === '#contact') window.location.href = '/#contact';
-    else if (id === '#insights') window.location.href = '/#insights';
+    else if (id === '#contact') window.location.href = '/contact#consultation';
+    else if (id === '#insights') window.location.href = '/insights';
     else window.location.href = `/${id}`;
   };
   const links = ['home', 'about', 'practice', 'attorneys', 'gallery', 'insights', 'contact'];
   const label = (id) => id === 'practice' ? 'Practice Areas' : id[0].toUpperCase() + id.slice(1);
-  const href = (id) => id === 'about' ? '/about' : id === 'gallery' ? '/gallery' : `#${id}`;
+  const href = (id) => id === 'about' ? '/about' : id === 'gallery' ? '/gallery' : id === 'insights' ? '/insights' : id === 'contact' ? '/contact' : `#${id}`;
   const onNavigationClick = (event, id) => {
-    if (id === 'about' || id === 'gallery') { setMenuOpen(false); return; }
+    if (id === 'about' || id === 'gallery' || id === 'insights' || id === 'contact') { setMenuOpen(false); return; }
     event.preventDefault();
     go(`#${id}`);
   };
@@ -71,9 +71,9 @@ export default function Header({ menuOpen, setMenuOpen }) {
       <img src="/assets/images/rmackay-full-badge-transparent.png" alt="R. Mackay Advocates badge" aria-hidden="true" />
       <span className="wordmark-text"><strong>R. MACKAY</strong><small>ADVOCATES</small></span>
     </a>
-    <nav className="desktop-nav" aria-label="Primary navigation">{links.map((id) => <a key={id} href={href(id)} className={id === 'gallery' && pathname === '/gallery' ? 'is-current' : undefined} aria-current={id === 'gallery' && pathname === '/gallery' ? 'page' : undefined} onClick={(event) => onNavigationClick(event, id)}>{label(id)}</a>)}</nav>
-    <a className="header-cta" href="#contact" onClick={(e) => { e.preventDefault(); go('#contact'); }}>Book a Consultation <Arrow /></a>
+    <nav className="desktop-nav" aria-label="Primary navigation">{links.map((id) => <a key={id} href={href(id)} className={(id === 'gallery' && pathname === '/gallery') || (id === 'contact' && pathname === '/contact') ? 'is-current' : undefined} aria-current={(id === 'gallery' && pathname === '/gallery') || (id === 'contact' && pathname === '/contact') ? 'page' : undefined} onClick={(event) => onNavigationClick(event, id)}>{label(id)}</a>)}</nav>
+    <a className="header-cta" href="/contact#consultation">Book a Consultation</a>
     <button className="menu-button" type="button" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><MenuIcon open={menuOpen} /></button>
-    {menuOpen && <div className="mobile-nav" aria-label="Mobile navigation">{links.map((id) => <a key={id} href={href(id)} className={id === 'gallery' && pathname === '/gallery' ? 'is-current' : undefined} aria-current={id === 'gallery' && pathname === '/gallery' ? 'page' : undefined} onClick={(event) => onNavigationClick(event, id)}>{label(id)}<Arrow /></a>)}<a className="mobile-nav-cta" href="#contact" onClick={(e) => { e.preventDefault(); go('#contact'); }}>Book a Consultation <Arrow /></a></div>}
+    {menuOpen && <div className="mobile-nav" aria-label="Mobile navigation">{links.map((id) => <a key={id} href={href(id)} className={(id === 'gallery' && pathname === '/gallery') || (id === 'contact' && pathname === '/contact') ? 'is-current' : undefined} aria-current={(id === 'gallery' && pathname === '/gallery') || (id === 'contact' && pathname === '/contact') ? 'page' : undefined} onClick={(event) => onNavigationClick(event, id)}>{label(id)}</a>)}<a className="mobile-nav-cta" href="/contact#consultation">Book a Consultation</a></div>}
   </header>;
 }
