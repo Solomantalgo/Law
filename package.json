@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "vercel:dev": "vercel dev --local-config vercel.dev.json",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test api/contact.test.js"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",

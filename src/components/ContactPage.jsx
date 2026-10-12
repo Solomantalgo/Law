@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useForm, ValidationError } from '@formspree/react';
 import Header from './Header';
 import Footer from './Footer';
 import { contactEnquiryNotice, firmContact, practiceAreas } from '../data/siteData';
@@ -8,8 +7,8 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function ContactPage({ menuOpen, setMenuOpen }) {
   const [errors, setErrors] = useState({});
-  const [formState, submitToFormspree, resetForm] = useForm('mppqdbrr');
-  const hasProviderError = (field) => Boolean(formState.errors?.getFieldErrors?.(field)?.length);
+  const [submissionState, setSubmissionState] = useState('idle');
+  const [submissionError, setSubmissionError] = useState('');
 
   useEffect(() => {
     if (window.location.hash !== '#consultation') return undefined;
@@ -25,8 +24,10 @@ export default function ContactPage({ menuOpen, setMenuOpen }) {
     return () => { window.cancelAnimationFrame(firstFrame); if (secondFrame) window.cancelAnimationFrame(secondFrame); };
   }, []);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
+    if (submissionState === 'submitting') return;
+    setSubmissionError('');
     const form = event.currentTarget;
     const data = new FormData(form);
     const nextErrors = {};
@@ -46,7 +47,55 @@ export default function ContactPage({ menuOpen, setMenuOpen }) {
       return;
     }
     setErrors({});
-    submitToFormspree(event);
+    setSubmissionError('');
+    setSubmissionState('submitting');
+    const payload = {
+      fullName,
+      email,
+      telephone: String(data.get('telephone') || '').trim(),
+      matterCategory: String(data.get('matterCategory') || '').trim(),
+      preferredContact: String(data.get('preferredContact') || '').trim(),
+      message,
+      privacyAcknowledged: privacyAcknowledged ? 'acknowledged' : '',
+      website: String(data.get('website') || '').trim(),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      let result;
+      try { result = await response.json(); }
+      catch { throw new Error('The enquiry service returned an unreadable response. Please contact the firm before sending the enquiry again.'); }
+
+      if (!response.ok || result?.ok !== true) {
+        const fieldMessages = {
+          fullName: 'Enter your full name.',
+          email: 'Enter a valid email address.',
+          message: 'Add a brief message.',
+          privacyAcknowledged: 'Please acknowledge the note above before sending.',
+          matterCategory: 'Choose a listed legal matter category.',
+          preferredContact: 'Choose a listed contact method.',
+        };
+        if (result?.field && fieldMessages[result.field]) {
+          setErrors({ [result.field]: fieldMessages[result.field] });
+          document.getElementById(result.field)?.focus();
+        } else {
+          setSubmissionError(result?.error || 'The enquiry could not be sent. Please try again later or contact the firm directly.');
+        }
+        setSubmissionState('error');
+        return;
+      }
+      setSubmissionState('success');
+    } catch (error) {
+      const message = error instanceof Error && error.message.startsWith('The enquiry service returned')
+        ? error.message
+        : 'We could not reach the enquiry service. Please try again later or contact the firm directly.';
+      setSubmissionError(message);
+      setSubmissionState('error');
+    }
   }
 
   return <>
@@ -77,60 +126,59 @@ export default function ContactPage({ menuOpen, setMenuOpen }) {
           <h2 id="contact-form-title">Send an Enquiry</h2>
           <p className="contact-form-intro">Briefly describe how we can direct your enquiry.</p>
           <div className="contact-notice" role="note">{contactEnquiryNotice.text}</div>
-          {formState.succeeded ? (
+          {submissionState === 'success' ? (
             <div className="contact-confirmation" role="status" aria-live="polite">
               <h3>Enquiry received</h3>
               <p>Thank you. Your enquiry has been submitted to the firm.</p>
-              <button className="line-link" type="button" onClick={resetForm}>Send another enquiry</button>
+              <button className="line-link" type="button" onClick={() => { setSubmissionState('idle'); setSubmissionError(''); setErrors({}); }}>Send another enquiry</button>
             </div>
-          ) : <form className="contact-form" onSubmit={handleSubmit} noValidate aria-busy={formState.submitting}>
+          ) : <form className="contact-form" onSubmit={handleSubmit} noValidate aria-busy={submissionState === 'submitting'}>
             <div className="contact-form-grid">
               <div className="contact-field">
                 <label htmlFor="fullName">Full name <span aria-hidden="true">*</span></label>
-                <input id="fullName" name="fullName" autoComplete="name" required aria-required="true" aria-invalid={Boolean(errors.fullName || hasProviderError('fullName'))} aria-describedby={errors.fullName ? 'fullName-error' : hasProviderError('fullName') ? 'fullName-formspree-error' : undefined} onChange={() => setErrors((current) => ({ ...current, fullName: undefined }))} />
+                <input id="fullName" name="fullName" autoComplete="name" maxLength="120" required aria-required="true" aria-invalid={Boolean(errors.fullName)} aria-describedby={errors.fullName ? 'fullName-error' : undefined} onChange={() => setErrors((current) => ({ ...current, fullName: undefined }))} />
                 {errors.fullName && <span id="fullName-error" className="contact-field-error">{errors.fullName}</span>}
-                <ValidationError id="fullName-formspree-error" className="contact-field-error" field="fullName" errors={formState.errors} />
               </div>
               <div className="contact-field">
                 <label htmlFor="email">Email address <span aria-hidden="true">*</span></label>
-                <input id="email" name="email" type="email" autoComplete="email" required aria-required="true" aria-invalid={Boolean(errors.email || hasProviderError('email'))} aria-describedby={errors.email ? 'email-error' : hasProviderError('email') ? 'email-formspree-error' : undefined} onChange={() => setErrors((current) => ({ ...current, email: undefined }))} />
+                <input id="email" name="email" type="email" autoComplete="email" maxLength="254" required aria-required="true" aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? 'email-error' : undefined} onChange={() => setErrors((current) => ({ ...current, email: undefined }))} />
                 {errors.email && <span id="email-error" className="contact-field-error">{errors.email}</span>}
-                <ValidationError id="email-formspree-error" className="contact-field-error" field="email" errors={formState.errors} />
               </div>
               <div className="contact-field">
                 <label htmlFor="telephone">Telephone <span className="contact-optional">Optional</span></label>
-                <input id="telephone" name="telephone" type="tel" autoComplete="tel" />
+                <input id="telephone" name="telephone" type="tel" autoComplete="tel" maxLength="40" />
               </div>
               <div className="contact-field">
                 <label htmlFor="matterCategory">Legal matter category <span className="contact-optional">Optional</span></label>
-                <select id="matterCategory" name="matterCategory" defaultValue="">
+                <select id="matterCategory" name="matterCategory" defaultValue="" aria-invalid={Boolean(errors.matterCategory)} aria-describedby={errors.matterCategory ? 'matterCategory-error' : undefined} onChange={() => setErrors((current) => ({ ...current, matterCategory: undefined }))}>
                   <option value="">Select a category</option>
                   {practiceAreas.map((area) => <option key={area.slug} value={area.slug}>{area.title}</option>)}
                 </select>
+                {errors.matterCategory && <span id="matterCategory-error" className="contact-field-error">{errors.matterCategory}</span>}
               </div>
               <div className="contact-field">
                 <label htmlFor="preferredContact">Preferred contact method <span className="contact-optional">Optional</span></label>
-                <select id="preferredContact" name="preferredContact" defaultValue="">
+                <select id="preferredContact" name="preferredContact" defaultValue="" aria-invalid={Boolean(errors.preferredContact)} aria-describedby={errors.preferredContact ? 'preferredContact-error' : undefined} onChange={() => setErrors((current) => ({ ...current, preferredContact: undefined }))}>
                   <option value="">No preference</option><option value="email">Email</option><option value="telephone">Telephone</option>
                 </select>
+                {errors.preferredContact && <span id="preferredContact-error" className="contact-field-error">{errors.preferredContact}</span>}
               </div>
               <div className="contact-field contact-field-message">
                 <label htmlFor="message">Brief message <span aria-hidden="true">*</span></label>
-                <textarea id="message" name="message" rows="4" maxLength="2000" required aria-required="true" aria-invalid={Boolean(errors.message || hasProviderError('message'))} aria-describedby={`message-hint${errors.message ? ' message-error' : hasProviderError('message') ? ' message-formspree-error' : ''}`} onChange={() => setErrors((current) => ({ ...current, message: undefined }))} />
+                <textarea id="message" name="message" rows="4" maxLength="2000" required aria-required="true" aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? 'message-hint message-error' : 'message-hint'} onChange={() => setErrors((current) => ({ ...current, message: undefined }))} />
                 <span id="message-hint" className="contact-field-hint">Keep your message brief and avoid confidential or time-sensitive details. Maximum 2,000 characters.</span>
                 {errors.message && <span id="message-error" className="contact-field-error">{errors.message}</span>}
-                <ValidationError id="message-formspree-error" className="contact-field-error" field="message" errors={formState.errors} />
               </div>
             </div>
 
-            <div className="contact-honeypot" aria-hidden="true"><label htmlFor="gotcha">Leave this field blank</label><input id="gotcha" name="_gotcha" type="text" tabIndex="-1" autoComplete="off" /></div>
+            <div className="contact-honeypot" aria-hidden="true"><label htmlFor="website">Leave this field blank</label><input id="website" name="website" type="text" tabIndex="-1" autoComplete="off" /></div>
             <div className="contact-consent-wrap">
               <label className="contact-consent" htmlFor="privacyAcknowledged"><input id="privacyAcknowledged" name="privacyAcknowledged" type="checkbox" value="acknowledged" required aria-required="true" aria-invalid={Boolean(errors.privacyAcknowledged)} aria-describedby={errors.privacyAcknowledged ? 'privacyAcknowledged-error' : undefined} onChange={() => setErrors((current) => ({ ...current, privacyAcknowledged: undefined }))} /><span>I understand this is an initial enquiry and agree to be contacted about it.</span></label>
               {errors.privacyAcknowledged && <span id="privacyAcknowledged-error" className="contact-field-error">{errors.privacyAcknowledged}</span>}
             </div>
 
-            <ValidationError className="contact-form-status is-error" errors={formState.errors} role="alert" aria-live="polite" />
-            <button className="button button-dark contact-submit" type="submit" disabled={formState.submitting}>{formState.submitting ? 'Sending' : 'Send enquiry'}</button>
+            {submissionError && <p className="contact-form-status is-error" role="alert" aria-live="polite">{submissionError}</p>}
+            <button className="button button-dark contact-submit" type="submit" disabled={submissionState === 'submitting'}>{submissionState === 'submitting' ? 'Sending' : 'Send enquiry'}</button>
           </form>}
         </section>
       </section>
