@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { contactEnquiryNotice, firmContact, practiceAreas } from '../data/siteData';
@@ -9,6 +9,10 @@ export default function ContactPage({ menuOpen, setMenuOpen }) {
   const [errors, setErrors] = useState({});
   const [submissionState, setSubmissionState] = useState('idle');
   const [submissionError, setSubmissionError] = useState('');
+  const successHeadingRef = useRef(null);
+  const formHeadingRef = useRef(null);
+  const focusFormHeadingRef = useRef(false);
+  const handledSuccessHeadingRef = useRef(null);
 
   useEffect(() => {
     if (window.location.hash !== '#consultation') return undefined;
@@ -23,6 +27,29 @@ export default function ContactPage({ menuOpen, setMenuOpen }) {
     }); });
     return () => { window.cancelAnimationFrame(firstFrame); if (secondFrame) window.cancelAnimationFrame(secondFrame); };
   }, []);
+
+  useEffect(() => {
+    if (submissionState === 'success') {
+      const heading = successHeadingRef.current;
+      if (!heading || handledSuccessHeadingRef.current === heading) return undefined;
+      handledSuccessHeadingRef.current = heading;
+      const frame = window.requestAnimationFrame(() => {
+        if (successHeadingRef.current !== heading) return;
+        heading.focus({ preventScroll: true });
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        heading.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth', block: 'start' });
+      });
+      return () => window.cancelAnimationFrame(frame);
+    }
+
+    handledSuccessHeadingRef.current = null;
+    if (focusFormHeadingRef.current && submissionState === 'idle') {
+      focusFormHeadingRef.current = false;
+      const frame = window.requestAnimationFrame(() => formHeadingRef.current?.focus({ preventScroll: true }));
+      return () => window.cancelAnimationFrame(frame);
+    }
+    return undefined;
+  }, [submissionState]);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -123,14 +150,14 @@ export default function ContactPage({ menuOpen, setMenuOpen }) {
 
         <section id="consultation" className="contact-form-section" aria-labelledby="contact-form-title">
           <p className="eyebrow dark">INITIAL ENQUIRY</p>
-          <h2 id="contact-form-title">Send an Enquiry</h2>
+          <h2 id="contact-form-title" ref={formHeadingRef} tabIndex={-1}>Send an Enquiry</h2>
           <p className="contact-form-intro">Briefly describe how we can direct your enquiry.</p>
           <div className="contact-notice" role="note">{contactEnquiryNotice.text}</div>
           {submissionState === 'success' ? (
             <div className="contact-confirmation" role="status" aria-live="polite">
-              <h3>Enquiry received</h3>
+              <h3 ref={successHeadingRef} tabIndex={-1}>Enquiry received</h3>
               <p>Thank you. Your enquiry has been submitted to the firm.</p>
-              <button className="line-link" type="button" onClick={() => { setSubmissionState('idle'); setSubmissionError(''); setErrors({}); }}>Send another enquiry</button>
+              <button className="line-link" type="button" onClick={() => { focusFormHeadingRef.current = true; setSubmissionState('idle'); setSubmissionError(''); setErrors({}); }}>Send another enquiry</button>
             </div>
           ) : <form className="contact-form" onSubmit={handleSubmit} noValidate aria-busy={submissionState === 'submitting'}>
             <div className="contact-form-grid">
