@@ -88,7 +88,7 @@ export const attorneys = [
     biography: [
       'Robert Mackay is a Ugandan advocate, prosecutor, legal educator and Managing Partner of R. Mackay Advocates, with more than 18 years of experience across complex criminal litigation, internatio[...]
       'He has built his practice at the intersection of domestic and international justice, combining courtroom advocacy with strategic legal advisory services for individuals, businesses and public i[...]
-      'Robert began his public-sector legal career as a State Attorney and pioneer prosecutor in the Anti-Corruption Department of the Office of the Director of Public Prosecutions, where he participa[...]
+      'Robert began his public-sector legal career as a prosecutor in the Anti-Corruption Department of the Office of the Director of Public Prosecutions, where he participa[...]
       'In private practice, he leads R. Mackay Advocates, a Kampala-based law firm handling criminal, commercial, anti-corruption and cybercrime matters. His practice has included investigations, tran[...]
       { heading: 'International Criminal Law', text: 'Robert has specialised international training and practical experience in international criminal justice. He holds an LL.M. in International Crime[...]
       { text: 'He served as Lead Counsel for victims in The Prosecutor v Thomas Kwoyelo before the International Crimes Division of the High Court of Uganda, a domestic prosecution of international cr[...]
@@ -108,7 +108,7 @@ export const attorneys = [
       'Legal Education & Professional Training', 'Institutional Governance & Reform',
     ],
     experience: [
-      { title: 'Prosecutor', organization: 'Office of the Director of Public Prosecutions', description: 'Anti-Corruption Department; prosecution work and multidisciplinary team lea[...]
+      { title: 'Prosecutor', organization: 'Office of the Director of Public Prosecutions', description: 'Anti-Corruption Department; prosecution work and multidisciplinary tea[...]
       { title: 'Academic and institutional leadership', organization: 'Law Development Centre', description: 'Acting Head and Deputy Head of Post Graduate Legal Studies and Legal Aid; Head of Sub[...]
     ],
     representativeMatters: [
