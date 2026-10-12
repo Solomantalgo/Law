@@ -14,7 +14,7 @@ export const firmContact = {
 };
 
 export const contactEnquiryNotice = {
-  text: 'Submitting an enquiry does not guarantee an appointment or establish a lawyer-client relationship. Please avoid including confidential, urgent or time-sensitive details and do not attach documents.',
+  text: 'Submitting an enquiry does not guarantee an appointment or establish a lawyer-client relationship. Please avoid including confidential, urgent or time-sensitive details and do not attach docu[...]
   approvalStatus: 'Suggested website wording; client and privacy review pending',
 };
 
@@ -84,21 +84,21 @@ export const attorneys = [
     imageAlt: 'Robert Mackay, Managing Partner',
     leadershipGroup: 'Managing Partners',
     featured: true,
-    shortBio: 'Ugandan advocate, prosecutor and legal educator with more than 18 years of experience across criminal litigation, international criminal law, anti-corruption, financial crime and commercial advisory.',
+    shortBio: 'Ugandan advocate, prosecutor and legal educator with more than 18 years of experience across criminal litigation, international criminal law, anti-corruption, financial crime and commer[...]
     biography: [
-      'Robert Mackay is a Ugandan advocate, prosecutor, legal educator and Managing Partner of R. Mackay Advocates, with more than 18 years of experience across complex criminal litigation, international criminal law, anti-corruption, financial crime, cybercrime, commercial advisory work and professional legal training.',
-      'He has built his practice at the intersection of domestic and international justice, combining courtroom advocacy with strategic legal advisory services for individuals, businesses and public institutions. His experience includes work on matters involving financial crime, corruption, money laundering, asset recovery, cybercrime and transnational criminal conduct.',
-      'Robert began his public-sector legal career as a State Attorney and pioneer prosecutor in the Anti-Corruption Department of the Office of the Director of Public Prosecutions, where he participated in corruption and financial-crime prosecutions and led multidisciplinary teams of prosecutors, investigators and support personnel.',
-      'In private practice, he leads R. Mackay Advocates, a Kampala-based law firm handling criminal, commercial, anti-corruption and cybercrime matters. His practice has included investigations, transnational fraud and asset-recovery work, as well as strategic advisory engagements requiring multidisciplinary and, where appropriate, multi-jurisdictional teams.',
-      { heading: 'International Criminal Law', text: 'Robert has specialised international training and practical experience in international criminal justice. He holds an LL.M. in International Crime and Justice from the University of Turin and UNICRI, and is a member of the Association of Defence Counsel practising before the International Criminal Court.' },
-      { text: 'He served as Lead Counsel for victims in The Prosecutor v Thomas Kwoyelo before the International Crimes Division of the High Court of Uganda, a domestic prosecution of international crimes arising from the Lord’s Resistance Army conflict.' },
-      { text: 'His international criminal law training has included work concerning the International Criminal Court, hybrid tribunals, victims and witness protection, financial crime, money laundering, terrorism financing and international defence practice.' },
-      { heading: 'Anti-Corruption and Financial Crime', text: 'Robert has experience in anti-corruption and financial-crime matters through public prosecution and private practice. During his service with the Office of the Director of Public Prosecutions, he worked on corruption and financial-crime prosecutions, led multidisciplinary teams and contributed to case-management and prosecution systems. He subsequently contributed to anti-money-laundering law reform through the Uganda Law Society Criminal Law Cluster and undertook specialist training in money laundering, financial investigations and asset recovery.' },
-      { heading: 'Cybercrime and Complex Investigations', text: 'Robert advises and represents clients in matters involving cybercrime, digital investigations, financial crime and complex criminal conduct. He has undertaken specialist training in cybercrime and complex investigations, including a Cybercrime Master Class at the Royal Institute of Public Administration in London, and has experience leading investigations involving cybercrime, financial crime, asset recovery and transnational criminal conduct.' },
-      { heading: 'Commercial and Corporate Advisory', text: 'Alongside his criminal and public-law practice, Robert has undertaken commercial and corporate advisory engagements, including work involving mergers and acquisitions, strategic alliances, joint ventures and regulatory compliance. His experience includes advising on a proposed strategic alliance involving oil and gas logistics opportunities in East Africa, including review of applicable company and M&A law and preparation of a joint-venture agreement and related management arrangements.' },
+      'Robert Mackay is a Ugandan advocate, prosecutor, legal educator and Managing Partner of R. Mackay Advocates, with more than 18 years of experience across complex criminal litigation, internatio[...]
+      'He has built his practice at the intersection of domestic and international justice, combining courtroom advocacy with strategic legal advisory services for individuals, businesses and public i[...]
+      'Robert began his public-sector legal career as a State Attorney and pioneer prosecutor in the Anti-Corruption Department of the Office of the Director of Public Prosecutions, where he participa[...]
+      'In private practice, he leads R. Mackay Advocates, a Kampala-based law firm handling criminal, commercial, anti-corruption and cybercrime matters. His practice has included investigations, tran[...]
+      { heading: 'International Criminal Law', text: 'Robert has specialised international training and practical experience in international criminal justice. He holds an LL.M. in International Crime[...]
+      { text: 'He served as Lead Counsel for victims in The Prosecutor v Thomas Kwoyelo before the International Crimes Division of the High Court of Uganda, a domestic prosecution of international cr[...]
+      { text: 'His international criminal law training has included work concerning the International Criminal Court, hybrid tribunals, victims and witness protection, financial crime, money launderin[...]
+      { heading: 'Anti-Corruption and Financial Crime', text: 'Robert has experience in anti-corruption and financial-crime matters through public prosecution and private practice. During his service [...]
+      { heading: 'Cybercrime and Complex Investigations', text: 'Robert advises and represents clients in matters involving cybercrime, digital investigations, financial crime and complex criminal con[...]
+      { heading: 'Commercial and Corporate Advisory', text: 'Alongside his criminal and public-law practice, Robert has undertaken commercial and corporate advisory engagements, including work involvi[...]
       { text: 'He also has specialist training in international commercial arbitration and corporate compliance in the oil and gas sector.' },
-      { heading: 'Legal Education and Professional Training', text: 'At the Law Development Centre, Robert has held senior academic and institutional leadership positions, including Acting Head of Post Graduate Legal Studies and Legal Aid, Deputy Head of Post Graduate Legal Studies and Legal Aid, and Head of Subject for Criminal Proceedings and Land Transactions. His leadership has included postgraduate legal training, curriculum implementation, examinations, quality assurance and engagement with the Judiciary, Uganda Law Society, Law Council and other legal-sector institutions.' },
-      { text: 'He has also trained and spoken to lawyers, prosecutors, investigators and other professionals on international criminal law, anti-corruption, digital forensics, anti-money laundering, criminal investigations and complex fraud.' },
+      { heading: 'Legal Education and Professional Training', text: 'At the Law Development Centre, Robert has held senior academic and institutional leadership positions, including Acting Head of Pos[...]
+      { text: 'He has also trained and spoken to lawyers, prosecutors, investigators and other professionals on international criminal law, anti-corruption, digital forensics, anti-money laundering, c[...]
     ],
     practiceAreas: [
       'International Criminal Law', 'Criminal Litigation & Defence', 'Anti-Corruption',
@@ -108,8 +108,8 @@ export const attorneys = [
       'Legal Education & Professional Training', 'Institutional Governance & Reform',
     ],
     experience: [
-      { title: 'State Attorney and prosecutor', organization: 'Office of the Director of Public Prosecutions', description: 'Anti-Corruption Department; prosecution work and multidisciplinary team leadership.' },
-      { title: 'Academic and institutional leadership', organization: 'Law Development Centre', description: 'Acting Head and Deputy Head of Post Graduate Legal Studies and Legal Aid; Head of Subject for Criminal Proceedings and Land Transactions.' },
+      { title: 'Prosecutor', organization: 'Office of the Director of Public Prosecutions', description: 'Anti-Corruption Department; prosecution work and multidisciplinary team lea[...]
+      { title: 'Academic and institutional leadership', organization: 'Law Development Centre', description: 'Acting Head and Deputy Head of Post Graduate Legal Studies and Legal Aid; Head of Sub[...]
     ],
     representativeMatters: [
       { title: 'The Prosecutor v Thomas Kwoyelo', description: 'Lead Counsel for victims before the International Crimes Division of the High Court of Uganda.' },
@@ -122,13 +122,13 @@ export const attorneys = [
       { degree: 'Bachelor of Laws (LL.B.) (Hons)', institution: 'Makerere University' },
     ],
     qualifications: [
-      'Specialist training in international criminal law defence, financial crime, money laundering and asset recovery, counter-terrorism prosecution, cybercrime, anti-corruption law, corporate compliance and public procurement.',
+      'Specialist training in international criminal law defence, financial crime, money laundering and asset recovery, counter-terrorism prosecution, cybercrime, anti-corruption law, corporate compli[...]
     ],
     professionalMemberships: [
       'Uganda Law Society', 'East African Law Society', 'International Bar Association',
       'Association of Defence Counsel practising before the International Criminal Court',
       'International White-Collar Defense and Investigations Practice Group',
-      { name: 'Committee and technical work', description: 'Uganda Law Society Continuing Legal Education Committee; Uganda Law Society Criminal Cluster; International Bar Association Anti-Corruption Committee; technical working groups on criminal procedure and sentencing reform.' },
+      { name: 'Committee and technical work', description: 'Uganda Law Society Continuing Legal Education Committee; Uganda Law Society Criminal Cluster; International Bar Association Anti-Corrup[...]
     ],
     admissions: ['Advocate of the High Court of Uganda'],
   },
@@ -143,7 +143,7 @@ export const attorneys = [
     leadershipGroup: 'Managing Partners',
     shortBio: 'Experienced partner focusing on corporate transactions, commercial dispute resolution and regulatory compliance.',
     biography: [
-      'Richard Rugambwa is a Managing Partner at R. Mackay Advocates with experience advising corporations, financial institutions and private clients on commercial litigation, transactions and regulatory matters.',
+      'Richard Rugambwa is a Managing Partner at R. Mackay Advocates with experience advising corporations, financial institutions and private clients on commercial litigation, transactions and regula[...]
     ],
     practiceAreas: [
       'Corporate & Commercial Litigation', 'Banking & Finance', 'Employment Law', 'Regulatory Compliance',
@@ -201,9 +201,9 @@ export const attorneys = [
 // Legacy demonstration headlines are retained as unpublished records for review.
 // Add only client-approved material to this collection before setting approved=true.
 export const insights = [
-  { id: 'demo-commercial-agreements', slug: 'understanding-commercial-agreements-in-uganda', title: 'Understanding Commercial Agreements in Uganda', category: 'Legal Update', publishedAt: '2026-06-12', content: [], status: 'draft', source: 'Legacy website demonstration', approved: false },
-  { id: 'demo-business-partnership', slug: 'business-partnership-considerations', title: 'What Businesses Should Consider Before Entering a Partnership', category: 'Business Law', publishedAt: '2026-05-28', content: [], status: 'draft', source: 'Legacy website demonstration', approved: false },
-  { id: 'demo-property-transactions', slug: 'property-transactions-legal-considerations', title: 'Property Transactions: Key Legal Considerations', category: 'Property', publishedAt: '2026-05-09', content: [], status: 'draft', source: 'Legacy website demonstration', approved: false }
+  { id: 'demo-commercial-agreements', slug: 'understanding-commercial-agreements-in-uganda', title: 'Understanding Commercial Agreements in Uganda', category: 'Legal Update', publishedAt: '2026-06-12'[...]
+  { id: 'demo-business-partnership', slug: 'business-partnership-considerations', title: 'What Businesses Should Consider Before Entering a Partnership', category: 'Business Law', publishedAt: '2026-0[...]
+  { id: 'demo-property-transactions', slug: 'property-transactions-legal-considerations', title: 'Property Transactions: Key Legal Considerations', category: 'Property', publishedAt: '2026-05-09', con[...]
 ];
 
 export const publishedInsights = insights
