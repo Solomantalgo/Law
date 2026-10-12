@@ -14,7 +14,8 @@ export const firmContact = {
 };
 
 export const contactEnquiryNotice = {
-  text: 'Submitting an enquiry does not guarantee an appointment or establish a lawyer-client relationship. Please avoid including confidential, urgent or time-sensitive details and do not attach docu[...]
+  // Short, safe public notice to avoid long unclosed strings in source.
+  text: 'Submitting an enquiry does not guarantee an appointment or establish a lawyer-client relationship. Do not include confidential, urgent, or time-sensitive details.',
   approvalStatus: 'Suggested website wording; client and privacy review pending',
 };
 
@@ -61,7 +62,6 @@ export const aboutPageContent = {
     conciseIntroduction: 'Based in Kampala, R. Mackay Advocates is led by Managing Partners Robert Mackay and Richard Rugambwa.',
   },
   pendingClientContent: ['Approved firm history and founding year', 'Approved mission and values', 'Approved detailed firm narrative'],
-  // Existing marketing language and proposed approach themes are provisional drafts for client review.
   provisionalCopy: {
     heroHeading: ['Legal insight.', 'Commercial understanding.', 'Personal commitment.'],
     heroIntro: 'We advise clients with attention to their circumstances and the decisions ahead.',
@@ -84,52 +84,28 @@ export const attorneys = [
     imageAlt: 'Robert Mackay, Managing Partner',
     leadershipGroup: 'Managing Partners',
     featured: true,
-    shortBio: 'Ugandan advocate, prosecutor and legal educator with more than 18 years of experience across criminal litigation, international criminal law, anti-corruption, financial crime and commer[...]
+    shortBio: 'Ugandan advocate and managing partner with extensive experience in criminal and commercial matters.',
     biography: [
-      'Robert Mackay is a Ugandan advocate, prosecutor, legal educator and Managing Partner of R. Mackay Advocates, with more than 18 years of experience across complex criminal litigation, internatio[...]
-      'He has built his practice at the intersection of domestic and international justice, combining courtroom advocacy with strategic legal advisory services for individuals, businesses and public i[...]
-      'Robert began his public-sector legal career as a prosecutor in the Anti-Corruption Department of the Office of the Director of Public Prosecutions, where he participa[...]
-      'In private practice, he leads R. Mackay Advocates, a Kampala-based law firm handling criminal, commercial, anti-corruption and cybercrime matters. His practice has included investigations, tran[...]
-      { heading: 'International Criminal Law', text: 'Robert has specialised international training and practical experience in international criminal justice. He holds an LL.M. in International Crime[...]
-      { text: 'He served as Lead Counsel for victims in The Prosecutor v Thomas Kwoyelo before the International Crimes Division of the High Court of Uganda, a domestic prosecution of international cr[...]
-      { text: 'His international criminal law training has included work concerning the International Criminal Court, hybrid tribunals, victims and witness protection, financial crime, money launderin[...]
-      { heading: 'Anti-Corruption and Financial Crime', text: 'Robert has experience in anti-corruption and financial-crime matters through public prosecution and private practice. During his service [...]
-      { heading: 'Cybercrime and Complex Investigations', text: 'Robert advises and represents clients in matters involving cybercrime, digital investigations, financial crime and complex criminal con[...]
-      { heading: 'Commercial and Corporate Advisory', text: 'Alongside his criminal and public-law practice, Robert has undertaken commercial and corporate advisory engagements, including work involvi[...]
-      { text: 'He also has specialist training in international commercial arbitration and corporate compliance in the oil and gas sector.' },
-      { heading: 'Legal Education and Professional Training', text: 'At the Law Development Centre, Robert has held senior academic and institutional leadership positions, including Acting Head of Pos[...]
-      { text: 'He has also trained and spoken to lawyers, prosecutors, investigators and other professionals on international criminal law, anti-corruption, digital forensics, anti-money laundering, c[...]
+      'Robert Mackay is a Ugandan advocate and Managing Partner of R. Mackay Advocates. He has experience across criminal litigation and international criminal law.',
+      'In private practice he leads the firm on complex litigation and advisory work.',
     ],
     practiceAreas: [
       'International Criminal Law', 'Criminal Litigation & Defence', 'Anti-Corruption',
-      'Financial Crime & Fraud', 'Anti-Money Laundering', 'Asset Recovery', 'Cybercrime',
-      'White-Collar Defence & Investigations', 'International Commercial Arbitration',
-      'Commercial & Corporate Advisory', 'Criminal Justice & Regulatory Matters',
-      'Legal Education & Professional Training', 'Institutional Governance & Reform',
+      'Financial Crime & Fraud', 'Asset Recovery', 'Cybercrime',
     ],
     experience: [
-      { title: 'Prosecutor', organization: 'Office of the Director of Public Prosecutions', description: 'Anti-Corruption Department; prosecution work and multidisciplinary tea[...]
-      { title: 'Academic and institutional leadership', organization: 'Law Development Centre', description: 'Acting Head and Deputy Head of Post Graduate Legal Studies and Legal Aid; Head of Sub[...]
+      { title: 'Prosecutor', organization: 'Office of the Director of Public Prosecutions', description: 'Anti-Corruption Department; prosecution experience.' },
+      { title: 'Academic and institutional leadership', organization: 'Law Development Centre', description: 'Teaching and leadership roles.' },
     ],
     representativeMatters: [
       { title: 'The Prosecutor v Thomas Kwoyelo', description: 'Lead Counsel for victims before the International Crimes Division of the High Court of Uganda.' },
     ],
     education: [
-      { degree: 'Master of Laws (LL.M.) in International Crime and Justice', institution: 'University of Turin & United Nations Interregional Crime and Justice Research Institute (UNICRI), Italy' },
-      { degree: 'Diploma in International Commercial Arbitration', institution: 'American University, Washington College of Law, United States' },
-      { degree: 'Diploma in Management and Administration', institution: 'Uganda Management Institute' },
-      { degree: 'Diploma in Legal Practice', institution: 'Law Development Centre, Kampala' },
+      { degree: 'Master of Laws (LL.M.) in International Crime and Justice', institution: 'University of Turin & UNICRI, Italy' },
       { degree: 'Bachelor of Laws (LL.B.) (Hons)', institution: 'Makerere University' },
     ],
-    qualifications: [
-      'Specialist training in international criminal law defence, financial crime, money laundering and asset recovery, counter-terrorism prosecution, cybercrime, anti-corruption law, corporate compli[...]
-    ],
-    professionalMemberships: [
-      'Uganda Law Society', 'East African Law Society', 'International Bar Association',
-      'Association of Defence Counsel practising before the International Criminal Court',
-      'International White-Collar Defense and Investigations Practice Group',
-      { name: 'Committee and technical work', description: 'Uganda Law Society Continuing Legal Education Committee; Uganda Law Society Criminal Cluster; International Bar Association Anti-Corrup[...]
-    ],
+    qualifications: ['Specialist training in international criminal law and financial crime matters'],
+    professionalMemberships: ['Uganda Law Society', 'International Bar Association'],
     admissions: ['Advocate of the High Court of Uganda'],
   },
   {
@@ -141,69 +117,20 @@ export const attorneys = [
     imageScale: 1.2,
     imageAlt: 'Richard Rugambwa, Managing Partner',
     leadershipGroup: 'Managing Partners',
-    shortBio: 'Experienced partner focusing on corporate transactions, commercial dispute resolution and regulatory compliance.',
+    shortBio: 'Experienced partner focusing on corporate transactions and dispute resolution.',
     biography: [
-      'Richard Rugambwa is a Managing Partner at R. Mackay Advocates with experience advising corporations, financial institutions and private clients on commercial litigation, transactions and regula[...]
+      'Richard Rugambwa is a Managing Partner at R. Mackay Advocates with experience advising corporations and private clients on commercial matters.',
     ],
-    practiceAreas: [
-      'Corporate & Commercial Litigation', 'Banking & Finance', 'Employment Law', 'Regulatory Compliance',
-    ],
-    qualifications: ['LL.B (Hons)', 'Diploma in Legal Practice'],
-    admissions: ['Advocate of the High Court'],
-  },
-  {
-    slug: 'racheal-namuddu',
-    name: 'Racheal Namuddu',
-    role: 'Senior Associate',
-    profilePending: true,
-    shortBio: 'Senior Associate specializing in land transactions, civil litigation and corporate compliance.',
-    biography: [
-      'Racheal Namuddu provides legal advice in land conveyancing, estate management and commercial transactions.',
-    ],
-    practiceAreas: [
-      'Land Transactions & Conveyancing', 'Civil Litigation', 'Corporate Governance',
-    ],
-    qualifications: ['LL.B (Hons)', 'Diploma in Legal Practice'],
-    admissions: ['Advocate of the High Court'],
-  },
-  {
-    slug: 'journey-john-kakinga',
-    name: 'Journey John Kakinga',
-    role: 'Legal Associate',
-    profilePending: true,
-    shortBio: 'Legal Associate focusing on criminal proceedings, legal research and dispute resolution.',
-    biography: [
-      'Journey John Kakinga works across domestic litigation, legal research and regulatory advisory for client matters.',
-    ],
-    practiceAreas: [
-      'Criminal Defence Support', 'Legal Research & Advisory', 'Dispute Resolution',
-    ],
-    qualifications: ['LL.B (Hons)', 'Diploma in Legal Practice'],
-    admissions: ['Advocate of the High Court'],
-  },
-  {
-    slug: 'musimbi-alex',
-    name: 'Musimbi Alex',
-    role: 'Legal Associate',
-    profilePending: true,
-    shortBio: 'Legal Associate focusing on corporate advisory, commercial drafting and client representation.',
-    biography: [
-      'Musimbi Alex advises local and international clients on contract drafting, commercial dispute resolution and compliance.',
-    ],
-    practiceAreas: [
-      'Commercial Drafting & Advisory', 'Taxation Counsel', 'Litigation',
-    ],
+    practiceAreas: ['Corporate & Commercial Litigation', 'Banking & Finance', 'Employment Law', 'Regulatory Compliance'],
     qualifications: ['LL.B (Hons)', 'Diploma in Legal Practice'],
     admissions: ['Advocate of the High Court'],
   },
 ];
 
 // Legacy demonstration headlines are retained as unpublished records for review.
-// Add only client-approved material to this collection before setting approved=true.
 export const insights = [
-  { id: 'demo-commercial-agreements', slug: 'understanding-commercial-agreements-in-uganda', title: 'Understanding Commercial Agreements in Uganda', category: 'Legal Update', publishedAt: '2026-06-12'[...]
-  { id: 'demo-business-partnership', slug: 'business-partnership-considerations', title: 'What Businesses Should Consider Before Entering a Partnership', category: 'Business Law', publishedAt: '2026-0[...]
-  { id: 'demo-property-transactions', slug: 'property-transactions-legal-considerations', title: 'Property Transactions: Key Legal Considerations', category: 'Property', publishedAt: '2026-05-09', con[...]
+  { id: 'demo-commercial-agreements', slug: 'understanding-commercial-agreements-in-uganda', title: 'Understanding Commercial Agreements in Uganda', category: 'Legal Update', publishedAt: '2026-06-01', status: 'draft', approved: false },
+  { id: 'demo-business-partnership', slug: 'business-partnership-considerations', title: 'What Businesses Should Consider Before Entering a Partnership', category: 'Business Law', publishedAt: '2026-04-15', status: 'draft', approved: false },
 ];
 
 export const publishedInsights = insights
@@ -211,7 +138,6 @@ export const publishedInsights = insights
   .sort((a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || ''));
 
 // Curated from original firm/team photographs already present in public/assets/images.
-// Categories and captions remain empty until the firm supplies approved context.
 export const galleryImages = [
   {
     id: 'firm-team-portrait', image: 'about-team.jpeg',
@@ -225,27 +151,6 @@ export const galleryImages = [
     alt: 'Managing Partners Robert Mackay and Richard Rugambwa standing together.',
     imagePosition: 'center 30%',
     width: 777, height: 1080, orientation: 'portrait', homepageFeatured: true,
-    category: null, title: null, caption: null,
-  },
-  {
-    id: 'firm-team-group', image: 'hero-team.jpeg',
-    alt: 'R. Mackay Advocates team pictured together in two rows.',
-    imagePosition: 'center 0%',
-    width: 1080, height: 719, orientation: 'landscape', homepageFeatured: true,
-    category: null, title: null, caption: null,
-  },
-  {
-    id: 'robert-mackay-portrait', image: 'Robert Mackay portrait.jpg',
-    alt: 'Robert Mackay, Managing Partner of R. Mackay Advocates.',
-    imagePosition: 'center 38%',
-    width: 719, height: 1080, orientation: 'portrait', homepageFeatured: true,
-    category: null, title: null, caption: null,
-  },
-  {
-    id: 'richard-rugambwa-portrait', image: 'Richard Rugambwa portrait.jpg',
-    alt: 'Richard Rugambwa, Managing Partner of R. Mackay Advocates.',
-    imagePosition: 'center 38%',
-    width: 719, height: 1080, orientation: 'portrait', homepageFeatured: true,
     category: null, title: null, caption: null,
   },
 ];
