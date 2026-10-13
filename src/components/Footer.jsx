@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="reveal reveal-fade">
       <div className="footer-main">
-        <a className="footer-badge" href="#home" aria-label="R. Mackay Advocates home"><img src="/assets/images/rmackay-full-badge-transparent.png" alt="R. Mackay Advocates" /></a>
+        <a className="footer-badge" href="/#home" aria-label="R. Mackay Advocates home"><img src="/assets/images/rmackay-full-badge-transparent.png" alt="R. Mackay Advocates" /></a>
         <p>Legal counsel for businesses, institutions and individuals in Kampala.</p>
       </div>
       <div><h4>Firm</h4><a href="/about">About</a><a href="/people">Attorneys</a><a href="/gallery">Gallery</a><a href="/insights">Insights</a><a href="/contact">Contact</a></div>

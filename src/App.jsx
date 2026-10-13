@@ -21,11 +21,34 @@ import ConsultationCTA from './components/ConsultationCTA';
 import Footer from './components/Footer';
 import { attorneys, practiceAreas } from './data/siteData';
 
+const decodePathSegment = (segment) => {
+  try { return decodeURIComponent(segment); }
+  catch { return ''; }
+};
+
 const getProfileSlug = () => {
   const match = window.location.pathname.match(/^\/people\/([^/]+)\/?$/);
-  const slug = match?.[1] || (window.location.hash.startsWith('#attorneys/') ? window.location.hash.slice('#attorneys/'.length) : null);
+  const rawSlug = match?.[1] || (window.location.hash.startsWith('#attorneys/') ? window.location.hash.slice('#attorneys/'.length) : null);
+  const slug = rawSlug ? decodePathSegment(rawSlug) : null;
   return attorneys.some((attorney) => attorney.slug === slug) ? slug : null;
 };
+
+function NotFoundPage({ menuOpen, setMenuOpen }) {
+  useEffect(() => {
+    document.title = 'Page Not Found | R. Mackay Advocates';
+  }, []);
+
+  return <div className="practice-area-page">
+    <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+    <main className="practice-not-found">
+      <p className="eyebrow dark">R. MACKAY ADVOCATES</p>
+      <h1>Page not found</h1>
+      <p>This page is unavailable or may have moved.</p>
+      <a className="button button-dark" href="/">Return to the homepage</a>
+    </main>
+    <Footer />
+  </div>;
+}
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -107,16 +130,18 @@ export default function App() {
 
   const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
   if (currentPath === '/insights') return <InsightsListingPage />;
-  if (currentPath.startsWith('/insights/')) return <InsightArticlePage slug={decodeURIComponent(currentPath.slice('/insights/'.length))} />;
+  if (currentPath.startsWith('/insights/')) return <InsightArticlePage slug={decodePathSegment(currentPath.slice('/insights/'.length))} />;
   if (currentPath === '/about') return <AboutPage menuOpen={menuOpen} setMenuOpen={setMenuOpen} />;
   if (currentPath === '/gallery') return <GalleryPage />;
   if (currentPath === '/contact') return <ContactPage menuOpen={menuOpen} setMenuOpen={setMenuOpen} />;
   if (currentPath === '/practice-areas') return <PracticeAreasDirectoryPage />;
   if (currentPath.startsWith('/practice-areas/')) {
-    const slug = decodeURIComponent(currentPath.slice('/practice-areas/'.length));
+    const slug = decodePathSegment(currentPath.slice('/practice-areas/'.length));
     const practiceArea = practiceAreas.find((area) => area.slug === slug);
     return practiceArea ? <PracticeAreaPage area={practiceArea} /> : <PracticeAreaNotFoundPage />;
   }
+
+  if (currentPath !== '/') return <NotFoundPage menuOpen={menuOpen} setMenuOpen={setMenuOpen} />;
 
   return (
     <>

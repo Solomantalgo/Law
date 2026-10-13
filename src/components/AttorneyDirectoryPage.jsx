@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './Header';
 import Attorneys from './Attorneys';
 import ConsultationCTA from './ConsultationCTA';
@@ -6,6 +6,10 @@ import Footer from './Footer';
 
 export default function AttorneyDirectoryPage({ onSelectAttorney }) {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.title = 'Our People | R. Mackay Advocates';
+  }, []);
 
   return (
     <div className="attorney-directory-page">

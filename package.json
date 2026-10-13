@@ -11,10 +11,12 @@
     "test": "node --test api/contact.test.js"
   },
   "dependencies": {
-    "@formspree/react": "^3.0.0",
-    "@vitejs/plugin-react": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "vite": "latest"
+    "@formspree/react": "3.0.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.1.1",
+    "vite": "8.3.0"
   }
 }

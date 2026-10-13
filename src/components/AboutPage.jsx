@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import AttorneyPortrait from './AttorneyPortrait';
@@ -7,6 +8,9 @@ import { aboutPageContent, attorneys, image } from '../data/siteData';
 
 export default function AboutPage({ menuOpen, setMenuOpen }) {
   const { confirmedFacts, provisionalCopy } = aboutPageContent;
+  useEffect(() => {
+    document.title = 'About the Firm | R. Mackay Advocates';
+  }, []);
   const leaders = confirmedFacts.leadershipSlugs
     .map((slug) => attorneys.find((attorney) => attorney.slug === slug))
     .filter(Boolean);

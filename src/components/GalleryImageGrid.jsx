@@ -34,7 +34,7 @@ export default function GalleryImageGrid({ items, variant = 'page' }) {
               decoding="async"
               style={{ objectPosition: item.imagePosition || undefined }}
             />
-            <span className="gallery-tile-open" aria-hidden="true">View photograph <span>↗</span></span>
+            <span className="gallery-tile-open" aria-hidden="true">View <span>↗</span></span>
           </button>
         ))}
       </div>

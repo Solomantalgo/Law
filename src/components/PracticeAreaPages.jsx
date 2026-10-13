@@ -131,6 +131,9 @@ export function PracticeAreaPage({ area }) {
 
 export function PracticeAreaNotFoundPage() {
   const header = usePracticePageHeader();
+  useEffect(() => {
+    document.title = 'Practice Area Not Found | R. Mackay Advocates';
+  }, []);
   return (
     <div className="practice-area-page practice-area-not-found">
       <Header {...header} />

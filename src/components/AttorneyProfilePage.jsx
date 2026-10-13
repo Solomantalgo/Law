@@ -13,6 +13,10 @@ const hasValue = (value) => {
 const asList = (value) => (Array.isArray(value) ? value : value ? [value] : []).filter(hasValue);
 const itemText = (item) => (typeof item === 'string' ? item : item?.title || item?.name || item?.role || item?.label || item?.degree || '');
 const itemDescription = (item) => typeof item === 'object' ? item.description || item.summary || '' : '';
+const decodeFragment = (fragment) => {
+  try { return decodeURIComponent(fragment); }
+  catch { return ''; }
+};
 const keepNavItemVisible = (nav, link, behavior) => {
   if (!nav || !link || window.innerWidth > 800) return;
   const headerBottom = document.querySelector('.site-header')?.getBoundingClientRect().bottom || 0;
@@ -96,7 +100,7 @@ export default function AttorneyProfilePage({ attorneyId }) {
   };
 
   useEffect(() => {
-    const requestedSection = decodeURIComponent(window.location.hash.slice(1));
+    const requestedSection = decodeFragment(window.location.hash.slice(1));
     const initialSection = tabs.find((section) => section.id === requestedSection) || tabs[0];
     setActiveSectionId(initialSection?.id || '');
     if (requestedSection && tabs.some((section) => section.id === requestedSection)) {
@@ -159,7 +163,7 @@ export default function AttorneyProfilePage({ attorneyId }) {
 
   useEffect(() => {
     const handleLocation = () => {
-      const id = decodeURIComponent(window.location.hash.slice(1));
+      const id = decodeFragment(window.location.hash.slice(1));
       if (tabs.some((section) => section.id === id)) requestAnimationFrame(() => scrollToSection(id, motionBehavior()));
     };
     window.addEventListener('popstate', handleLocation);

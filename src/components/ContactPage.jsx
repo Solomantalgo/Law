@@ -15,6 +15,10 @@ export default function ContactPage({ menuOpen, setMenuOpen }) {
   const handledSuccessHeadingRef = useRef(null);
 
   useEffect(() => {
+    document.title = 'Contact | R. Mackay Advocates';
+  }, []);
+
+  useEffect(() => {
     if (window.location.hash !== '#consultation') return undefined;
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth';
     let secondFrame;
