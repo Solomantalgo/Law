@@ -1210,9 +1210,13 @@ footer a { transition: color .22s; }
 .profile-timeline li::before, .profile-matters-list li::before { position: absolute; top: .45rem; left: -25px; width: 11px; height: 11px; border: 2px solid #b8954d; border-radius: 50%; background: #fff; content: ''; }
 .profile-timeline h3, .profile-matters-list h3 { margin-bottom: 5px; }
 .profile-detail-meta { margin: 0 0 8px !important; color: #657387 !important; font-size: var(--profile-small) !important; font-weight: 600 !important; }
-.profile-experience-areas { display: grid; gap: 15px; margin-top: 18px; }
-.profile-experience-area h4 { margin-top: 0; }
-.profile-experience-area ul { display: grid; gap: 8px; margin: 0; padding-left: 19px; color: #334155; font: 400 var(--profile-body)/1.75 var(--profile-text-font); }
+.profile-experience-areas { display: grid; gap: 0; margin-top: 18px; padding-top: 3px; border-top: 1px solid var(--line); }
+.profile-experience-area { padding: 15px 0 16px; border-bottom: 1px solid var(--line); }
+.profile-experience-area:last-child { padding-bottom: 0; border-bottom: 0; }
+.profile-experience-area h4 { margin: 0 0 9px; color: #69798a; font: 700 .72rem/1.4 var(--profile-text-font); letter-spacing: .09em; text-transform: uppercase; }
+.profile-experience-area ul { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; color: #334155; font: 400 var(--profile-body)/1.7 var(--profile-text-font); }
+.profile-experience-area li { position: relative; padding-left: 13px; }
+.profile-experience-area li::before { position: absolute; top: .42em; left: 1px; width: 2px; height: 1.05em; border: 0; border-radius: 1px; background: #b8954d; content: ''; }
 .profile-skills { display: grid; gap: 30px; }
 .profile-skill-group ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; margin: 0; padding: 0; list-style: none; color: #334155; font: 400 var(--profile-body)/1.7 var(--profile-text-font); }
 .profile-skill-group li { padding: 11px 0; border-bottom: 1px solid var(--line); }
