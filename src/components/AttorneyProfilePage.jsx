@@ -17,13 +17,19 @@ const decodeFragment = (fragment) => {
   try { return decodeURIComponent(fragment); }
   catch { return ''; }
 };
-const keepNavItemVisible = (nav, link, behavior) => {
+const keepNavItemVisible = (nav, link) => {
   if (!nav || !link || window.innerWidth > 800) return;
-  const headerBottom = document.querySelector('.site-header')?.getBoundingClientRect().bottom || 0;
   const navRect = nav.getBoundingClientRect();
   const linkRect = link.getBoundingClientRect();
-  if (navRect.top > headerBottom + 2 || linkRect.left >= navRect.left && linkRect.right <= navRect.right) return;
-  link.scrollIntoView({ block: 'nearest', inline: 'center', behavior });
+  const viewportLeft = navRect.left + nav.clientLeft;
+  const viewportRight = viewportLeft + nav.clientWidth;
+  const fullyVisible = linkRect.left >= viewportLeft + 2 && linkRect.right <= viewportRight - 2;
+  if (fullyVisible) return;
+
+  const targetLeft = nav.scrollLeft + linkRect.left - viewportLeft - (nav.clientWidth - linkRect.width) / 2;
+  const maxLeft = Math.max(0, nav.scrollWidth - nav.clientWidth);
+  const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth';
+  nav.scrollTo({ left: Math.max(0, Math.min(targetLeft, maxLeft)), behavior });
 };
 
 function Biography({ entries }) {
@@ -154,12 +160,11 @@ export default function AttorneyProfilePage({ attorneyId }) {
     const nav = tabsRef.current;
     const activeLink = navItemRefs.current.get(activeSection?.id);
     if (!nav || !activeLink) return;
-    const keepVisible = () => keepNavItemVisible(nav, activeLink, 'instant');
-    keepVisible();
-    window.addEventListener('scroll', keepVisible, { passive: true });
+    const keepVisible = () => keepNavItemVisible(nav, activeLink);
+    const frame = window.requestAnimationFrame(keepVisible);
     window.addEventListener('resize', keepVisible);
     return () => {
-      window.removeEventListener('scroll', keepVisible);
+      window.cancelAnimationFrame(frame);
       window.removeEventListener('resize', keepVisible);
     };
   }, [activeSection?.id]);
