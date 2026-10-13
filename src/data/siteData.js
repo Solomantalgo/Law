@@ -158,28 +158,98 @@ export const attorneys = [
     image: 'Ruth Twongyeirwe.JPG',
     imagePosition: '50% 24%',
     imageAlt: 'Ruth Twongyeirwe, Advocate',
-    shortBio: 'Advocate at R. Mackay Advocates with experience in legal research, case management, drafting, client coordination and litigation preparation.',
+    shortBio: 'Ruth Twongyeirwe is an Advocate at R. Mackay Advocates. Her experience includes legal advice, court and tribunal representation, dispute resolution, legal drafting, case management and judicial support.',
     biography: [
-      'Ruth Twongyeirwe is an Advocate at R. Mackay Advocates. Her work includes legal research, case management, legal drafting, client coordination, litigation preparation, negotiation and dispute resolution.',
+      'Ruth Twongyeirwe is an Advocate whose work has included advising and representing clients, preparing legal documents, managing cases and supporting judicial work. Her experience spans private legal practice and a period assisting a judge at the Mpigi High Court Circuit.',
     ],
     experience: [
       {
         title: 'Advocate',
         organization: 'R. Mackay Advocates',
         period: '2025 to present',
-        description: 'Advises and represents clients, prepares and reviews legal documents, manages cases, and participates in negotiation and dispute resolution.',
+        areas: [
+          {
+            title: 'Legal advice and representation',
+            items: [
+              'Explains applicable laws, rights, obligations, remedies and legal options to clients.',
+              'Advises clients on ways to address legal disputes and provides legal opinions on issues affecting individuals and businesses.',
+              'Represents clients in courts, tribunals and other legal proceedings, including presenting arguments and evidence.',
+            ],
+          },
+          {
+            title: 'Documents and dispute resolution',
+            items: [
+              'Drafts pleadings, contracts, agreements, legal opinions, notices and court applications, and reviews documents prepared by clients.',
+              'Participates in mediation, arbitration and other dispute resolution processes, and negotiates with opposing advocates and parties.',
+            ],
+          },
+          {
+            title: 'Case management and preparation',
+            items: [
+              'Maintains case files and records, coordinates with colleagues, clients and witnesses, and monitors deadlines and court dates.',
+              'Prepares matters for hearings and coordinates the legal work required to progress proceedings.',
+            ],
+          },
+        ],
       },
       {
         title: 'Private Legal Assistant to a Judge',
         organization: 'Mpigi High Court Circuit',
         period: '2025',
-        description: 'Conducted legal research, assisted with court documents and case files, and supported preparation for hearings and judicial work.',
+        areas: [
+          {
+            title: 'Legal research and case files',
+            items: [
+              'Researched laws, statutes, regulations and case law relevant to matters before the judge, and prepared summaries and briefs.',
+              'Organized and maintained court files, and reviewed pleadings, applications, submissions and other court documents.',
+            ],
+          },
+          {
+            title: 'Judgments and courtroom support',
+            items: [
+              'Assisted, as directed, with research and the preparation or review of judgments, rulings, orders and other judicial documents.',
+              'Attended court sessions, tracked proceedings, orders and directions, and assisted the judge with relevant law and procedure.',
+              'Proofread judicial documents and related correspondence, and maintained confidentiality when handling sensitive court materials.',
+              'Prepared files and relevant documents for court sessions and hearings.',
+            ],
+          },
+        ],
       },
       {
         title: 'Legal Assistant',
         organization: 'Tuhimbise & Co. Advocates',
         period: 'May 2021 to July 2024',
-        description: 'Supported legal research, case investigation, document preparation, court support, trial preparation and client coordination.',
+        areas: [
+          {
+            title: 'Case investigation and legal research',
+            items: [
+              'Investigated case facts and researched relevant laws, regulations and legal materials, including preparation of legal opinions.',
+              'Gathered, reviewed and organized evidence and supporting documents for case preparation and advocate review.',
+            ],
+          },
+          {
+            title: 'Legal drafting and document management',
+            items: [
+              'Drafted contracts, mortgages, reports, affidavits, pleadings, complaints, summonses, discovery requests and responses to opposing counsel.',
+              'Organized paper and electronic files and assisted with filing exhibits, briefs, appeals and other court documents.',
+            ],
+          },
+          {
+            title: 'Trial, court and dispute-resolution support',
+            items: [
+              'Prepared exhibits, coordinated witnesses, took trial notes and organized materials for courtroom use.',
+              'Assisted lawyers during trials, reviewed transcripts, managed case files and prepared materials for mediation conferences.',
+            ],
+          },
+          {
+            title: 'Client coordination and case administration',
+            items: [
+              'Communicated case progress to clients, coordinated with witnesses, opposing counsel and other parties, and scheduled interviews and meetings.',
+              'Coordinated with senior advocates on case status and next steps, monitored calendars and deadlines, and prepared case documentation.',
+              'Checked outstanding balances involving clients, advocates and providers, and maintained case-cost records.',
+            ],
+          },
+        ],
       },
     ],
     education: [
@@ -191,8 +261,50 @@ export const attorneys = [
         degree: 'Bachelor of Laws (LL.B)',
         institution: 'Uganda Christian University, Mukono, 2013 to 2017',
       },
+      {
+        degree: 'Uganda Advanced Certificate of Education (UACE)',
+        institution: 'Kashaka Girls Secondary School, Mbarara, 2011 to 2012',
+      },
+      {
+        degree: 'Uganda Certificate of Education (UCE)',
+        institution: 'Kashaka Girls Secondary School, Mbarara, 2007 to 2010',
+      },
     ],
-    languages: ['English', 'Luganda', 'Runyakitara', 'Kiswahili'],
+    additionalTraining: [
+      {
+        title: 'Clerkship Training',
+        institution: 'Entebbe Magistrates Court, Uganda',
+        period: '2015',
+      },
+      {
+        title: 'Certificate in Networking and Leadership',
+        institution: 'Transforming Nations Alliance, Kampala, Uganda',
+        period: '2017',
+      },
+    ],
+    qualifications: ['Practising certificate'],
+    skills: [
+      {
+        category: 'Legal and technical skills',
+        items: [
+          'Legal research', 'Legal drafting', 'Case management', 'Document management',
+          'Trial preparation', 'Evidence gathering', 'Legal software proficiency', 'Case filing systems',
+        ],
+      },
+      {
+        category: 'Professional and interpersonal skills',
+        items: [
+          'Analytical thinking', 'Communication', 'Client relations', 'Team collaboration',
+          'Problem solving', 'Time management', 'Critical thinking', 'Decision making',
+        ],
+      },
+    ],
+    languages: [
+      { name: 'English', proficiency: 'Excellent' },
+      { name: 'Luganda', proficiency: 'Good' },
+      { name: 'Runyakitara', proficiency: 'Excellent' },
+      { name: 'Kiswahili', proficiency: 'Excellent' },
+    ],
   },
   {
     slug: 'racheal-namuddu',

@@ -1198,6 +1198,7 @@ footer a { transition: color .22s; }
 .profile-content-panel { outline: none; }
 .profile-panel-heading { margin: 0 0 27px; color: var(--navy); font: 500 var(--profile-h2)/1.2 var(--profile-heading-font); letter-spacing: -.025em; }
 .profile-content-panel h3 { margin: 0 0 9px; color: var(--navy); font: 600 var(--profile-h3)/1.4 var(--profile-heading-font); letter-spacing: -.01em; }
+.profile-content-panel h4 { margin: 20px 0 8px; color: var(--navy); font: 600 .9rem/1.45 var(--profile-text-font); }
 .profile-content-panel p,
 .profile-biography { color: #334155; font: 400 var(--profile-body)/1.8 var(--profile-text-font); }
 .profile-biography { max-width: 72ch; text-align: left; }
@@ -1209,6 +1210,12 @@ footer a { transition: color .22s; }
 .profile-timeline li::before, .profile-matters-list li::before { position: absolute; top: .45rem; left: -25px; width: 11px; height: 11px; border: 2px solid #b8954d; border-radius: 50%; background: #fff; content: ''; }
 .profile-timeline h3, .profile-matters-list h3 { margin-bottom: 5px; }
 .profile-detail-meta { margin: 0 0 8px !important; color: #657387 !important; font-size: var(--profile-small) !important; font-weight: 600 !important; }
+.profile-experience-areas { display: grid; gap: 15px; margin-top: 18px; }
+.profile-experience-area h4 { margin-top: 0; }
+.profile-experience-area ul { display: grid; gap: 8px; margin: 0; padding-left: 19px; color: #334155; font: 400 var(--profile-body)/1.75 var(--profile-text-font); }
+.profile-skills { display: grid; gap: 30px; }
+.profile-skill-group ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; margin: 0; padding: 0; list-style: none; color: #334155; font: 400 var(--profile-body)/1.7 var(--profile-text-font); }
+.profile-skill-group li { padding: 11px 0; border-bottom: 1px solid var(--line); }
 .profile-list, .profile-credential-list, .profile-practice-links { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; color: #334155; font: 400 var(--profile-body)/1.7 var(--profile-text-font); }
 .profile-credential-list li { display: grid; gap: 2px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
 .profile-credential-list li:last-child { padding-bottom: 0; border-bottom: 0; }
@@ -1341,6 +1348,7 @@ footer a { transition: color .22s; }
   .profile-main-content { padding: 0 20px 36px; }
   .profile-panel-heading { margin-bottom: 21px; }
   .profile-timeline, .profile-matters-list { gap: 20px; }
+  .profile-skill-group ul { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   .profile-tab, .profile-tab::after, .attorney-card, .attorney-card.featured-attorney, .attorney-card.featured-attorney .attorney-photo > span { transition: none !important; }
