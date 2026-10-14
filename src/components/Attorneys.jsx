@@ -2,13 +2,13 @@ import { Arrow } from './Shared';
 import { attorneys } from '../data/siteData';
 import AttorneyPortrait from './AttorneyPortrait';
 
-const leadership = attorneys.filter((attorney) => attorney.leadershipGroup === 'Managing Partners');
+const leadership = attorneys.filter((attorney) => attorney.leadershipGroup === 'Leadership');
 const otherPartners = attorneys.filter((attorney) => !attorney.leadershipGroup && attorney.role === 'Partner');
 const otherAttorneys = attorneys.filter((attorney) => !attorney.leadershipGroup && attorney.role !== 'Partner');
 
 export default function Attorneys({ onSelectAttorney, preview = false }) {
   const groups = [
-    { title: 'Managing Partners', members: leadership },
+    { title: 'Leadership', members: leadership },
     ...(!preview ? [
       { title: 'Other Partners', members: otherPartners },
       { title: 'Other Attorneys', members: otherAttorneys },
@@ -26,7 +26,7 @@ export default function Attorneys({ onSelectAttorney, preview = false }) {
       </div>
 
       {groups.map((group) => (
-        <div className={`attorney-groups attorney-group-${group.title === 'Managing Partners' ? 'leadership' : 'others'}`} key={group.title}>
+        <div className={`attorney-groups attorney-group-${group.title === 'Leadership' ? 'leadership' : 'others'}`} key={group.title}>
           <h3 className="attorney-group-title reveal-up">{group.title}</h3>
           <div className={`attorney-grid attorney-grid-count-${group.members.length} reveal-stagger`}>
             {group.members.map((attorney) => (

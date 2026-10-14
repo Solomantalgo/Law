@@ -16,7 +16,7 @@ export default function AttorneyPortrait({ attorney, variant = 'card' }) {
       <img
         src={image(attorney.image)}
         alt={attorney.imageAlt || `${attorney.name}, ${attorney.role}`}
-        style={{ objectPosition: attorney.imagePosition || '50% 24%', '--portrait-scale': variant === 'profile' ? 1 : attorney.imageScale || 1 }}
+        style={{ objectPosition: attorney.imagePosition || '50% 24%', '--portrait-scale': attorney.imageScale || 1, '--portrait-scale-origin': attorney.imageScaleOrigin || 'center 20%' }}
         loading={variant === 'profile' ? 'eager' : 'lazy'}
         decoding="async"
       />

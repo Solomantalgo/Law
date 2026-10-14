@@ -65,7 +65,7 @@ export default function AboutPage({ menuOpen, setMenuOpen }) {
         <section className="about-page-leadership" id="leadership">
           <div className="about-page-content">
             <div className="about-page-leadership-heading">
-              <div><p className="eyebrow dark">LEADERSHIP</p><h2>Managing Partners</h2></div>
+              <div><p className="eyebrow dark">LEADERSHIP</p><h2>Leadership</h2></div>
               <p>Meet the firm's leadership.</p>
             </div>
             <div className="about-leaders-grid">
