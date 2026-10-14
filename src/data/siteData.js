@@ -160,7 +160,7 @@ export const attorneys = [
     imageAlt: 'Ruth Twongyeirwe, Advocate',
     shortBio: 'Ruth Twongyeirwe is an Advocate at R. Mackay Advocates. Her experience includes legal advice, court and tribunal representation, dispute resolution, legal drafting, case management and judicial support.',
     biography: [
-      'Ruth Twongyeirwe is an Advocate whose work has included advising and representing clients, preparing legal documents, managing cases and supporting judicial work. Her experience spans private legal practice and a period assisting a judge at the Mpigi High Court Circuit.',
+      'Ruth Twongyeirwe is an Advocate whose work has included advising and representing clients, preparing legal documents, managing cases and supporting judicial work. Her experience spans private legal practice and a period providing research support to a judge.',
     ],
     experience: [
       {
@@ -193,9 +193,11 @@ export const attorneys = [
         ],
       },
       {
-        title: 'Private Legal Assistant to a Judge',
-        organization: 'Mpigi High Court Circuit',
+        title: 'Private Researcher for a Judge',
         period: '2025',
+        // Wording pending Ruth Twongyeirwe's final approval after consultation with Counsel Robert.
+        approvalStatus: 'Pending final approval',
+        description: 'Conducted legal research and analysis to support judicial work, including reviewing case law, legislation, pleadings and other legal materials. Assisted with the preparation of research briefs and the review of judicial documents under the judge’s direction.',
         areas: [
           {
             title: 'Legal research and case files',
