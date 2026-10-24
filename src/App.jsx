@@ -26,10 +26,13 @@ const decodePathSegment = (segment) => {
   catch { return ''; }
 };
 
+const profileRouteAliases = { 'rugambwa-jelly': 'rugambwa-jerry' };
+
 const getProfileSlug = () => {
   const match = window.location.pathname.match(/^\/people\/([^/]+)\/?$/);
   const rawSlug = match?.[1] || (window.location.hash.startsWith('#attorneys/') ? window.location.hash.slice('#attorneys/'.length) : null);
-  const slug = rawSlug ? decodePathSegment(rawSlug) : null;
+  const requestedSlug = rawSlug ? decodePathSegment(rawSlug) : null;
+  const slug = requestedSlug ? profileRouteAliases[requestedSlug] || requestedSlug : null;
   return attorneys.some((attorney) => attorney.slug === slug) ? slug : null;
 };
 

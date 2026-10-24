@@ -1018,6 +1018,7 @@ footer a { transition: color .22s; }
 .about-page-leadership-heading > p { margin: 0 0 4px; color: var(--muted); font-size: .9rem; }
 .about-leaders-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .about-leader-card { display: grid; min-width: 0; grid-template-columns: minmax(0, 1fr); color: inherit; background: #fff; text-decoration: none; border-top: 3px solid rgba(7,26,47,.16); transition: box-shadow .25s ease, transform .25s ease, border-color .25s ease; }
+.about-leader-card--gold-outline { border: 1px solid #a98032; }
 .about-leader-card--lead { border-top-color: #a8894d; box-shadow: 0 12px 30px rgba(7,26,47,.1); }
 .about-leader-card:hover { transform: translateY(-3px); box-shadow: 0 15px 34px rgba(7,26,47,.14); }
 .about-leader-card:focus-visible, .about-page a:focus-visible { outline: 3px solid #b8954d; outline-offset: 4px; }
@@ -1233,6 +1234,7 @@ footer a { transition: color .22s; }
 .profile-content-panel a { color: var(--blue); text-decoration: underline; text-decoration-color: rgba(23,105,170,.35); text-underline-offset: 3px; }
 .profile-consultation { scroll-margin-top: 100px; }
 .attorney-card.featured-attorney { position: relative; border-top: 5px solid #a98032; background: linear-gradient(180deg, #fffdf8 0%, #fff 26%); box-shadow: 0 10px 30px rgba(7,26,47,.12); }
+.attorney-card.leadership-attorney { border-right: 1px solid #a98032; border-bottom: 1px solid #a98032; border-left: 1px solid #a98032; }
 .attorney-card.featured-attorney .attorney-info h3 { color: #806022; }
 .attorney-card.featured-attorney .attorney-role { color: #665638; font-weight: 600; }
 .attorney-card.featured-attorney .view-profile-link { color: #73571f; font-weight: 700; }
@@ -1241,6 +1243,7 @@ footer a { transition: color .22s; }
 .attorney-card.featured-attorney .attorney-photo > span { transition: transform .2s ease; }
 .attorney-card.featured-attorney:hover .attorney-photo > span { transform: translateX(4px); }
 .attorney-card.featured-attorney .attorney-info .attorney-role::before { display: inline-block; width: 18px; height: 1px; margin: 0 8px 4px 0; background: #b8954d; content: ''; }
+.profile-hero-photo.leadership-profile-photo { padding: 5px; border: 1px solid #a98032; background: #a98032; }
 
 /* Practice-area directory and data-driven detail pages. */
 .practice-directory-page, .practice-area-page { min-height: 100vh; background: #fff; }
@@ -1509,3 +1512,22 @@ footer a { transition: color .22s; }
   .contact-field-message { grid-column: auto; }
   .contact-submit { width: 100%; justify-content: center; }
 }
+
+/* Shared visual treatment for both confirmed firm leaders. */
+.attorney-card.leadership-gold-treatment { position: relative; border: 1px solid #a98032; border-top: 5px solid #a98032; background: linear-gradient(180deg, #fffdf8 0%, #fff 26%); box-shadow: 0 10px 30px rgba(7,26,47,.12); transition: box-shadow .22s ease, transform .22s ease, border-color .22s ease; }
+.attorney-card.leadership-gold-treatment .attorney-info h3 { color: #806022; }
+.attorney-card.leadership-gold-treatment .attorney-role { color: #665638; font-weight: 600; }
+.attorney-card.leadership-gold-treatment .view-profile-link { color: #73571f; font-weight: 700; }
+.attorney-card.leadership-gold-treatment .attorney-info .attorney-role::before { display: inline-block; width: 18px; height: 1px; margin: 0 8px 4px 0; background: #b8954d; content: ''; }
+.attorney-card.leadership-gold-treatment:hover { transform: translateY(-4px); border-color: #a98032; box-shadow: 0 17px 38px rgba(7,26,47,.16); }
+.attorney-card.leadership-gold-treatment .attorney-photo > span { transition: transform .2s ease; }
+.attorney-card.leadership-gold-treatment:hover .attorney-photo > span { transform: translateX(4px); }
+.attorney-card.leadership-gold-treatment:focus-within { outline: 2px solid #a98032; outline-offset: 3px; }
+.about-leader-card--leadership { border-top: 5px solid #a98032; background: linear-gradient(180deg, #fffdf8 0%, #fff 26%); box-shadow: 0 10px 30px rgba(7,26,47,.12); }
+.about-leader-card--leadership .about-leader-role,
+.about-leader-card--leadership .about-leader-details strong,
+.about-leader-card--leadership .about-leader-link { color: #806022; }
+.about-leader-card--leadership:hover { border-color: #a98032; box-shadow: 0 17px 38px rgba(7,26,47,.16); }
+.about-leader-card--leadership:focus-visible { outline-color: #a98032; }
+.attorney-profile-page.profile-leadership .profile-hero-details h1,
+.attorney-profile-page.profile-leadership .profile-title { color: #c8a35c; }

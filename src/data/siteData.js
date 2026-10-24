@@ -311,6 +311,675 @@ export const attorneys = [
     ],
   },
   {
+    slug: 'kakala-keren-suubi',
+    name: 'Kakala Keren Suubi',
+    role: 'Legal Intern',
+    directoryGroup: 'Legal Team',
+    shortBio: 'Kakala Keren Suubi is a Legal Intern at R. Mackay Advocates. Her CV records legal internship experience at the firm, the Supreme Court of Uganda and the Court of Appeal of Uganda, as well as a field attachment at Parliament of Uganda.',
+    biography: [
+      'Kakala Keren Suubi is a Legal Intern at R. Mackay Advocates. Her experience includes court support, legal research, supervised drafting and a legislative field attachment at Parliament of Uganda.',
+    ],
+    experience: [
+      { title: 'Legal Intern', organization: 'R. Mackay Advocates', period: 'July 2025 to present' },
+      {
+        title: 'Volunteer', organization: 'Supreme Court of Uganda', period: 'March 2024 to August 2024',
+        areas: [{ title: 'Court support', items: [
+          'Assisted court staff with case management and trial preparation.',
+          'Researched case law, statutes and precedents.',
+          'Prepared draft memoranda, opinions and judgments under supervision.',
+          'Participated in legal discussions and case conferences to analyse legal documents and strategies.',
+          'Organised case files, scheduled appointments and maintained records.',
+        ] }],
+      },
+      {
+        title: 'Volunteer', organization: 'Court of Appeal of Uganda', period: 'July 2023 to February 2024',
+        areas: [{ title: 'Court support', items: [
+          'Assisted court staff with case management and trial preparation.',
+          'Researched case law, statutes and precedents.',
+          'Prepared draft memoranda, opinions and judgments under supervision.',
+          'Participated in legal discussions and case conferences to analyse legal documents and strategies.',
+          'Organised case files, scheduled appointments and maintained records.',
+        ] }],
+      },
+      {
+        title: 'Field Attachment Intern', organization: 'Parliament of Uganda', period: 'September 2022 to October 2022',
+        description: 'Field attachment completed as part of the academic requirements for the Bachelor of Laws at Makerere University School of Law.',
+        areas: [{ title: 'Legislative and administrative support', items: [
+          'Researched legislative matters and prepared briefs for the parliamentary legal department.',
+          'Attended committee meetings, took notes and prepared reports.',
+          'Attended parliamentary proceedings and observed debates and discussions.',
+        ] }],
+      },
+    ],
+    education: [
+      { degree: 'Postgraduate Diploma in Legal Practice', institution: 'Law Development Centre, Kampala', period: '2024 to 2025' },
+      { degree: 'Postgraduate Diploma in Human Resource Management', institution: 'Uganda Christian University, Mukono', period: '2024 to 2025' },
+      { degree: 'Bachelor of Laws (LL.B.)', institution: 'Makerere University School of Law, Kampala', period: '2019 to 2023' },
+      { degree: 'Uganda Advanced Certificate of Education', institution: 'Uganda Martyrs Secondary School, Namugongo', period: '2017 to 2018' },
+      { degree: 'Uganda Certificate of Education', institution: 'Naalya Secondary School, Namugongo', period: '2013 to 2016' },
+    ],
+    skills: [
+      { category: 'Legal capabilities', items: ['Legal research and writing', 'Legal analysis and interpretation'] },
+      { category: 'Professional skills', items: ['Communication and interpersonal skills', 'Independent work and collaboration in a team environment', 'Microsoft Office Suite', 'Legal research databases'] },
+    ],
+  },
+  {
+    slug: 'oyet-brian',
+    name: 'Oyet Brian',
+    role: 'Legal Assistant',
+    directoryGroup: 'Legal Team',
+    shortBio: 'Oyet Brian is a Legal Assistant at R. Mackay Advocates. His experience includes legal drafting, research, case file management, client liaison and court filing support, with earlier clerkship and Ministry of Internal Affairs experience.',
+    biography: [
+      'Oyet Brian is a Legal Assistant at R. Mackay Advocates. He supports legal research and drafting, case administration, client communication, court filings and compliance processes. His earlier experience includes a clerkship internship at ABMAK Associates and an internship at the Ministry of Internal Affairs.',
+    ],
+    experience: [
+      {
+        title: 'Legal Assistant', organization: 'R. Mackay Advocates, Uganda', period: 'August 2024 to present',
+        areas: [{ title: 'Legal and case support', items: [
+          'Drafts, proofreads and reviews contracts, agreements, pleadings and other legal documents for accuracy and consistency with applicable law and firm policies.',
+          'Maintains electronic and physical case files, tracks deadlines and supports timely court and regulatory submissions.',
+          'Researches statutes, case law and legal precedents, and prepares summaries and briefs for case strategy and client advice.',
+          'Liaises with clients, provides updates, responds to enquiries and schedules meetings with advocates.',
+          'Prepares and files court documents, manages court correspondence and coordinates appearances with judges, opposing counsel and relevant authorities.',
+          'Coordinates calendars, meetings and travel, and assists with billing and invoice tracking.',
+          'Monitors compliance with legal requirements and internal policies.',
+          'Works with lawyers, paralegals and administrative staff to coordinate legal and administrative tasks.',
+          'Uses legal management software, electronic filing systems and Microsoft Office to maintain records and prepare documents.',
+        ] }],
+      },
+      {
+        title: 'Clerkship Intern', organization: 'ABMAK Associates', period: '2024',
+        areas: [{ title: 'Clerkship experience', items: [
+          'Attended court sessions, client meetings and internal consultations to observe legal procedure and case management.',
+          'Assisted with supervised research and summaries of case law, statutes and regulations.',
+          'Helped prepare draft letters, memoranda and simple legal documents for attorney review.',
+          'Organised case files and supported office scheduling and note-taking.',
+          'Assisted attorneys, under supervision, with gathering client information and preparing case background materials.',
+          'Learned and applied legal and ethical standards under supervising lawyers.',
+          'Collaborated with attorneys, paralegals and other staff on legal and administrative tasks.',
+        ] }],
+      },
+      {
+        title: 'Intern', organization: 'Ministry of Internal Affairs', period: 'June 2017 to August 2017',
+        areas: [{ title: 'Policy and administrative support', items: [
+          'Researched national laws, policies and regulations relating to internal affairs, public administration and governance.',
+          'Assisted with letters, memoranda, reports and briefing notes under supervision.',
+          'Organised official files and records in line with government filing procedures.',
+          'Supported communication with departments, government agencies and members of the public to gather information and schedule meetings.',
+          'Assisted with schedules, meetings, minutes and data entry.',
+          'Learned government procedures, protocols and ethical standards.',
+          'Supported research and administration for ministry projects and programmes.',
+          'Attended departmental meetings and prepared notes or summaries for supervisors.',
+        ] }],
+      },
+    ],
+    education: [
+      { degree: 'Bachelor of Laws (Honours)', institution: 'Islamic University in Uganda', period: '2019 to 2023' },
+      { degree: 'Bachelor of Arts in Social Sciences', institution: 'Makerere University', period: '2015 to 2019' },
+      { degree: 'Uganda Advanced Certificate of Education', institution: 'Lubiri Secondary School', period: '2013 to 2015' },
+      { degree: 'Uganda Certificate of Education', institution: 'Lubiri Secondary School', period: '2009 to 2012' },
+    ],
+    skills: [
+      { category: 'Legal and administrative skills', items: ['Drafting legal documents, contracts and correspondence', 'Maintaining client and case files', 'Scheduling appointments, court dates and meetings', 'Liaising professionally with clients, attorneys and courts', 'Accuracy in filings and reports', 'Legal management software and Microsoft Office'] },
+      { category: 'Core competencies', items: ['Legal research and analysis', 'Case and document management', 'Client relations and communication', 'Compliance and regulatory adherence', 'Time management and multitasking', 'Administrative support in legal settings'] },
+    ],
+    languages: [
+      { name: 'English', spoken: 'Fluent', written: 'Excellent', listening: 'Excellent' },
+      { name: 'Runyakitara', spoken: 'Fluent', written: 'Excellent', listening: 'Excellent' },
+      { name: 'Runyoro/Rutooro', spoken: 'Fluent', written: 'Excellent', listening: 'Excellent' },
+      { name: 'Luganda', spoken: 'Fluent', written: 'Excellent', listening: 'Excellent' },
+    ],
+  },
+  {
+    "slug": "rugambwa-jerry",
+    "name": "Rugambwa Jerry",
+    "role": "Legal Assistant (Internship)",
+    "biography": [
+      "Rugambwa Jerry is a law graduate whose CV records legal assistant internships at R. Mackay Advocates and the Chief Magistrate’s Court in Mbarara, alongside human-rights volunteering, student leadership and legal research. His internship at R. Mackay Advocates ran from June to September 2024."
+    ],
+    "experience": [
+      {
+        "title": "Legal Assistant Intern",
+        "organization": "R. Mackay Advocates, Kampala",
+        "period": "June to September 2024",
+        "areas": [
+          {
+            "title": "Responsibilities",
+            "items": [
+              "Researched and drafted legal opinions, pleadings and advisory notes on civil matters.",
+              "Assisted in preparing litigation case files.",
+              "Participated in reviewing legal documents submitted by government departments and agencies.",
+              "Observed civil and criminal court proceedings.",
+              "Participated in pre-trial briefings and coordinated with witnesses, law enforcement and client departments.",
+              "Managed files, took minutes and prepared legal correspondence."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Legal Assistant Intern",
+        "organization": "Chief Magistrate’s Court, Mbarara",
+        "period": "July to September 2023",
+        "areas": [
+          {
+            "title": "Responsibilities",
+            "items": [
+              "Conducted research and prepared briefs, memoranda and case summaries.",
+              "Assisted magistrates during court sessions and adjudication of civil and criminal matters.",
+              "Observed proceedings and recorded trial procedure, witness examinations and rulings.",
+              "Assisted with drafting judgments, rulings and court orders under supervision.",
+              "Reviewed and organised case files for accuracy and compliance with court protocols.",
+              "Coordinated scheduling and case management with advocates, litigants and court staff.",
+              "Supported case registration, records and filing.",
+              "Prepared weekly activity progress reports within agreed timeframes."
+            ]
+          }
+        ]
+      }
+    ],
+    "volunteering": [
+      {
+        "title": "Legal Advisor Volunteer",
+        "organization": "Human Rights Association, Uganda Christian University Chapter",
+        "period": "January 2023 to December 2024",
+        "areas": [
+          {
+            "title": "Responsibilities",
+            "items": [
+              "Interpreted national, regional and international human-rights instruments relevant to the association’s activities.",
+              "Drafted memoranda and press statements on general rights issues at the university.",
+              "Supported planning and legal review of student events and rights-awareness workshops.",
+              "Engaged university bodies and stakeholders on student rights and freedoms.",
+              "Conducted student training sessions and rights-literacy forums on procedures and legal remedies.",
+              "Collaborated with student organisations and NGOs on joint human-rights initiatives and research."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Advisor Coordinator Volunteer",
+        "organization": "HiveColab, Uganda",
+        "period": "August 2021 to December 2022",
+        "areas": [
+          {
+            "title": "Responsibilities",
+            "items": [
+              "Developed and implemented advocacy strategies aligned with association priorities.",
+              "Coordinated awareness campaigns, petitions and dialogues on social-justice issues.",
+              "Facilitated engagement with university administration, student bodies and civil-society organisations.",
+              "Organised forums and panel discussions.",
+              "Supervised volunteers and coordinated student participation in campaigns and events."
+            ]
+          }
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Laws (LL.B.) (Honours)",
+        "institution": "Uganda Christian University, Mukono",
+        "period": "August 2021 to July 2025"
+      },
+      {
+        "degree": "Uganda Advanced Certificate of Education",
+        "institution": "Plus Two High School",
+        "period": "March 2019 to December 2020"
+      },
+      {
+        "degree": "Uganda Certificate of Education",
+        "institution": "Mbarara High School",
+        "period": "March 2015 to November 2018"
+      }
+    ],
+    "skills": [
+      {
+        "category": "Legal capabilities",
+        "items": [
+          "Legal research and analytical writing",
+          "Legal drafting and policy analysis",
+          "Civil and criminal procedure",
+          "Human-rights law and advocacy",
+          "Case management and file handling",
+          "Litigation preparation"
+        ]
+      },
+      {
+        "category": "Professional capabilities",
+        "items": [
+          "Communication and legal reasoning",
+          "Public speaking and legal education",
+          "Stakeholder engagement",
+          "Campaign coordination and facilitation",
+          "Leadership, teamwork and mobilisation",
+          "Confidentiality and professional communication"
+        ]
+      }
+    ],
+    "publications": [
+      {
+        "title": "Navigating Uganda’s Energy Transition: A Comparative Analysis of Legal Frameworks Governing Oil, Gas, and Renewable Energy Integration",
+        "kind": "LL.B. dissertation"
+      }
+    ],
+    "leadershipRoles": [
+      {
+        "title": "Member of Parliament, 26th Student Guild",
+        "organization": "Uganda Christian University",
+        "period": "2024 to 2025"
+      },
+      {
+        "title": "Minister of Student Welfare, 26th Student Guild",
+        "organization": "Uganda Christian University",
+        "period": "2024 to 2025"
+      }
+    ],
+    "languages": [
+      {
+        "name": "Runyakole",
+        "proficiency": "Native"
+      },
+      {
+        "name": "English",
+        "proficiency": "Proficient"
+      },
+      {
+        "name": "Luganda",
+        "proficiency": "Proficient"
+      },
+      {
+        "name": "Kiswahili",
+        "proficiency": "Beginner"
+      }
+    ],
+    "directoryGroup": "Legal Team",
+    "shortBio": "Rugambwa Jerry is a law graduate whose CV records legal assistant internships at R. Mackay Advocates and the Chief Magistrate’s Court in Mbarara, alongside human-rights volunteering, student leadership and legal research. His internship at R. Mackay Advocates ran from June to September 2024.",
+    "professionalContributions": [
+      {
+        "title": "Best Student Personality",
+        "organization": "Uganda Christian University",
+        "period": "2023/2024",
+        "areas": [
+          {
+            "title": "Recognition stated in the CV",
+            "items": [
+              "Best student personality 2023/2024."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "najjumba-martina-luyinda",
+    "name": "Najjumba Martina Luyinda",
+    "role": "Legal Assistant",
+    "biography": [
+      "Najjumba Martina Luyinda’s CV records legal assistant work at R. Mackay Advocates in 2026, earlier litigation support, public-interest legal aid and juvenile-justice experience, and a Postgraduate Bar Course listed as ongoing."
+    ],
+    "experience": [
+      {
+        "title": "Legal Assistant",
+        "organization": "R. Mackay Advocates",
+        "period": "2026",
+        "areas": [
+          {
+            "title": "Responsibilities",
+            "items": [
+              "Prepared, reviewed and managed legal documents, agreements, pleadings, affidavits and correspondence.",
+              "Researched civil, commercial and regulatory matters and assisted with opinions and case strategies.",
+              "Supported advocates with client advice on legal and procedural requirements, risks and options.",
+              "Prepared, filed and followed up court and regulatory documents against procedural requirements and deadlines.",
+              "Reviewed transaction documents for inconsistencies, missing requirements and potential legal risks.",
+              "Maintained client files, case records and confidential documents.",
+              "Liaised with clients, registries, opposing counsel and stakeholders.",
+              "Assisted with demand notices, applications, submissions and bills of costs.",
+              "Monitored legislation, regulations and case law relevant to client matters."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Legal Assistant",
+        "organization": "Nshemereirwe, Arigye & Co. Advocates",
+        "period": "May to August 2025",
+        "areas": [
+          {
+            "title": "Responsibilities",
+            "items": [
+              "Researched case law, statutes and procedural rules for litigation.",
+              "Drafted pleadings, motions, affidavits, submissions and legal opinions.",
+              "Supported trial preparation, case strategy, client interviews, evidence review and witness statements.",
+              "Attended hearings, mentions, mediations and trials and prepared proceedings notes and follow-up briefs.",
+              "Managed litigation files, deadlines, filing and service.",
+              "Liaised with registries, process servers and opposing counsel.",
+              "Interviewed clients and prepared affidavits and case updates under supervision.",
+              "Translated documents from Luganda to English and assisted with mediation and negotiations."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Legal Intern",
+        "organization": "Child Concern Initiative Organization Uganda through Public Interest Law Clinic, Makerere University",
+        "period": "June to August 2023",
+        "areas": [
+          {
+            "title": "Responsibilities",
+            "items": [
+              "Provided legal assistance, advice, case intake and referrals to indigent and vulnerable people.",
+              "Delivered legal-awareness outreach on access to justice and rights-based issues, including in schools and prisons.",
+              "Liaised with courts, prisons, police, Justice Centres Uganda and UGANET to facilitate access to legal services.",
+              "Researched human rights, constitutional, family and criminal law and public-interest litigation.",
+              "Drafted pleadings, affidavits, opinions and correspondence for legal-aid matters.",
+              "Assisted with supervised court representation, including bail applications, mentions and hearings.",
+              "Interviewed clients, documented case histories and prepared confidential case files.",
+              "Documented human-rights concerns and contributed to advocacy, reports and strategic-litigation work.",
+              "Assisted with mediation of community and family disputes with the Office of the Probation, Social and Welfare Officer."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Legal Extern",
+        "organization": "Naguru Remand Home, Uganda",
+        "period": "March to May 2023",
+        "areas": [
+          {
+            "title": "Responsibilities",
+            "items": [
+              "Supported children in conflict with the law under the Children Act and juvenile-justice procedures.",
+              "Delivered legal education on plea taking, diversion, children’s rights, court processes and child protection.",
+              "Interviewed children about their case backgrounds, legal status and welfare concerns.",
+              "Reviewed files to track detention status, court dates and lawful remand periods.",
+              "Attended Family and Children Court and followed up on remanded children’s matters.",
+              "Liaised with probation and social-welfare officers, magistrates and justice-sector stakeholders.",
+              "Supported diversion and rehabilitation initiatives and observed child-protection and confidentiality standards.",
+              "Gained exposure to criminal, civil and family-law proceedings in the court setting."
+            ]
+          }
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Postgraduate Bar Course, ongoing",
+        "institution": "Law Development Centre, Uganda",
+        "period": "2024 to present"
+      },
+      {
+        "degree": "Bachelor of Laws",
+        "institution": "Makerere University, Uganda",
+        "period": "2020 to 2024"
+      },
+      {
+        "degree": "Uganda Advanced Certificate of Education",
+        "institution": "Nabisunsa Girls’ School, Uganda",
+        "period": "2019"
+      },
+      {
+        "degree": "Uganda Certificate of Education",
+        "institution": "Nabisunsa Girls’ School, Uganda",
+        "period": "2017"
+      },
+      {
+        "degree": "Certificate of Completion of Primary School Studies",
+        "institution": "Kampala Parents School",
+        "period": "2004"
+      }
+    ],
+    "skills": [
+      {
+        "category": "Core competencies",
+        "items": [
+          "Critical thinking and analysis",
+          "Legal research and information analysis",
+          "Public communication",
+          "Team building",
+          "Organisational management",
+          "Fact checking and editorial skills",
+          "Conflict resolution"
+        ]
+      }
+    ],
+    "volunteering": [
+      {
+        "title": "Member and Volunteer",
+        "organization": "Radiant Smile Foundation",
+        "period": "August 2020 to present"
+      }
+    ],
+    "publications": [
+      {
+        "title": "Assessing the Enforcement of the Laws Governing the Juvenile Justice Systems in Uganda: Overcoming the Delays and Case Backlog in Juvenile Judicial Affairs in Alignment with Regional and International Standards",
+        "kind": "Research report submitted to Makerere University School of Law"
+      }
+    ],
+    "languages": [
+      {
+        "name": "English",
+        "proficiency": "Fluent"
+      },
+      {
+        "name": "Luganda",
+        "proficiency": "Fluent"
+      }
+    ],
+    "directoryGroup": "Legal Team",
+    "shortBio": "Najjumba Martina Luyinda’s CV records legal assistant work at R. Mackay Advocates in 2026, earlier litigation support, public-interest legal aid and juvenile-justice experience, and a Postgraduate Bar Course listed as ongoing.",
+    "professionalContributions": [
+      {
+        "title": "Legal Assistant",
+        "organization": "R. Mackay Advocates",
+        "period": "2026",
+        "areas": [
+          {
+            "title": "Selected contributions stated in the CV",
+            "items": [
+              "The CV states that she gained two years of practical experience supporting legal services across litigation, commercial matters and client advice.",
+              "Developed research, drafting, document-review and analysis skills on time-sensitive assignments.",
+              "Supported timely preparation of court and legal documents, with attention to detail and deadlines.",
+              "Assessed legal issues and risks and translated requirements into clear advice and documents.",
+              "Built working relationships with clients, advocates and court staff while handling sensitive information."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Legal Assistant",
+        "organization": "Nshemereirwe, Arigye & Co. Advocates",
+        "period": "May to August 2025",
+        "areas": [
+          {
+            "title": "Selected contributions stated in the CV",
+            "items": [
+              "Contributed research and drafting support to civil and criminal matters.",
+              "Supported trial preparation, case readiness and procedural timelines.",
+              "Managed files and schedules against deadlines.",
+              "Assisted with mediation and negotiation processes.",
+              "The CV notes recognition for accuracy, attention to detail and reliability.",
+              "Gained practical exposure to advocacy and case strategy.",
+              "Handled confidential information with attention to professional ethics."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Legal Intern",
+        "organization": "Child Concern Initiative Organization Uganda through PILAC, Makerere University",
+        "period": "June to August 2023",
+        "areas": [
+          {
+            "title": "Selected contributions stated in the CV",
+            "items": [
+              "Assisted vulnerable clients with legal remedies, including bail, protection orders, community service and dispute resolution.",
+              "Supported resolution of legal-aid matters.",
+              "Contributed to rights litigation, advocacy reports and briefs.",
+              "Participated in community legal education and access-to-justice work.",
+              "Worked with justice-sector stakeholders on timely and fair processes.",
+              "The CV notes professionalism, empathy and ethical handling of client matters."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Legal Extern",
+        "organization": "Naguru Remand Home, Uganda",
+        "period": "March to May 2023",
+        "areas": [
+          {
+            "title": "Selected contributions stated in the CV",
+            "items": [
+              "Supported case tracking and attention to statutory remand periods.",
+              "Followed up court matters with a view to timely hearings and bail or release where applicable.",
+              "Supported diversion and rehabilitation approaches in child matters.",
+              "Gained experience in juvenile justice and child protection.",
+              "The CV notes professionalism, sensitivity and ethical conduct.",
+              "Developed an understanding of links between criminal justice, child rights and social welfare."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "kunda-susan",
+    "name": "Kunda Susan",
+    "role": "Legal Assistant",
+    "biography": [
+      "Kunda Susan’s CV records legal assistant work at R. Mackay Advocates and previous volunteer experience in legal practice, business operations and court support. Her experience includes legal research, document drafting, case-file administration and client support."
+    ],
+    "experience": [
+      {
+        "title": "Legal Assistant",
+        "organization": "R. Mackay Advocates, Kampala",
+        "period": "15th December, 2025 up to date 24th June, 2026",
+        "areas": [
+          {
+            "title": "Responsibilities",
+            "items": [
+              "Researched corporate, land and family-law matters.",
+              "Drafted pleadings, chamber applications, written submissions and legal briefs.",
+              "Filed documents and tracked court-registry matters and case schedules.",
+              "Interviewed clients and prepared case summaries for senior advocates.",
+              "Maintained confidential client files and updated the legal database."
+            ]
+          }
+        ]
+      }
+    ],
+    "volunteering": [
+      {
+        "title": "Volunteer",
+        "organization": "Hallmark Advocates, Lira Town",
+        "period": "2023 to 2025",
+        "areas": [
+          {
+            "title": "Responsibilities",
+            "items": [
+              "Conducted legal research and prepared draft pleadings.",
+              "Managed client files and supported legal consultations."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Volunteer",
+        "organization": "100% Enterprises, Post Office",
+        "period": "2020 to 2022",
+        "areas": [
+          {
+            "title": "Responsibilities",
+            "items": [
+              "Assisted with daily business operations and record keeping.",
+              "Handled customer enquiries and service delivery."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Volunteer",
+        "organization": "Ibanda Magistrate Court",
+        "period": "2018",
+        "areas": [
+          {
+            "title": "Responsibilities",
+            "items": [
+              "Observed court proceedings and assisted with case filing.",
+              "Guided members of the public on court registries and processes."
+            ]
+          }
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Laws (LL.B.)",
+        "institution": "Islamic University in Uganda, Kampala Campus",
+        "period": "2019 to 2023"
+      },
+      {
+        "degree": "Uganda Advanced Certificate of Education",
+        "institution": "Lakeside College Luzira",
+        "period": "2014 to 2016"
+      },
+      {
+        "degree": "Uganda Certificate of Education",
+        "institution": "Old Kampala Secondary School",
+        "period": "2009 to 2014"
+      },
+      {
+        "degree": "Primary Leaving Examination",
+        "institution": "Mirembe Infant Primary School",
+        "period": "2001 to 2008"
+      }
+    ],
+    "skills": [
+      {
+        "category": "Skills",
+        "items": [
+          "Research in Ugandan statutes, case law and online legal databases",
+          "Drafting contracts, affidavits and letters of demand",
+          "Verbal and written communication",
+          "File management and multitasking",
+          "Legal drafting",
+          "Case analysis",
+          "Client management",
+          "Advocacy support",
+          "Court etiquette and judicial procedure",
+          "Document organisation",
+          "Business administration",
+          "Customer relations",
+          "Problem solving"
+        ]
+      }
+    ],
+    "languages": [
+      {
+        "name": "English",
+        "proficiency": "Fluent (official)"
+      },
+      {
+        "name": "Runyankore",
+        "proficiency": "Native speaker"
+      },
+      {
+        "name": "Luganda",
+        "proficiency": "Fluent"
+      },
+      {
+        "name": "Kiswahili",
+        "proficiency": "Conversational"
+      }
+    ],
+    "directoryGroup": "Legal Team",
+    "shortBio": "Kunda Susan’s CV records legal assistant work at R. Mackay Advocates and previous volunteer experience in legal practice, business operations and court support. Her experience includes legal research, document drafting, case-file administration and client support.",
+    "qualifications": [
+      "Certificate in Bachelor of laws",
+      "Transcript of Academic Record",
+      "Advanced"
+    ]
+  },
+  {
     slug: 'racheal-namuddu',
     name: 'Racheal Namuddu',
     role: 'Senior Associate',

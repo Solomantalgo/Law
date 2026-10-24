@@ -48,9 +48,9 @@ function ProfilePanel({ section, attorney }) {
   return <section id={section.id} className="profile-content-section profile-content-panel reveal-up" aria-labelledby={`${section.id}-heading`}>
     <h2 id={`${section.id}-heading`} className="profile-panel-heading">{section.label}</h2>
     {section.id === 'biography' && <Biography entries={section.items} />}
-    {section.id === 'experience' && <ol className="profile-timeline">{section.items.map((item, index) => <li key={index}><h3>{itemText(item)}</h3>{typeof item === 'object' && (item.organization || item.period) && <p className="profile-detail-meta">{[item.organization, item.period].filter(Boolean).join(' · ')}</p>}{itemDescription(item) && <p>{itemDescription(item)}</p>}{Array.isArray(item.areas) && <div className="profile-experience-areas">{item.areas.map((area, areaIndex) => <section className="profile-experience-area" key={areaIndex}><h4>{area.title}</h4><ul>{asList(area.items).map((responsibility, responsibilityIndex) => <li key={responsibilityIndex}>{itemText(responsibility)}</li>)}</ul></section>)}</div>}</li>)}</ol>}
+    {(section.id === 'experience' || section.id === 'volunteering') && <ol className="profile-timeline">{section.items.map((item, index) => <li key={index}><h3>{itemText(item)}</h3>{typeof item === 'object' && (item.organization || item.period) && <p className="profile-detail-meta">{[item.organization, item.period].filter(Boolean).join(' · ')}</p>}{itemDescription(item) && <p>{itemDescription(item)}</p>}{Array.isArray(item.areas) && <div className="profile-experience-areas">{item.areas.map((area, areaIndex) => <section className="profile-experience-area" key={areaIndex}><h4>{area.title}</h4><ul>{asList(area.items).map((responsibility, responsibilityIndex) => <li key={responsibilityIndex}>{itemText(responsibility)}</li>)}</ul></section>)}</div>}</li>)}</ol>}
     {section.id === 'education' && <div className="profile-credentials">
-      {asList(attorney.education).length > 0 && <ul className="profile-credential-list">{asList(attorney.education).map((item, index) => <li key={`edu-${index}`}><strong>{typeof item === 'string' ? item : item.degree || item.title || item.name}</strong>{typeof item === 'object' && item.institution && <span>{item.institution}</span>}</li>)}</ul>}
+      {asList(attorney.education).length > 0 && <ul className="profile-credential-list">{asList(attorney.education).map((item, index) => <li key={`edu-${index}`}><strong>{typeof item === 'string' ? item : item.degree || item.title || item.name}</strong>{typeof item === 'object' && item.institution && <span>{item.institution}</span>}{typeof item === 'object' && item.period && <span>{item.period}</span>}</li>)}</ul>}
       {asList(attorney.qualifications).length > 0 && <><h3>Professional qualifications</h3><ul className="profile-list">{asList(attorney.qualifications).map((item, index) => <li key={`qual-${index}`}>{itemText(item)}{itemDescription(item) && <span>: {itemDescription(item)}</span>}</li>)}</ul></>}
       {asList(attorney.additionalTraining).length > 0 && <><h3>Additional training</h3><ul className="profile-credential-list">{asList(attorney.additionalTraining).map((item, index) => <li key={`training-${index}`}><strong>{itemText(item)}</strong>{item.institution && <span>{item.institution}</span>}{item.period && <span>{item.period}</span>}</li>)}</ul></>}
     </div>}
@@ -61,7 +61,10 @@ function ProfilePanel({ section, attorney }) {
     </div>}
     {section.id === 'practice-areas' && <ul className="profile-practice-links">{section.items.map((area, index) => <li key={index}>{typeof area === 'string' || !area.href ? <span>{itemText(area)}</span> : <a href={area.href}>{itemText(area)} <span aria-hidden="true">↗</span></a>}</li>)}</ul>}
     {section.id === 'skills' && <div className="profile-skills">{section.items.map((group, index) => <section className="profile-skill-group" key={index}><h3>{group.category || itemText(group)}</h3><ul>{asList(group.items).map((skill, skillIndex) => <li key={skillIndex}>{itemText(skill)}</li>)}</ul></section>)}</div>}
-    {section.id === 'languages' && <ul className="profile-list">{section.items.map((item, index) => <li key={index}><strong>{itemText(item)}</strong>{typeof item === 'object' && item.proficiency && <span>: {item.proficiency}</span>}</li>)}</ul>}
+    {section.id === 'languages' && <ul className="profile-list">{section.items.map((item, index) => <li key={index}><strong>{itemText(item)}</strong>{typeof item === 'object' && item.proficiency && <span>: {item.proficiency}</span>}{typeof item === 'object' && (item.spoken || item.written || item.listening) && <span>: {[item.spoken && `Spoken: ${item.spoken}`, item.written && `Written: ${item.written}`, item.listening && `Listening: ${item.listening}`].filter(Boolean).join(' · ')}</span>}</li>)}</ul>}
+    {section.id === 'leadership' && <ol className="profile-timeline">{section.items.map((item, index) => <li key={index}><h3>{itemText(item)}</h3>{typeof item === 'object' && (item.organization || item.period) && <p className="profile-detail-meta">{[item.organization, item.period].filter(Boolean).join(' · ')}</p>}{itemDescription(item) && <p>{itemDescription(item)}</p>}</li>)}</ol>}
+    {section.id === 'publications' && <ul className="profile-matters-list">{section.items.map((item, index) => <li key={index}><h3>{itemText(item)}</h3>{typeof item === 'object' && (item.kind || item.period) && <p className="profile-detail-meta">{[item.kind, item.period].filter(Boolean).join(' · ')}</p>}{itemDescription(item) && <p>{itemDescription(item)}</p>}</li>)}</ul>}
+    {section.id === 'contributions' && <ol className="profile-timeline">{section.items.map((item, index) => <li key={index}><h3>{itemText(item)}</h3>{typeof item === 'object' && (item.organization || item.period) && <p className="profile-detail-meta">{[item.organization, item.period].filter(Boolean).join(' · ')}</p>}{itemDescription(item) && <p>{itemDescription(item)}</p>}{Array.isArray(item.areas) && <div className="profile-experience-areas">{item.areas.map((area, areaIndex) => <section className="profile-experience-area" key={areaIndex}><h4>{area.title}</h4><ul>{asList(area.items).map((contribution, contributionIndex) => <li key={contributionIndex}>{itemText(contribution)}</li>)}</ul></section>)}</div>}</li>)}</ol>}
     {section.id === 'related-insights' && <ul className="profile-list">{section.items.map((item, index) => <li key={index}>{typeof item === 'string' || !item.href ? itemText(item) : <a href={item.href}>{itemText(item)}</a>}{itemDescription(item) && <p>{itemDescription(item)}</p>}</li>)}</ul>}
   </section>;
 }
@@ -87,6 +90,10 @@ export default function AttorneyProfilePage({ attorneyId }) {
       { id: 'experience', label: 'Experience', items: asList(attorney.experience) },
       { id: 'education', label: 'Education & Qualifications', items: [...asList(attorney.education), ...asList(attorney.qualifications), ...asList(attorney.additionalTraining)] },
       { id: 'skills', label: 'Skills & Capabilities', items: asList(attorney.skills) },
+      { id: 'volunteering', label: 'Volunteering', items: asList(attorney.volunteering) },
+      { id: 'leadership', label: 'Leadership & Service', items: asList(attorney.leadershipRoles) },
+      { id: 'publications', label: 'Publications & Research', items: asList(attorney.publications) },
+      { id: 'contributions', label: 'Contributions & Recognition', items: asList(attorney.professionalContributions) },
       { id: 'representative-matters', label: 'Representative Matters', items: asList(attorney.representativeMatters) },
       { id: 'memberships', label: 'Memberships & Admissions', items: [...asList(attorney.professionalMemberships), ...asList(attorney.admissions)] },
       { id: 'practice-areas', label: 'Practice Areas', items: asList(attorney.practiceAreas) },
@@ -186,14 +193,14 @@ export default function AttorneyProfilePage({ attorneyId }) {
   const hasProfileContent = tabs.length > 0;
 
   return (
-    <div className="attorney-profile-page">
+    <div className={`attorney-profile-page${attorney.leadershipGroup ? ' profile-leadership' : ''}`}>
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <main>
         <section className={`profile-hero ${hasProfileContent ? 'profile-hero-detailed' : 'profile-hero-limited'}`}>
           <div className="profile-hero-inner">
             <a href="/people" className="back-link">&larr; Back to Our People</a>
             <div className="profile-hero-content">
-              <div className="profile-hero-photo reveal reveal-left"><AttorneyPortrait attorney={attorney} variant="profile" /></div>
+              <div className={`profile-hero-photo reveal reveal-left${attorney.leadershipGroup ? ' leadership-profile-photo' : ''}`}><AttorneyPortrait attorney={attorney} variant="profile" /></div>
               <div className="profile-hero-details reveal-up">
                 <p className="eyebrow profile-eyebrow">OUR PEOPLE</p>
                 <h1>{attorney.name}</h1>

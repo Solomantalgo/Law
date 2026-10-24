@@ -69,8 +69,8 @@ export default function AboutPage({ menuOpen, setMenuOpen }) {
               <p>Meet the firm's leadership.</p>
             </div>
             <div className="about-leaders-grid">
-              {leaders.map((attorney, index) => (
-                <a className={`about-leader-card${index === 0 ? ' about-leader-card--lead' : ''}`} href={`/people/${attorney.slug}`} key={attorney.slug}>
+              {leaders.map((attorney) => (
+                <a className="about-leader-card about-leader-card--gold-outline about-leader-card--leadership" href={`/people/${attorney.slug}`} key={attorney.slug}>
                   <AttorneyPortrait attorney={attorney} variant="card" />
                   <span className="about-leader-details">
                     <span className="about-leader-role">{attorney.role}</span>

@@ -4,7 +4,8 @@ import AttorneyPortrait from './AttorneyPortrait';
 
 const leadership = attorneys.filter((attorney) => attorney.leadershipGroup === 'Leadership');
 const otherPartners = attorneys.filter((attorney) => !attorney.leadershipGroup && attorney.role === 'Partner');
-const otherAttorneys = attorneys.filter((attorney) => !attorney.leadershipGroup && attorney.role !== 'Partner');
+const legalTeam = attorneys.filter((attorney) => attorney.directoryGroup === 'Legal Team');
+const otherAttorneys = attorneys.filter((attorney) => !attorney.leadershipGroup && attorney.role !== 'Partner' && attorney.directoryGroup !== 'Legal Team');
 
 export default function Attorneys({ onSelectAttorney, preview = false }) {
   const groups = [
@@ -12,6 +13,7 @@ export default function Attorneys({ onSelectAttorney, preview = false }) {
     ...(!preview ? [
       { title: 'Other Partners', members: otherPartners },
       { title: 'Other Attorneys', members: otherAttorneys },
+      { title: 'Legal Team', members: legalTeam },
     ] : []),
   ].filter((group) => group.members.length);
 
@@ -31,7 +33,7 @@ export default function Attorneys({ onSelectAttorney, preview = false }) {
           <div className={`attorney-grid attorney-grid-count-${group.members.length} reveal-stagger`}>
             {group.members.map((attorney) => (
               <article
-                className={`attorney-card reveal-item ${attorney.featured ? 'featured-attorney' : ''} ${attorney.leadershipGroup ? 'leadership-attorney' : ''} ${!attorney.image ? 'attorney-card-placeholder' : ''}`}
+                className={`attorney-card reveal-item ${attorney.featured ? 'featured-attorney' : ''} ${attorney.leadershipGroup ? 'leadership-attorney leadership-gold-treatment' : ''} ${!attorney.image ? 'attorney-card-placeholder' : ''}`}
                 key={attorney.slug}
               >
                 <a
