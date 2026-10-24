@@ -613,6 +613,11 @@ export const attorneys = [
     "slug": "najjumba-martina-luyinda",
     "name": "Najjumba Martina Luyinda",
     "role": "Legal Assistant",
+    "image": "NAJJUMBA MARTINA LUYINDA.JPG",
+    "imagePosition": "50% 20%",
+    "imageScale": 1.4,
+    "imageScaleOrigin": "center top",
+    "imageAlt": "Najjumba Martina Luyinda, Legal Assistant.",
     "biography": [
       "Najjumba Martina Luyinda’s CV records legal assistant work at R. Mackay Advocates in 2026, earlier litigation support, public-interest legal aid and juvenile-justice experience, and a Postgraduate Bar Course listed as ongoing."
     ],
