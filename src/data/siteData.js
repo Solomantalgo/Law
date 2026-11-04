@@ -314,6 +314,11 @@ export const attorneys = [
     slug: 'kakala-keren-suubi',
     name: 'Kakala Keren Suubi',
     role: 'Legal Intern',
+    image: 'Kakala Keren.jpg',
+    imagePosition: '50% 0%',
+    imageScale: 1,
+    imageScaleOrigin: 'center 12%',
+    imageAlt: 'Kakala Keren Suubi, Legal Intern',
     directoryGroup: 'Legal Team',
     shortBio: 'Kakala Keren Suubi is a Legal Intern at R. Mackay Advocates. Her CV records legal internship experience at the firm, the Supreme Court of Uganda and the Court of Appeal of Uganda, as well as a field attachment at Parliament of Uganda.',
     biography: [
@@ -367,6 +372,11 @@ export const attorneys = [
     slug: 'oyet-brian',
     name: 'Oyet Brian',
     role: 'Legal Assistant',
+    image: 'oyet Brian.jpg',
+    imagePosition: '50% 0%',
+    imageScale: 1,
+    imageScaleOrigin: 'center 12%',
+    imageAlt: 'Oyet Brian, Legal Assistant',
     directoryGroup: 'Legal Team',
     shortBio: 'Oyet Brian is a Legal Assistant at R. Mackay Advocates. His experience includes legal drafting, research, case file management, client liaison and court filing support, with earlier clerkship and Ministry of Internal Affairs experience.',
     biography: [
@@ -434,6 +444,11 @@ export const attorneys = [
     "slug": "rugambwa-jerry",
     "name": "Rugambwa Jerry",
     "role": "Legal Assistant (Internship)",
+    "image": "Rugambwa Jerry.jpg",
+    "imagePosition": "50% 0%",
+    "imageScale": 1,
+    "imageScaleOrigin": "center 12%",
+    "imageAlt": "Rugambwa Jerry, Legal Assistant (Internship)",
     "biography": [
       "Rugambwa Jerry is a law graduate whose CV records legal assistant internships at R. Mackay Advocates and the Chief Magistrate’s Court in Mbarara, alongside human-rights volunteering, student leadership and legal research. His internship at R. Mackay Advocates ran from June to September 2024."
     ],
@@ -850,6 +865,11 @@ export const attorneys = [
     "slug": "kunda-susan",
     "name": "Kunda Susan",
     "role": "Legal Assistant",
+    "image": "Kunda Susan.jpg",
+    "imagePosition": "50% 0%",
+    "imageScale": 1.18,
+    "imageScaleOrigin": "center 12%",
+    "imageAlt": "Kunda Susan, Legal Assistant",
     "biography": [
       "Kunda Susan’s CV records legal assistant work at R. Mackay Advocates and previous volunteer experience in legal practice, business operations and court support. Her experience includes legal research, document drafting, case-file administration and client support."
     ],
