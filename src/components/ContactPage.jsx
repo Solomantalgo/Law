@@ -4,7 +4,7 @@ import Footer from './Footer';
 import { contactEnquiryNotice, firmContact, practiceAreas } from '../data/siteData';
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const CONTACT_API_URL = 'https://law-demo.solomantalgo.com/api/contact';
+const CONTACT_API_URL = 'https://law-three-navy.vercel.app/api/contact';
 
 export default function ContactPage({ menuOpen, setMenuOpen }) {
   const [errors, setErrors] = useState({});

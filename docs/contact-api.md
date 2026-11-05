@@ -1,6 +1,6 @@
 # Consultation API setup
 
-The cPanel deployment serves the static Vite site. Its contact form posts to the Vercel Node.js Function at `https://law-demo.solomantalgo.com/api/contact`, which validates and rate-limits submissions before forwarding URL-encoded fields to Google Apps Script. The function allows cross-origin requests only from `https://rmackayadvocates.com` and `https://www.rmackayadvocates.com`. The Apps Script deployment URL is read only by the server from `GOOGLE_APPS_SCRIPT_URL` and is not included in the Vite client bundle.
+The cPanel deployment serves the static Vite site. Its contact form posts to the client-owned Vercel Node.js Function at `https://law-three-navy.vercel.app/api/contact`, which validates and rate-limits submissions before forwarding URL-encoded fields to Google Apps Script. The function allows cross-origin requests only from `https://rmackayadvocates.com` and `https://www.rmackayadvocates.com`. The Apps Script deployment URL is read only by the server from `GOOGLE_APPS_SCRIPT_URL` and is not included in the Vite client bundle.
 
 ## Environment
 
