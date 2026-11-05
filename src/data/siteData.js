@@ -1101,6 +1101,34 @@ export const galleryImages = [
     width: 719, height: 1080, orientation: 'portrait', homepageFeatured: true,
     category: null, title: null, caption: null,
   },
+  {
+    id: 'kakala-keren-suubi-portrait', image: 'Kakala Keren.jpg',
+    alt: 'Kakala Keren Suubi, Legal Intern at R. Mackay Advocates.',
+    imagePosition: 'center 12%',
+    width: 3266, height: 4899, orientation: 'portrait', homepageFeatured: false,
+    category: null, title: null, caption: null,
+  },
+  {
+    id: 'oyet-brian-portrait', image: 'oyet Brian.jpg',
+    alt: 'Oyet Brian, Legal Assistant at R. Mackay Advocates.',
+    imagePosition: 'center 12%',
+    width: 3266, height: 4899, orientation: 'portrait', homepageFeatured: false,
+    category: null, title: null, caption: null,
+  },
+  {
+    id: 'rugambwa-jerry-portrait', image: 'Rugambwa Jerry.jpg',
+    alt: 'Rugambwa Jerry, Legal Assistant Intern at R. Mackay Advocates.',
+    imagePosition: 'center 12%',
+    width: 3266, height: 4899, orientation: 'portrait', homepageFeatured: false,
+    category: null, title: null, caption: null,
+  },
+  {
+    id: 'kunda-susan-portrait', image: 'Kunda Susan.jpg',
+    alt: 'Kunda Susan, Legal Assistant at R. Mackay Advocates.',
+    imagePosition: 'center 12%',
+    width: 3266, height: 4899, orientation: 'portrait', homepageFeatured: false,
+    category: null, title: null, caption: null,
+  },
 ];
 
 export const image = (name) => `/assets/images/${name}`;
