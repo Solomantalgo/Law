@@ -17,6 +17,10 @@ const MAX_LENGTHS = {
 };
 const ALLOWED_FIELDS = Object.keys(MAX_LENGTHS);
 const ALLOWED_MATTERS = new Set(practiceAreas.map((area) => area.slug));
+const ALLOWED_ORIGINS = new Set([
+  'https://rmackayadvocates.com',
+  'https://www.rmackayadvocates.com',
+]);
 const UPSTREAM_TIMEOUT_MS = 10000;
 const RATE_LIMIT_TIMEOUT_MS = 2500;
 
@@ -161,6 +165,21 @@ export function createContactHandler({
   upstreamTimeoutMs = UPSTREAM_TIMEOUT_MS,
 } = {}) {
   return async function contactHandler(req, res) {
+    const origin = req.headers?.origin;
+    if (origin && !ALLOWED_ORIGINS.has(origin)) {
+      return response(res, 403, { ok: false, error: 'This origin is not allowed to submit enquiries.' });
+    }
+    if (origin) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+      res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+      res.setHeader('Access-Control-Max-Age', '600');
+      res.setHeader('Vary', 'Origin');
+    }
+    if (req.method === 'OPTIONS') {
+      res.setHeader('Cache-Control', 'no-store');
+      return res.status(204).end();
+    }
     if (req.method !== 'POST') return response(res, 405, { ok: false, error: 'Use POST to submit this form.' }, { Allow: 'POST' });
     if (!String(req.headers?.['content-type'] || '').toLowerCase().includes('application/json')) {
       return response(res, 415, { ok: false, error: 'Submit the enquiry as JSON.' });

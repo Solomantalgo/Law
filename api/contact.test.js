@@ -25,6 +25,7 @@ function makeResponse() {
     setHeader(key, value) { this.headers[key] = value; },
     status(code) { this.statusCode = code; return this; },
     json(payload) { this.payload = payload; return this; },
+    end() { this.ended = true; return this; },
   };
 }
 
@@ -44,6 +45,21 @@ test('rejects non-POST methods', async () => {
   const { res } = await run({ method: 'GET' });
   assert.equal(res.statusCode, 405);
   assert.equal(res.headers.Allow, 'POST');
+});
+
+test('allows CORS preflight from the production site', async () => {
+  const { res } = await run({ method: 'OPTIONS', headers: { origin: 'https://rmackayadvocates.com' } });
+  assert.equal(res.statusCode, 204);
+  assert.equal(res.ended, true);
+  assert.equal(res.headers['Access-Control-Allow-Origin'], 'https://rmackayadvocates.com');
+  assert.equal(res.headers['Access-Control-Allow-Methods'], 'POST, OPTIONS');
+  assert.equal(res.headers['Access-Control-Allow-Headers'], 'Content-Type');
+});
+
+test('rejects cross-origin requests from unapproved sites', async () => {
+  const { res } = await run({ headers: { origin: 'https://example.com' } });
+  assert.equal(res.statusCode, 403);
+  assert.equal(res.headers['Access-Control-Allow-Origin'], undefined);
 });
 
 test('rejects invalid required fields without contacting Apps Script', async () => {

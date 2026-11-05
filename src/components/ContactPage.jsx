@@ -4,6 +4,7 @@ import Footer from './Footer';
 import { contactEnquiryNotice, firmContact, practiceAreas } from '../data/siteData';
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const CONTACT_API_URL = 'https://law-demo.solomantalgo.com/api/contact';
 
 export default function ContactPage({ menuOpen, setMenuOpen }) {
   const [errors, setErrors] = useState({});
@@ -92,7 +93,7 @@ export default function ContactPage({ menuOpen, setMenuOpen }) {
     };
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(CONTACT_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(payload),
