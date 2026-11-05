@@ -5,6 +5,9 @@
     { "source": "/gallery", "destination": "/index.html" },
     { "source": "/insights/:path*", "destination": "/index.html" },
     { "source": "/practice-areas/:path*", "destination": "/index.html" },
+    { "source": "/team", "destination": "/index.html" },
+    { "source": "/team/:path*", "destination": "/index.html" },
+    { "source": "/people", "destination": "/index.html" },
     { "source": "/people/:path*", "destination": "/index.html" }
   ]
 }

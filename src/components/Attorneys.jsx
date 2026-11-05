@@ -22,7 +22,7 @@ export default function Attorneys({ onSelectAttorney, preview = false }) {
       <div className="section-heading reveal-up">
         <div>
           <p className="eyebrow dark">ATTORNEY DIRECTORY</p>
-          <h2>Our People</h2>
+          <h2>Our Team</h2>
         </div>
         <p className="heading-note">Profiles for the firm’s legal team.</p>
       </div>
@@ -37,7 +37,7 @@ export default function Attorneys({ onSelectAttorney, preview = false }) {
                 key={attorney.slug}
               >
                 <a
-                  href={`/people/${attorney.slug}`}
+                  href={`/team/${attorney.slug}`}
                   className="attorney-photo"
                   onClick={(event) => {
                     event.preventDefault();
@@ -52,7 +52,7 @@ export default function Attorneys({ onSelectAttorney, preview = false }) {
                   <h3>{attorney.name}</h3>
                   <p className="attorney-role">{attorney.role}</p>
                   <a
-                    href={`/people/${attorney.slug}`}
+                    href={`/team/${attorney.slug}`}
                     className="view-profile-link"
                     onClick={(event) => {
                       event.preventDefault();
@@ -67,7 +67,7 @@ export default function Attorneys({ onSelectAttorney, preview = false }) {
           </div>
         </div>
       ))}
-      {preview && <div className="attorneys-directory-link reveal-up"><a href="/people">Meet Our People</a></div>}
+      {preview && <div className="attorneys-directory-link reveal-up"><a href="/team">Meet Our Team</a></div>}
     </section>
   );
 }

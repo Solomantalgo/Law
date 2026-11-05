@@ -79,7 +79,7 @@ export default function AttorneyProfilePage({ attorneyId }) {
 
   useEffect(() => {
     if (!window.location.hash) window.scrollTo({ top: 0, behavior: 'instant' });
-    document.title = attorney ? `${attorney.name} | R. Mackay Advocates` : 'Our People | R. Mackay Advocates';
+    document.title = attorney ? `${attorney.name} | R. Mackay Advocates` : 'Our Team | R. Mackay Advocates';
     return () => { document.title = 'R. Mackay Advocates'; };
   }, [attorney]);
 
@@ -198,11 +198,11 @@ export default function AttorneyProfilePage({ attorneyId }) {
       <main>
         <section className={`profile-hero ${hasProfileContent ? 'profile-hero-detailed' : 'profile-hero-limited'}`}>
           <div className="profile-hero-inner">
-            <a href="/people" className="back-link">&larr; Back to Our People</a>
+            <a href="/team" className="back-link">&larr; Back to Our Team</a>
             <div className="profile-hero-content">
               <div className={`profile-hero-photo reveal reveal-left${attorney.leadershipGroup ? ' leadership-profile-photo' : ''}`}><AttorneyPortrait attorney={attorney} variant="profile" /></div>
               <div className="profile-hero-details reveal-up">
-                <p className="eyebrow profile-eyebrow">OUR PEOPLE</p>
+                <p className="eyebrow profile-eyebrow">OUR TEAM</p>
                 <h1>{attorney.name}</h1>
                 <p className="profile-title">{attorney.role}</p>
                 {attorney.shortBio && <p className="profile-intro">{attorney.shortBio}</p>}

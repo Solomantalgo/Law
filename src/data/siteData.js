@@ -70,7 +70,7 @@ export const aboutPageContent = {
       { title: 'Considered Advice', text: 'Thoughtful counsel that takes the wider context of each decision into account.' },
       { title: 'Personal Attention', text: 'Responsive service that keeps the individual matter in view.' },
     ],
-    peopleIntro: 'Find names, roles and available profile information in the directory.',
+    teamIntro: 'Find names, roles and available profile information in the directory.',
   },
 };
 

@@ -8,7 +8,7 @@ export default function AttorneyDirectoryPage({ onSelectAttorney }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    document.title = 'Our People | R. Mackay Advocates';
+    document.title = 'Our Team | R. Mackay Advocates';
   }, []);
 
   return (

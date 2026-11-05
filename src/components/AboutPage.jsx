@@ -70,7 +70,7 @@ export default function AboutPage({ menuOpen, setMenuOpen }) {
             </div>
             <div className="about-leaders-grid">
               {leaders.map((attorney) => (
-                <a className="about-leader-card about-leader-card--gold-outline about-leader-card--leadership" href={`/people/${attorney.slug}`} key={attorney.slug}>
+                <a className="about-leader-card about-leader-card--gold-outline about-leader-card--leadership" href={`/team/${attorney.slug}`} key={attorney.slug}>
                   <AttorneyPortrait attorney={attorney} variant="card" />
                   <span className="about-leader-details">
                     <span className="about-leader-role">{attorney.role}</span>
@@ -83,13 +83,13 @@ export default function AboutPage({ menuOpen, setMenuOpen }) {
           </div>
         </section>
 
-        <section className="about-page-people" id="our-people">
+        <section className="about-page-people" id="our-team">
           <div className="about-page-people-copy">
-            <p className="eyebrow dark">OUR PEOPLE</p>
+            <p className="eyebrow dark">OUR TEAM</p>
             <h2>A wider legal team.</h2>
-            <p>{provisionalCopy.peopleIntro}</p>
+            <p>{provisionalCopy.teamIntro}</p>
           </div>
-          <a className="line-link" href="/people">Meet Our People</a>
+          <a className="line-link" href="/team">Meet Our Team</a>
         </section>
 
         <ConsultationCTA />

@@ -4,7 +4,7 @@ export default function Header({ menuOpen, setMenuOpen }) {
   const [scrolled, setScrolled] = useState(false);
   const headerRef = useRef(null);
   const pathname = window.location.pathname.replace(/\/$/, '') || '/';
-  const context = pathname === '/people' ? 'directory' : /^\/people\/[^/]+$/.test(pathname) ? 'profile' : pathname === '/practice-areas' || pathname.startsWith('/practice-areas/') ? 'practice' : pathname === '/about' ? 'about' : pathname === '/gallery' ? 'gallery' : pathname === '/contact' ? 'contact' : pathname === '/insights' || pathname.startsWith('/insights/') ? 'insights' : pathname === '/' ? 'home' : 'contact';
+  const context = pathname === '/team' || pathname === '/people' ? 'directory' : /^\/(?:team|people)\/[^/]+$/.test(pathname) ? 'profile' : pathname === '/practice-areas' || pathname.startsWith('/practice-areas/') ? 'practice' : pathname === '/about' ? 'about' : pathname === '/gallery' ? 'gallery' : pathname === '/contact' ? 'contact' : pathname === '/insights' || pathname.startsWith('/insights/') ? 'insights' : pathname === '/' ? 'home' : 'contact';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -53,7 +53,7 @@ export default function Header({ menuOpen, setMenuOpen }) {
     if (target) target.scrollIntoView({ behavior: 'smooth' });
     else if (id === '#practice') window.location.href = '/practice-areas';
     else if (id === '#home') window.location.href = '/';
-    else if (id === '#attorneys') window.location.href = '/people';
+    else if (id === '#attorneys') window.location.href = '/team';
     else if (id === '#contact') window.location.href = '/contact#consultation';
     else if (id === '#insights') window.location.href = '/insights';
     else window.location.href = `/${id}`;
@@ -61,7 +61,7 @@ export default function Header({ menuOpen, setMenuOpen }) {
   const links = ['home', 'about', 'practice', 'attorneys', 'gallery', 'insights', 'contact'];
   const label = (id) => id === 'practice' ? 'Practice Areas' : id[0].toUpperCase() + id.slice(1);
   const href = (id) => id === 'about' ? '/about' : id === 'gallery' ? '/gallery' : id === 'insights' ? '/insights' : id === 'contact' ? '/contact' : `#${id}`;
-  const isCurrentPage = (id) => id === 'home' ? pathname === '/' : id === 'about' ? pathname === '/about' : id === 'practice' ? pathname === '/practice-areas' || pathname.startsWith('/practice-areas/') : id === 'attorneys' ? pathname === '/people' || pathname.startsWith('/people/') : id === 'gallery' ? pathname === '/gallery' : id === 'insights' ? pathname === '/insights' || pathname.startsWith('/insights/') : id === 'contact' && pathname === '/contact';
+  const isCurrentPage = (id) => id === 'home' ? pathname === '/' : id === 'about' ? pathname === '/about' : id === 'practice' ? pathname === '/practice-areas' || pathname.startsWith('/practice-areas/') : id === 'attorneys' ? pathname === '/team' || pathname.startsWith('/team/') || pathname === '/people' || pathname.startsWith('/people/') : id === 'gallery' ? pathname === '/gallery' : id === 'insights' ? pathname === '/insights' || pathname.startsWith('/insights/') : id === 'contact' && pathname === '/contact';
   const onNavigationClick = (event, id) => {
     if (id === 'about' || id === 'gallery' || id === 'insights' || id === 'contact') { setMenuOpen(false); return; }
     event.preventDefault();

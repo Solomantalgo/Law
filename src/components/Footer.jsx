@@ -10,7 +10,7 @@ export default function Footer() {
         <a className="footer-badge" href="/#home" aria-label="R. Mackay Advocates home"><img src="/assets/images/rmackay-full-badge-transparent.png" alt="R. Mackay Advocates" /></a>
         <p>Legal counsel for businesses, institutions and individuals in Kampala.</p>
       </div>
-      <div><h4>Firm</h4><a href="/about">About</a><a href="/people">Attorneys</a><a href="/gallery">Gallery</a><a href="/insights">Insights</a><a href="/contact">Contact</a></div>
+      <div><h4>Firm</h4><a href="/about">About</a><a href="/team">Attorneys</a><a href="/gallery">Gallery</a><a href="/insights">Insights</a><a href="/contact">Contact</a></div>
       <div><h4>Expertise</h4><a href="/practice-areas/tax">Tax</a><a href="/practice-areas/criminal">Criminal</a><a href="/practice-areas/corporate-commercial">Corporate and Commercial Practice</a><a href="/practice-areas/conveyancing">Conveyancing</a><a href="/practice-areas/corporate-compliance">Corporate Compliance</a></div>
       <div>
         <h4>Contact</h4>

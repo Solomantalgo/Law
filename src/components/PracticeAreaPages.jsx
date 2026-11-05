@@ -88,7 +88,7 @@ export function PracticeAreaPage({ area }) {
               <h2>Related Attorneys</h2>
               <div className="practice-related-grid">
                 {relatedAttorneys.map((attorney) => (
-                  <a className="practice-related-attorney" href={`/people/${attorney.slug}`} key={attorney.slug}>
+                  <a className="practice-related-attorney" href={`/team/${attorney.slug}`} key={attorney.slug}>
                     <AttorneyPortrait attorney={attorney} variant="card" />
                     <span><strong>{attorney.name}</strong><small>{attorney.role}</small></span>
                     <Arrow />

@@ -29,7 +29,7 @@ const decodePathSegment = (segment) => {
 const profileRouteAliases = { 'rugambwa-jelly': 'rugambwa-jerry' };
 
 const getProfileSlug = () => {
-  const match = window.location.pathname.match(/^\/people\/([^/]+)\/?$/);
+  const match = window.location.pathname.match(/^\/(?:team|people)\/([^/]+)\/?$/);
   const rawSlug = match?.[1] || (window.location.hash.startsWith('#attorneys/') ? window.location.hash.slice('#attorneys/'.length) : null);
   const requestedSlug = rawSlug ? decodePathSegment(rawSlug) : null;
   const slug = requestedSlug ? profileRouteAliases[requestedSlug] || requestedSlug : null;
@@ -56,6 +56,13 @@ function NotFoundPage({ menuOpen, setMenuOpen }) {
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileId, setProfileId] = useState(getProfileSlug);
+
+  useEffect(() => {
+    const pathname = window.location.pathname;
+    if (pathname === '/people' || pathname.startsWith('/people/')) {
+      window.history.replaceState({}, '', `/team${pathname.slice('/people'.length)}${window.location.search}${window.location.hash}`);
+    }
+  }, []);
 
   useEffect(() => {
     const handleLocationChange = () => {
@@ -123,9 +130,9 @@ export default function App() {
     );
   }
 
-  if (window.location.pathname === '/people' || window.location.pathname === '/people/') {
+  if (window.location.pathname === '/team' || window.location.pathname === '/team/' || window.location.pathname === '/people' || window.location.pathname === '/people/') {
     return <AttorneyDirectoryPage onSelectAttorney={(id) => {
-      window.history.pushState({}, '', `/people/${id}`);
+      window.history.pushState({}, '', `/team/${id}`);
       setProfileId(id);
       window.scrollTo({ top: 0, behavior: 'instant' });
     }} />;
@@ -159,7 +166,7 @@ export default function App() {
         <Attorneys
           preview
           onSelectAttorney={(id) => {
-            window.history.pushState({}, '', `/people/${id}`);
+            window.history.pushState({}, '', `/team/${id}`);
             setProfileId(id);
             window.scrollTo({ top: 0, behavior: 'instant' });
           }}
