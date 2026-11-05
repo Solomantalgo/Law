@@ -1,6 +1,6 @@
 # Consultation API setup
 
-The contact form posts to `/api/contact`, a Vercel Node.js Function. The function forwards URL-encoded form fields to Google Apps Script. The Apps Script deployment URL is read only by the server from `GOOGLE_APPS_SCRIPT_URL` and is not included in the Vite client bundle.
+The cPanel deployment serves the static Vite site and uses `public/api/contact.php` for `/api/contact`; see [cPanel contact form setup](./cpanel-contact.md). The Node.js function below remains the API implementation for Vercel deployments: it forwards URL-encoded form fields to Google Apps Script. The Apps Script deployment URL is read only by the server from `GOOGLE_APPS_SCRIPT_URL` and is not included in the Vite client bundle.
 
 ## Environment
 
