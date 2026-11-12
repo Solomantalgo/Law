@@ -1037,17 +1037,11 @@ export const attorneys = [
   {
     slug: 'musimbi-alex',
     name: 'Musimbi Alex',
-    role: 'Legal Associate',
+    role: 'Associate Partner',
+    image: 'Musimbi Alex.jpeg',
+    imagePosition: '50% 50%',
+    imageAlt: 'Musimbi Alex, Associate Partner at R. Mackay Advocates.',
     profilePending: true,
-    shortBio: 'Legal Associate focusing on corporate advisory, commercial drafting and client representation.',
-    biography: [
-      'Musimbi Alex advises local and international clients on contract drafting, commercial dispute resolution and compliance.',
-    ],
-    practiceAreas: [
-      'Commercial Drafting & Advisory', 'Taxation Counsel', 'Litigation',
-    ],
-    qualifications: ['LL.B (Hons)', 'Diploma in Legal Practice'],
-    admissions: ['Advocate of the High Court'],
   },
 ];
 
@@ -1127,6 +1121,13 @@ export const galleryImages = [
     alt: 'Kunda Susan, Legal Assistant at R. Mackay Advocates.',
     imagePosition: 'center 12%',
     width: 3266, height: 4899, orientation: 'portrait', homepageFeatured: false,
+    category: null, title: null, caption: null,
+  },
+  {
+    id: 'musimbi-alex-portrait', image: 'Musimbi Alex.jpeg',
+    alt: 'Musimbi Alex, Associate Partner at R. Mackay Advocates.',
+    imagePosition: 'center 17%',
+    width: 1706, height: 2560, orientation: 'portrait', homepageFeatured: true,
     category: null, title: null, caption: null,
   },
 ];

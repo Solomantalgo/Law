@@ -2,7 +2,7 @@ import { galleryImages } from '../data/siteData';
 import GalleryImageGrid from './GalleryImageGrid';
 
 export default function GalleryPreview() {
-  const featured = galleryImages.filter((item) => item.homepageFeatured).slice(0, 5);
+  const featured = galleryImages.filter((item) => item.homepageFeatured).slice(0, 6);
   return (
     <section className="section gallery-preview" aria-labelledby="gallery-preview-title">
       <div className="gallery-preview-heading reveal-up">

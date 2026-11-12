@@ -2,16 +2,18 @@ import { Arrow } from './Shared';
 import { attorneys } from '../data/siteData';
 import AttorneyPortrait from './AttorneyPortrait';
 
-const leadership = attorneys.filter((attorney) => attorney.leadershipGroup === 'Leadership');
-const otherPartners = attorneys.filter((attorney) => !attorney.leadershipGroup && attorney.role === 'Partner');
+const isLeadership = (attorney) => attorney.leadershipGroup === 'Leadership' || attorney.role === 'Associate Partner';
+const leadership = attorneys.filter(isLeadership);
+const partnerRoles = new Set(['Partner']);
+const otherPartners = attorneys.filter((attorney) => !isLeadership(attorney) && partnerRoles.has(attorney.role));
 const legalTeam = attorneys.filter((attorney) => attorney.directoryGroup === 'Legal Team');
-const otherAttorneys = attorneys.filter((attorney) => !attorney.leadershipGroup && attorney.role !== 'Partner' && attorney.directoryGroup !== 'Legal Team');
+const otherAttorneys = attorneys.filter((attorney) => !isLeadership(attorney) && !partnerRoles.has(attorney.role) && attorney.directoryGroup !== 'Legal Team');
 
 export default function Attorneys({ onSelectAttorney, preview = false }) {
   const groups = [
     { title: 'Leadership', members: leadership },
     ...(!preview ? [
-      { title: 'Other Partners', members: otherPartners },
+      { title: 'Partners', members: otherPartners },
       { title: 'Other Attorneys', members: otherAttorneys },
       { title: 'Legal Team', members: legalTeam },
     ] : []),
