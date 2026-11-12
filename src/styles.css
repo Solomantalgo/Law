@@ -1535,3 +1535,44 @@ footer a { transition: color .22s; }
 .about-leader-card--leadership:focus-visible { outline-color: #a98032; }
 .attorney-profile-page.profile-leadership .profile-hero-details h1,
 .attorney-profile-page.profile-leadership .profile-title { color: #c8a35c; }
+
+/* Compact, mobile-first landing page for business-card QR scans. */
+.connect-page { display: grid; width: 100%; min-height: 100svh; min-height: 100dvh; place-items: center; overflow-x: clip; padding: clamp(12px, 3vh, 28px) 16px; background: radial-gradient(ellipse at 50% 0%, #17344e 0%, #071a2f 55%, #041321 100%); }
+.connect-card { position: relative; width: min(100%, 430px); padding: clamp(20px, 4vh, 32px) clamp(20px, 5vw, 32px) 22px; border: 1px solid rgba(200,163,92,.55); border-top: 4px solid #c8a35c; background: #fff; box-shadow: 0 22px 70px rgba(0,0,0,.28); }
+.connect-brand { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.connect-brand img { display: block; width: 49px; height: 49px; object-fit: contain; }
+.connect-wordmark { margin: 7px 0 0; color: var(--navy); font: 600 1.4rem/1.05 var(--serif); letter-spacing: .045em; }
+.connect-wordmark span { display: block; margin-top: 5px; color: #8a682e; font: 700 .64rem/1.2 var(--sans); letter-spacing: .34em; }
+.connect-tagline { margin: 7px 0 0; color: #707b86; font: italic .77rem/1.3 var(--serif); }
+.connect-partners { display: grid; grid-template-columns: 1fr 1fr; margin: 18px 0 15px; padding: 13px 0; border-top: 1px solid #e5e8eb; border-bottom: 1px solid #e5e8eb; }
+.connect-partners > div { display: flex; min-width: 0; flex-direction: column; gap: 3px; padding: 0 10px; }
+.connect-partners > div:first-child { padding-left: 0; border-right: 1px solid #d9dee3; }
+.connect-partners > div:last-child { padding-right: 0; padding-left: 15px; }
+.connect-partners strong { color: var(--navy); font: 600 .94rem/1.2 var(--serif); }
+.connect-partners span { color: #8a682e; font-size: .66rem; line-height: 1.35; }
+.connect-actions { display: grid; gap: 9px; }
+.connect-action { display: grid; grid-template-columns: 34px minmax(0,1fr) 16px; align-items: center; gap: 11px; min-height: 57px; padding: 9px 12px; border: 1px solid #d9dee3; color: var(--navy); text-decoration: none; transition: border-color .18s ease, background .18s ease; }
+.connect-action:hover { border-color: #b28b46; background: #faf8f3; }
+.connect-action:focus-visible, .connect-secondary-actions a:focus-visible { outline: 3px solid #b8954d; outline-offset: 3px; }
+.connect-action-call { border-color: var(--navy); background: var(--navy); color: #fff; }
+.connect-action-call:hover { border-color: #183b58; background: #102a43; }
+.connect-action-icon { display: grid; width: 32px; height: 32px; place-items: center; border: 1px solid rgba(178,139,70,.5); color: #8a682e; }
+.connect-action-call .connect-action-icon { color: #e3c987; }
+.connect-action-icon svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.connect-action-copy { display: flex; min-width: 0; flex-direction: column; gap: 2px; }
+.connect-action-copy strong { font-size: .79rem; font-weight: 700; }
+.connect-action-copy small { color: #6e7a86; font-size: .72rem; line-height: 1.35; overflow-wrap: anywhere; }
+.connect-action-call .connect-action-copy small { color: #e2e7eb; }
+.connect-arrow { justify-self: end; color: #8a682e; font-size: .95rem; }
+.connect-action-call .connect-arrow { color: #e3c987; }
+.connect-secondary-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 9px; }
+.connect-secondary-actions a { display: flex; min-height: 42px; align-items: center; justify-content: center; gap: 7px; border: 1px solid #d9dee3; color: var(--navy); font-size: .74rem; font-weight: 700; text-decoration: none; }
+.connect-secondary-actions a:hover { border-color: #b28b46; background: #faf8f3; }
+.connect-secondary-actions a span { color: #8a682e; }
+.connect-address { display: flex; flex-direction: column; margin-top: 14px; color: #606c78; font-size: .69rem; font-style: normal; line-height: 1.45; text-align: center; }
+.connect-home-link { display: flex; justify-content: center; gap: 5px; margin-top: 12px; color: #8a682e; font-size: .7rem; font-weight: 700; text-decoration: none; }
+.connect-home-link:hover { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
+.connect-home-link:focus-visible { outline: 3px solid #b8954d; outline-offset: 3px; }
+@media (max-width: 360px) { .connect-page { padding-inline: 10px; } .connect-card { padding-inline: 16px; } .connect-partners strong { font-size: .87rem; } .connect-action-copy small { font-size: .68rem; } }
+@media (max-height: 680px) { .connect-page { padding-block: 8px; } .connect-card { padding-top: 14px; padding-bottom: 14px; } .connect-brand img { width: 38px; height: 38px; } .connect-wordmark { font-size: 1.2rem; } .connect-tagline { margin-top: 4px; } .connect-partners { margin: 12px 0 10px; padding: 9px 0; } .connect-actions { gap: 7px; } .connect-action { min-height: 50px; } .connect-secondary-actions { margin-top: 7px; } .connect-address { margin-top: 10px; } .connect-home-link { margin-top: 8px; } }
+@media (max-height: 560px) { .connect-page { padding-block: 5px; } .connect-card { padding: 8px 20px 9px; } .connect-brand img { width: 30px; height: 30px; } .connect-wordmark { margin-top: 3px; font-size: 1.05rem; } .connect-wordmark span { margin-top: 2px; } .connect-tagline { margin-top: 2px; font-size: .68rem; } .connect-partners { margin: 7px 0 6px; padding: 6px 0; } .connect-actions { gap: 5px; } .connect-action { min-height: 42px; padding-block: 5px; } .connect-action-icon { width: 27px; height: 27px; } .connect-secondary-actions { margin-top: 5px; } .connect-secondary-actions a { min-height: 34px; } .connect-address { margin-top: 6px; font-size: .62rem; } .connect-home-link { margin-top: 5px; font-size: .64rem; } }

@@ -17,9 +17,11 @@ import { InsightsListingPage, InsightArticlePage } from './components/InsightsPa
 import GalleryPreview from './components/GalleryPreview';
 import GalleryPage from './components/GalleryPage';
 import ContactPage from './components/ContactPage';
+import ConnectPage from './components/ConnectPage';
 import ConsultationCTA from './components/ConsultationCTA';
 import Footer from './components/Footer';
 import { attorneys, practiceAreas } from './data/siteData';
+import { setCanonicalUrl } from './seo';
 
 const decodePathSegment = (segment) => {
   try { return decodeURIComponent(segment); }
@@ -63,6 +65,10 @@ export default function App() {
       window.history.replaceState({}, '', `/team${pathname.slice('/people'.length)}${window.location.search}${window.location.hash}`);
     }
   }, []);
+
+  useEffect(() => {
+    setCanonicalUrl(window.location.pathname);
+  }, [profileId]);
 
   useEffect(() => {
     const handleLocationChange = () => {
@@ -143,6 +149,7 @@ export default function App() {
   if (currentPath.startsWith('/insights/')) return <InsightArticlePage slug={decodePathSegment(currentPath.slice('/insights/'.length))} />;
   if (currentPath === '/about') return <AboutPage menuOpen={menuOpen} setMenuOpen={setMenuOpen} />;
   if (currentPath === '/gallery') return <GalleryPage />;
+  if (currentPath === '/connect') return <ConnectPage />;
   if (currentPath === '/contact') return <ContactPage menuOpen={menuOpen} setMenuOpen={setMenuOpen} />;
   if (currentPath === '/practice-areas') return <PracticeAreasDirectoryPage />;
   if (currentPath.startsWith('/practice-areas/')) {

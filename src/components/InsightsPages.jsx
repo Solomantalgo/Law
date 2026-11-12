@@ -4,6 +4,7 @@ import Footer from './Footer';
 import ConsultationCTA from './ConsultationCTA';
 import { Arrow } from './Shared';
 import { publishedInsights } from '../data/siteData';
+import { canonicalUrl } from '../seo';
 
 function useMeta(title, description, path) {
   useEffect(() => {
@@ -14,7 +15,7 @@ function useMeta(title, description, path) {
       if (node && value) node.setAttribute(attr, value);
     };
     set('meta[name="description"]', 'content', description, 'meta');
-    const url = `${window.location.origin}${path}`;
+    const url = canonicalUrl(path);
     set('link[rel="canonical"]', 'href', url, 'link');
     set('meta[property="og:title"]', 'content', title, 'meta');
     set('meta[property="og:description"]', 'content', description, 'meta');
